@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import GenerationControls from '@/components/GenerationControls';
 import LogsViewer from '@/components/LogsViewer';
-import RecentIdeas from '@/components/RecentIdeas';
 import { Idea, LogEntry } from '@/types';
 import { api } from '@/lib/api';
 
@@ -12,7 +11,6 @@ export default function DashboardPage() {
   const pathname = usePathname();
   const [ideas, setIdeas] = useState<Idea[]>([]);
   const [logs, setLogs] = useState<LogEntry[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
   const [currentStage, setCurrentStage] = useState<string>('');
   const pollIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -184,7 +182,6 @@ export default function DashboardPage() {
 
   const fetchRecentIdeas = async () => {
     try {
-      setIsLoading(true);
       const response = await api.getIdeas({
         sortBy: 'created',
         sortOrder: 'desc',
@@ -193,8 +190,6 @@ export default function DashboardPage() {
       setIdeas(response.ideas);
     } catch (error: any) {
       addLog('error', `Failed to fetch ideas: ${error.message}`);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -237,104 +232,74 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header with Profile Selector */}
-        <div className="mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-              Dashboard
-            </h1>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-              Generate and manage your business ideas
-            </p>
+    <div className="p-4 lg:p-6">
+      {/* Stats Row - Compact metric cards at top */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+        <div className="bg-surface rounded-md border border-border-subtle p-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-text-secondary uppercase tracking-wide">Recent Ideas</span>
+            <span className="text-xl font-bold text-mint">{ideas.length}</span>
           </div>
         </div>
-
-        {/* Generation Status Display */}
-        <div className="mb-6 bg-white dark:bg-gray-800 rounded-lg shadow p-4 border-l-4 border-primary-500">
-          <div className="flex items-center space-x-3">
-            {isGenerating ? (
-              <>
-                <div className="flex-shrink-0">
-                  <div className="h-3 w-3 bg-green-500 rounded-full animate-pulse"></div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                    Generation in Progress
-                  </p>
-                  {currentStage && (
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Current Stage: {currentStage}
-                    </p>
-                  )}
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="flex-shrink-0">
-                  <div className="h-3 w-3 bg-gray-400 rounded-full"></div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                    Idle
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    No generation in progress
-                  </p>
-                </div>
-              </>
-            )}
+        <div className="bg-surface rounded-md border border-border-subtle p-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-text-secondary uppercase tracking-wide">High Score (65+)</span>
+            <span className="text-xl font-bold text-success">{ideas.filter((i) => i.score >= 65).length}</span>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Controls */}
-          <div className="lg:col-span-1 space-y-6">
-            <GenerationControls
-              onGenerationStart={handleGenerationStart}
-              onGenerationComplete={handleGenerationComplete}
-              onError={handleError}
-              disabled={isGenerating}
-            />
-          </div>
-
-          {/* Right Column - Logs and Ideas */}
-          <div className="lg:col-span-2 space-y-6">
-            <LogsViewer logs={logs} />
-            <RecentIdeas ideas={ideas} onRefresh={fetchRecentIdeas} />
+        <div className="bg-surface rounded-md border border-border-subtle p-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-text-secondary uppercase tracking-wide">Domains</span>
+            <span className="text-xl font-bold text-warning">{new Set(ideas.map((i) => i.domain)).size}</span>
           </div>
         </div>
-
-        {/* Quick Stats */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-4 gap-4">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 text-center">
-            <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">
-              {ideas.length}
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Recent Ideas</p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 text-center">
-            <p className="text-3xl font-bold text-green-600 dark:text-green-400">
-              {ideas.filter((i) => i.score >= 65).length}
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">High Scoring (65+)</p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 text-center">
-            <p className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
-              {new Set(ideas.map((i) => i.domain)).size}
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Unique Domains</p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 text-center">
-            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">
-              {logs.filter((l) => l.level === 'error').length}
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Errors</p>
+        <div className="bg-surface rounded-md border border-border-subtle p-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-text-secondary uppercase tracking-wide">Errors</span>
+            <span className="text-xl font-bold text-error">{logs.filter((l) => l.level === 'error').length}</span>
           </div>
         </div>
-      </main>
+      </div>
+
+      {/* Generation Status - Compact inline indicator */}
+      <div className="mb-4 bg-surface rounded-md border border-border-subtle p-3">
+        <div className="flex items-center gap-3">
+          <div className={`w-2 h-2 rounded-full ${isGenerating ? 'bg-success animate-pulse' : 'bg-text-muted'}`} />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-text-primary">
+                {isGenerating ? 'Generation in Progress' : 'Idle'}
+              </span>
+              {currentStage && (
+                <span className="text-xs text-text-secondary truncate">
+                  — {currentStage}
+                </span>
+              )}
+            </div>
+          </div>
+          {isGenerating && (
+            <div className="w-4 h-4 border-2 border-mint border-t-transparent rounded-full animate-spin" />
+          )}
+        </div>
+      </div>
+
+      {/* Main Content Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {/* Left Column - Controls */}
+        <div className="lg:col-span-1">
+          <GenerationControls
+            onGenerationStart={handleGenerationStart}
+            onGenerationComplete={handleGenerationComplete}
+            onError={handleError}
+            disabled={isGenerating}
+          />
+        </div>
+
+        {/* Right Column - Logs */}
+        <div className="lg:col-span-2">
+          <LogsViewer logs={logs} />
+        </div>
+      </div>
     </div>
   );
 }

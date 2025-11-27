@@ -120,7 +120,6 @@ export default function ExtraFiltersEditor() {
       const data = await api.getSettings(selectedProfile?.id);
 
       if (data.extraFilters) {
-        // Merge loaded filters with defaults (in case new filters were added)
         const loadedFilters = data.extraFilters;
         const mergedFilters = defaultFilters.map(defaultFilter => {
           const loaded = loadedFilters.find((f: FilterOption) => f.id === defaultFilter.id);
@@ -141,7 +140,6 @@ export default function ExtraFiltersEditor() {
       setIsSaving(true);
       setMessage(null);
 
-      // Get current settings and merge with filters
       const currentSettings = await api.getSettings(selectedProfile?.id);
       await api.updateSettings(
         {
@@ -190,42 +188,40 @@ export default function ExtraFiltersEditor() {
 
   if (isLoading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        </div>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Loading filters...</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
+    <div className="p-4 space-y-4">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <div className="flex items-start justify-between mb-4">
+      <div className="border-b border-border-subtle pb-3">
+        <div className="flex items-start justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <h2 className="text-sm font-semibold text-text-primary mb-1">
               Extra Filters
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+            <p className="text-xs text-text-secondary">
               Add optional constraints to idea generation prompts
             </p>
           </div>
           <button
             onClick={saveFilters}
             disabled={isSaving}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-lg transition-colors"
+            className="px-3 py-1 bg-mint text-base rounded hover:bg-mint-dark transition-colors disabled:opacity-50 text-xs font-medium"
           >
-            {isSaving ? 'Saving...' : 'Save Filters'}
+            {isSaving ? 'Saving...' : 'Save'}
           </button>
         </div>
 
         {message && (
           <div
-            className={`p-4 rounded-lg mb-4 ${
+            className={`mt-3 p-2 rounded text-xs ${
               message.type === 'success'
-                ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200'
-                : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
+                ? 'bg-success/10 text-success border border-success/20'
+                : 'bg-error/10 text-error border border-error/20'
             }`}
           >
             {message.text}
@@ -234,64 +230,60 @@ export default function ExtraFiltersEditor() {
       </div>
 
       {/* Filter Options */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+      <div>
+        <h3 className="text-xs font-medium text-text-secondary mb-3">
           Available Filters
         </h3>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {filters.map((filter) => (
             <div
               key={filter.id}
-              className={`border rounded-lg p-4 transition-colors ${
+              className={`border rounded p-3 transition-colors ${
                 filter.enabled
-                  ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                  : 'border-gray-200 dark:border-gray-700'
+                  ? 'border-mint/30 bg-mint/5'
+                  : 'border-border-subtle'
               }`}
             >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <button
-                      onClick={() => toggleFilter(filter.id)}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        filter.enabled ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'
-                      }`}
-                    >
-                      <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                          filter.enabled ? 'translate-x-6' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
-                    <div>
-                      <h4 className="font-medium text-gray-900 dark:text-gray-100">
-                        {filter.label}
-                      </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {filter.description}
-                      </p>
-                    </div>
-                  </div>
+              <div className="flex items-start gap-3">
+                <button
+                  onClick={() => toggleFilter(filter.id)}
+                  className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors flex-shrink-0 mt-0.5 ${
+                    filter.enabled ? 'bg-mint' : 'bg-elevated'
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform ${
+                      filter.enabled ? 'translate-x-5' : 'translate-x-0.5'
+                    }`}
+                  />
+                </button>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-medium text-text-primary text-sm">
+                    {filter.label}
+                  </h4>
+                  <p className="text-xs text-text-muted">
+                    {filter.description}
+                  </p>
 
                   {/* Value input for number type filters */}
                   {filter.enabled && filter.type === 'number' && (
-                    <div className="mt-3 ml-14">
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <div className="mt-2">
+                      <label className="block text-micro font-medium text-text-secondary mb-1">
                         Value
                       </label>
                       <input
                         type="number"
                         value={filter.value as number}
                         onChange={(e) => updateFilterValue(filter.id, parseInt(e.target.value))}
-                        className="w-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                        className="w-24 px-2 py-1 text-xs border border-border-default rounded bg-base text-text-primary focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
                       />
                     </div>
                   )}
 
                   {/* Prompt text preview */}
                   {filter.enabled && (
-                    <div className="mt-3 ml-14 p-3 bg-gray-100 dark:bg-gray-700 rounded border-l-4 border-blue-500">
-                      <p className="text-sm text-gray-700 dark:text-gray-300 font-mono">
+                    <div className="mt-2 p-2 bg-elevated/50 rounded border-l-2 border-mint">
+                      <p className="text-micro text-text-secondary font-mono">
                         {filter.promptText.replace(
                           '{value}',
                           String(filter.value || '')
@@ -307,15 +299,15 @@ export default function ExtraFiltersEditor() {
       </div>
 
       {/* Generated Prompt Preview */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+      <div className="bg-info/5 border border-info/20 rounded p-3">
+        <h3 className="text-xs font-semibold text-info mb-2">
           Active Filters - Prompt Addition
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-          This text will be added to the generation prompt when enabled filters are active:
+        <p className="text-micro text-text-secondary mb-2">
+          This text will be added to generation prompts when active:
         </p>
-        <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
-          <pre className="text-sm text-gray-800 dark:text-gray-200 whitespace-pre-wrap font-mono">
+        <div className="p-2 bg-base rounded border border-border-subtle">
+          <pre className="text-micro text-text-primary whitespace-pre-wrap font-mono">
             {getActiveFiltersPrompt()}
           </pre>
         </div>

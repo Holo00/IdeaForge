@@ -56,6 +56,7 @@ For each task:
 ### When to Delegate
 
 - **architect** (opus): System design, major refactoring, new subsystems
+- **designer** (sonnet): UI/UX design, visual improvements, component aesthetics
 - **debugger** (sonnet): Complex bugs, tracing issues across files
 - **reviewer** (sonnet): Code review before major merges
 - **doc-writer** (haiku): Documentation generation, README updates
@@ -98,6 +99,7 @@ Don't delegate:
 | `/add-component` | New React component |
 | `/new-feature` | Full-stack feature |
 | `/update-feature` | Modify existing feature |
+| `/design` | UI/UX design or improvement |
 | `/refactor` | Code restructuring |
 | `/debug` | Bug investigation |
 | `/scan-structure` | Sync architecture docs |
@@ -116,14 +118,20 @@ Don't delegate:
 - `@docs/workflow.md` - SOLID principles, git workflow, planning
 - `@docs/recent-changes.md` - Changelog, breaking changes
 
-### Implementation Patterns
-- `@skills/api-endpoint.md` - Routes → Controller → Service → Repository
-- `@skills/database-changes.md` - Migration system, gotchas
-- `@skills/idea-generation.md` - Full generation flow
-- `@skills/frontend-patterns.md` - React/Next.js patterns, dark mode
+### Implementation Patterns (Skills)
+- `@skills/api-endpoint/` - Routes → Controller → Service → Repository
+- `@skills/database-changes/` - Migration system, gotchas
+- `@skills/idea-generation/` - Full generation flow
+- `@skills/frontend-patterns/` - React/Next.js patterns, dark mode
+- `@skills/frontend-design/` - Distinctive UI design principles
+- `@skills/skill-creator/` - Guide for creating new skills
+- `@skills/theme-factory/` - Pre-set themes for styling
+- `@skills/brand-guidelines/` - IdeaForge brand colors/typography
+- `@skills/document-skills/` - docx, pdf, pptx, xlsx processing
 
 ### Agents
 - `@agents/architect.md` - System design (opus)
+- `@agents/designer.md` - UI/UX design (sonnet)
 - `@agents/debugger.md` - Bug investigation (sonnet)
 - `@agents/reviewer.md` - Code review (sonnet)
 - `@agents/doc-writer.md` - Documentation (haiku)

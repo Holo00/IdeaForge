@@ -18,11 +18,10 @@ export default function DomainsEditor() {
 
   useEffect(() => {
     loadData();
-  }, [selectedProfileId]); // Reload when profile changes
+  }, [selectedProfileId]);
 
   const loadData = async () => {
     if (!selectedProfileId) {
-      // Wait for profile to be loaded
       return;
     }
 
@@ -44,7 +43,6 @@ export default function DomainsEditor() {
       let dataToSave = data;
 
       if (editMode === 'text') {
-        // Parse the text content as JSON
         try {
           dataToSave = JSON.parse(textContent);
           setData(dataToSave);
@@ -66,10 +64,8 @@ export default function DomainsEditor() {
 
   const switchMode = (newMode: 'visual' | 'text') => {
     if (newMode === 'text' && editMode === 'visual') {
-      // Switching from visual to text - convert data to JSON
       setTextContent(JSON.stringify(data, null, 2));
     } else if (newMode === 'visual' && editMode === 'text') {
-      // Switching from text to visual - try to parse JSON
       try {
         const parsed = JSON.parse(textContent);
         setData(parsed);
@@ -93,16 +89,16 @@ export default function DomainsEditor() {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300">Loading domains...</p>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Loading domains...</p>
       </div>
     );
   }
 
   if (!data || !data.domains) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300">Failed to load domains</p>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Failed to load domains</p>
       </div>
     );
   }
@@ -115,36 +111,36 @@ export default function DomainsEditor() {
   );
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-6">
-      <div className="border-b dark:border-gray-700 pb-4">
-        <div className="flex items-start justify-between mb-2">
+    <div className="p-4 space-y-4">
+      <div className="border-b border-border-subtle pb-3">
+        <div className="flex items-start justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+            <h2 className="text-sm font-semibold text-text-primary mb-1">
               Business Domains
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Browse and manage the business domains and subdomains used for idea generation.
+            <p className="text-xs text-text-secondary">
+              Browse and manage business domains and subdomains for idea generation.
             </p>
           </div>
           <div className="flex items-center gap-2">
             {/* Mode Toggle */}
-            <div className="flex rounded-lg border border-gray-300 dark:border-gray-600 overflow-hidden">
+            <div className="flex rounded border border-border-default overflow-hidden">
               <button
                 onClick={() => switchMode('visual')}
-                className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                className={`px-2 py-1 text-xs font-medium transition-colors ${
                   editMode === 'visual'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    ? 'bg-mint text-base'
+                    : 'bg-elevated text-text-secondary hover:bg-hover'
                 }`}
               >
                 View
               </button>
               <button
                 onClick={() => switchMode('text')}
-                className={`px-3 py-1.5 text-sm font-medium transition-colors border-l border-gray-300 dark:border-gray-600 ${
+                className={`px-2 py-1 text-xs font-medium transition-colors border-l border-border-default ${
                   editMode === 'text'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    ? 'bg-mint text-base'
+                    : 'bg-elevated text-text-secondary hover:bg-hover'
                 }`}
               >
                 Edit
@@ -154,7 +150,7 @@ export default function DomainsEditor() {
             <button
               onClick={saveData}
               disabled={saving}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium"
+              className="px-3 py-1 bg-mint text-base rounded hover:bg-mint-dark transition-colors disabled:opacity-50 text-xs font-medium"
             >
               {saving ? 'Saving...' : 'Save'}
             </button>
@@ -164,16 +160,17 @@ export default function DomainsEditor() {
 
       {editMode === 'visual' ? (
         <>
+          {/* Search */}
           <div className="relative">
             <input
               type="text"
               placeholder="Search domains and subdomains..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-3 pl-11 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-1.5 pl-8 border border-border-default bg-base text-text-primary text-sm rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint placeholder-text-muted"
             />
             <svg
-              className="w-5 h-5 text-gray-400 dark:text-gray-500 absolute left-3 top-3.5"
+              className="w-4 h-4 text-text-muted absolute left-2.5 top-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -187,25 +184,26 @@ export default function DomainsEditor() {
             </svg>
           </div>
 
-          <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-            <div className="max-h-[600px] overflow-y-auto">
+          {/* Domain List */}
+          <div className="border border-border-subtle rounded overflow-hidden">
+            <div className="max-h-80 overflow-y-auto">
               {filteredDomains.length === 0 ? (
-                <div className="p-8 text-center text-gray-500 dark:text-gray-400">
-                  <svg className="w-12 h-12 mx-auto mb-3 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="p-6 text-center text-text-muted">
+                  <svg className="w-8 h-8 mx-auto mb-2 text-text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <p className="font-medium">No domains found</p>
-                  <p className="text-sm mt-1">Try a different search term</p>
+                  <p className="text-sm font-medium">No domains found</p>
+                  <p className="text-xs mt-1">Try a different search term</p>
                 </div>
               ) : (
                 filteredDomains.map((domain: any, idx: number) => (
                   <div key={idx}>
                     <div
-                      className="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer border-b border-gray-100 dark:border-gray-700 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 hover:bg-hover cursor-pointer border-b border-border-subtle transition-colors"
                       onClick={() => toggleDomain(idx)}
                     >
                       <svg
-                        className={`w-5 h-5 text-gray-400 dark:text-gray-500 transition-transform flex-shrink-0 ${
+                        className={`w-4 h-4 text-text-muted transition-transform flex-shrink-0 ${
                           expandedDomains.has(idx) ? 'rotate-90' : ''
                         }`}
                         fill="currentColor"
@@ -217,20 +215,20 @@ export default function DomainsEditor() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="flex-1 font-semibold text-gray-900 dark:text-gray-100">{domain.name}</span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
-                        {domain.subdomains?.length || 0} subdomains
+                      <span className="flex-1 font-medium text-text-primary text-sm">{domain.name}</span>
+                      <span className="text-xs text-text-muted bg-elevated px-2 py-0.5 rounded-full">
+                        {domain.subdomains?.length || 0}
                       </span>
                     </div>
                     {expandedDomains.has(idx) && domain.subdomains && (
-                      <div className="bg-gray-50 dark:bg-gray-700 border-b border-gray-100 dark:border-gray-700">
-                        <div className="grid grid-cols-2 gap-2 p-5">
+                      <div className="bg-elevated/50 border-b border-border-subtle">
+                        <div className="grid grid-cols-2 gap-1.5 p-3">
                           {domain.subdomains.map((subdomain: any, subIdx: number) => (
                             <div
                               key={subIdx}
-                              className="flex items-center gap-2 px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-sm transition-all text-sm text-gray-700 dark:text-gray-300"
+                              className="flex items-center gap-1.5 px-2 py-1.5 bg-base border border-border-subtle rounded text-xs text-text-secondary hover:border-mint/30 transition-colors"
                             >
-                              <svg className="w-4 h-4 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-3 h-3 text-text-muted" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                               </svg>
                               {subdomain.name}
@@ -245,22 +243,23 @@ export default function DomainsEditor() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 pt-4 border-t dark:border-gray-700">
-            <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-              <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">{domains.length}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Parent Domains</p>
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-3 pt-2">
+            <div className="text-center p-3 bg-info/10 border border-info/20 rounded">
+              <p className="text-lg font-bold text-info">{domains.length}</p>
+              <p className="text-xs text-text-secondary">Domains</p>
             </div>
-            <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-              <p className="text-3xl font-bold text-green-600 dark:text-green-400">
+            <div className="text-center p-3 bg-success/10 border border-success/20 rounded">
+              <p className="text-lg font-bold text-success">
                 {domains.reduce((sum: number, d: any) => sum + (d.subdomains?.length || 0), 0)}
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Subdomains</p>
+              <p className="text-xs text-text-secondary">Subdomains</p>
             </div>
-            <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-              <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">
+            <div className="text-center p-3 bg-mint/10 border border-mint/20 rounded">
+              <p className="text-lg font-bold text-mint">
                 {domains.length + domains.reduce((sum: number, d: any) => sum + (d.subdomains?.length || 0), 0)}
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Total Options</p>
+              <p className="text-xs text-text-secondary">Total</p>
             </div>
           </div>
         </>
@@ -269,12 +268,12 @@ export default function DomainsEditor() {
           <textarea
             value={textContent}
             onChange={(e) => setTextContent(e.target.value)}
-            className="w-full h-[600px] px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            className="w-full h-96 px-3 py-2 border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint font-mono text-xs"
             placeholder="Edit JSON configuration..."
             spellCheck={false}
           />
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-            Tip: Edit the JSON directly. Click "Save" when done.
+          <p className="text-micro text-text-muted mt-1">
+            Edit the JSON directly. Click "Save" when done.
           </p>
         </div>
       )}

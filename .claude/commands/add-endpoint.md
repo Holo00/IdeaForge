@@ -25,7 +25,7 @@ Tasks:
 ### 2. Review Patterns
 
 Read the skill guide first:
-- `.claude/skills/api-endpoint.md`
+- `.claude/skills/api-endpoint/SKILL.md`
 
 Then check existing implementations:
 - `backend/src/api/routes/ideas.ts` - CRUD example

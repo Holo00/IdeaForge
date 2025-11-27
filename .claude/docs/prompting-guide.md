@@ -58,7 +58,7 @@ Add an endpoint to export ideas as markdown
 ```
 
 **What happens:**
-1. Claude reads `@skills/api-endpoint.md`
+1. Claude reads `@skills/api-endpoint/SKILL.md`
 2. Checks existing patterns in `routes/ideas.ts`
 3. Creates TodoWrite plan
 4. Implements: Route → Controller → Service → Repository (if needed)
@@ -85,7 +85,7 @@ Create a reusable Modal component for confirmations
 ```
 
 **What happens:**
-1. Claude reads `@skills/frontend-patterns.md`
+1. Claude reads `@skills/frontend-patterns/SKILL.md`
 2. Checks similar components in `frontend/components/`
 3. Creates component with proper patterns
 4. Includes dark mode classes
@@ -310,7 +310,7 @@ This triggers:
 ## Troubleshooting
 
 ### Claude Didn't Follow Patterns
-**Prompt**: "That doesn't match our patterns. Check @skills/api-endpoint.md and redo it."
+**Prompt**: "That doesn't match our patterns. Check @skills/api-endpoint/SKILL.md and redo it."
 
 ### Claude Made Unrelated Changes
 **Prompt**: "Revert the changes to [file]. Only modify what's needed for [task]."

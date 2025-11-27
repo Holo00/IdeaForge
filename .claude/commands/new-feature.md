@@ -38,7 +38,7 @@ If feature needs new tables/columns:
 2. Run: `npm run db:migrate`
 3. Update types: `backend/src/types/index.ts`
 
-Reference: `.claude/skills/database-changes.md`
+Reference: `.claude/skills/database-changes/SKILL.md`
 
 ### 4. Backend Implementation
 
@@ -50,7 +50,7 @@ Create in order:
 5. **Routes** - `backend/src/api/routes/{feature}.ts`
 6. **Register** - Add to `backend/src/index.ts`
 
-Reference: `.claude/skills/api-endpoint.md`
+Reference: `.claude/skills/api-endpoint/SKILL.md`
 
 ### 5. Frontend Implementation
 

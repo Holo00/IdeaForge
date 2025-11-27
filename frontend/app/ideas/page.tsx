@@ -155,267 +155,190 @@ export default function IdeasPage() {
   }, [pathname, fetchIdeas]);
 
   const getScoreColor = (score: number) => {
-    if (score >= 70) return 'bg-green-100 text-green-800';
-    if (score >= 50) return 'bg-yellow-100 text-yellow-800';
-    return 'bg-red-100 text-red-800';
+    if (score >= 70) return 'bg-success/20 text-success';
+    if (score >= 50) return 'bg-warning/20 text-warning';
+    return 'bg-error/20 text-error';
   };
 
   const getStatusBadge = (status: string) => {
     const colors = {
-      draft: 'bg-gray-100 text-gray-800',
-      active: 'bg-blue-100 text-blue-800',
-      archived: 'bg-orange-100 text-orange-800',
+      draft: 'bg-text-muted/20 text-text-secondary',
+      active: 'bg-info/20 text-info',
+      archived: 'bg-warning/20 text-warning',
     };
     return colors[status as keyof typeof colors] || colors.draft;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="p-4 lg:p-6">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <Link
-                href="/"
-                className="text-sm text-primary-600 hover:text-primary-700 font-medium mb-2 inline-flex items-center gap-1"
-              >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-                Back to Dashboard
-              </Link>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Browse Ideas</h1>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                {total} {total === 1 ? 'idea' : 'ideas'} in the database
-              </p>
-            </div>
-            <button
-              onClick={fetchIdeas}
-              className="px-4 py-2 bg-primary-600 dark:bg-primary-500 text-white rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors flex items-center gap-2"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                />
-              </svg>
-              Refresh
-            </button>
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h1 className="text-xl font-semibold text-text-primary">Browse Ideas</h1>
+          <p className="text-sm text-text-secondary">
+            {total} {total === 1 ? 'idea' : 'ideas'} in the database
+          </p>
+        </div>
+        <button
+          onClick={fetchIdeas}
+          className="px-3 py-1.5 text-sm bg-gradient-to-r from-mint to-mint-dark text-base font-medium rounded hover:from-mint-light hover:to-mint transition-all flex items-center gap-2"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          Refresh
+        </button>
+      </div>
+
+      {/* Advanced Filters */}
+      <AdvancedFilters
+        statusFilter={statusFilter}
+        setStatusFilter={setStatusFilter}
+        domainFilter={domainFilter}
+        setDomainFilter={setDomainFilter}
+        subdomainFilter={subdomainFilter}
+        setSubdomainFilter={setSubdomainFilter}
+        minScore={minScore}
+        setMinScore={setMinScore}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        frameworkFilter={frameworkFilter}
+        setFrameworkFilter={setFrameworkFilter}
+        monetizationFilter={monetizationFilter}
+        setMonetizationFilter={setMonetizationFilter}
+        targetAudienceFilter={targetAudienceFilter}
+        setTargetAudienceFilter={setTargetAudienceFilter}
+        maxTeamSizeFilter={maxTeamSizeFilter}
+        setMaxTeamSizeFilter={setMaxTeamSizeFilter}
+        minCriteriaScores={minCriteriaScores}
+        setMinCriteriaScores={setMinCriteriaScores}
+        onResetFilters={handleResetFilters}
+        onApplyFilters={handleApplyFilters}
+      />
+
+      {/* Error Message */}
+      {error && (
+        <div className="bg-error/10 border border-error/30 rounded-md p-3 mb-4">
+          <div className="flex items-center gap-2">
+            <svg className="w-4 h-4 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-sm text-error">{error}</p>
           </div>
         </div>
-      </header>
+      )}
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Advanced Filters */}
-        <AdvancedFilters
-          statusFilter={statusFilter}
-          setStatusFilter={setStatusFilter}
-          domainFilter={domainFilter}
-          setDomainFilter={setDomainFilter}
-          subdomainFilter={subdomainFilter}
-          setSubdomainFilter={setSubdomainFilter}
-          minScore={minScore}
-          setMinScore={setMinScore}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          sortOrder={sortOrder}
-          setSortOrder={setSortOrder}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          frameworkFilter={frameworkFilter}
-          setFrameworkFilter={setFrameworkFilter}
-          monetizationFilter={monetizationFilter}
-          setMonetizationFilter={setMonetizationFilter}
-          targetAudienceFilter={targetAudienceFilter}
-          setTargetAudienceFilter={setTargetAudienceFilter}
-          maxTeamSizeFilter={maxTeamSizeFilter}
-          setMaxTeamSizeFilter={setMaxTeamSizeFilter}
-          minCriteriaScores={minCriteriaScores}
-          setMinCriteriaScores={setMinCriteriaScores}
-          onResetFilters={handleResetFilters}
-          onApplyFilters={handleApplyFilters}
-        />
-
-        {/* Error Message */}
-        {error && (
-          <div className="bg-red-50 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg p-4 mb-6">
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-red-600 dark:text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-red-800 dark:text-red-200">{error}</p>
+      {/* Ideas Table */}
+      <div className="bg-surface rounded-md border border-border-subtle overflow-hidden">
+        {isLoading ? (
+          <div className="flex items-center justify-center py-12">
+            <div className="flex items-center gap-3">
+              <div className="w-5 h-5 border-2 border-mint border-t-transparent rounded-full animate-spin" />
+              <span className="text-sm text-text-secondary">Loading ideas...</span>
             </div>
           </div>
-        )}
-
-        {/* Ideas Table */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-          {isLoading ? (
-            <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 dark:border-primary-400"></div>
-              <p className="text-gray-600 dark:text-gray-300 mt-4">Loading ideas...</p>
-            </div>
-          ) : ideas.length === 0 ? (
-            <div className="text-center py-12">
-              <svg
-                className="w-16 h-16 mx-auto mb-4 text-gray-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-              <p className="text-lg font-medium text-gray-900 dark:text-gray-100">No ideas found</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                Try adjusting your filters or generate some ideas
-              </p>
-            </div>
-          ) : (
-            <>
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                  <thead className="bg-gray-50 dark:bg-gray-700">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Idea
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Domain
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Score
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Status
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Created
-                      </th>
-                      <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Actions
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                    {ideas.map((idea) => (
-                      <tr key={idea.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                        <td className="px-6 py-4">
-                          <div className="max-w-md">
-                            <Link
-                              href={`/ideas/${idea.id}`}
-                              className="font-medium text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400"
-                            >
-                              {idea.name}
-                            </Link>
-                            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mt-1">
-                              {idea.quickSummary}
-                            </p>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900 dark:text-gray-100">{idea.domain}</div>
-                          {idea.subdomain && (
-                            <div className="text-xs text-gray-500 dark:text-gray-400">
-                              {idea.subdomain}
-                            </div>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span
-                            className={`px-3 py-1 inline-flex text-sm leading-5 font-semibold rounded-full ${getScoreColor(
-                              idea.score
-                            )}`}
-                          >
-                            {idea.score}/100
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span
-                            className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadge(
-                              idea.status
-                            )}`}
-                          >
-                            {idea.status}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                          {new Date(idea.createdAt).toLocaleDateString('en-US', {
-                            month: 'short',
-                            day: 'numeric',
-                            year: 'numeric',
-                          })}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+        ) : ideas.length === 0 ? (
+          <div className="text-center py-12">
+            <svg className="w-12 h-12 mx-auto mb-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            <p className="text-sm font-medium text-text-primary">No ideas found</p>
+            <p className="text-xs text-text-secondary mt-1">Try adjusting your filters or generate some ideas</p>
+          </div>
+        ) : (
+          <>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-elevated border-b border-border-subtle">
+                    <th className="px-3 py-2 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Idea</th>
+                    <th className="px-3 py-2 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Domain</th>
+                    <th className="px-3 py-2 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Score</th>
+                    <th className="px-3 py-2 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Status</th>
+                    <th className="px-3 py-2 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Created</th>
+                    <th className="px-3 py-2 text-right text-xs font-medium text-text-secondary uppercase tracking-wider">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ideas.map((idea) => (
+                    <tr key={idea.id} className="border-b border-border-subtle hover:bg-hover transition-colors">
+                      <td className="px-3 py-2">
+                        <div className="max-w-md">
                           <Link
                             href={`/ideas/${idea.id}`}
-                            className="text-primary-600 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-300"
+                            className="text-sm font-medium text-text-primary hover:text-mint transition-colors"
                           >
-                            View
+                            {idea.name}
                           </Link>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                          <p className="text-xs text-text-secondary line-clamp-1 mt-0.5">{idea.quickSummary}</p>
+                        </div>
+                      </td>
+                      <td className="px-3 py-2 whitespace-nowrap">
+                        <span className="text-sm text-text-primary">{idea.domain}</span>
+                        {idea.subdomain && (
+                          <span className="text-xs text-text-muted block">{idea.subdomain}</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 whitespace-nowrap">
+                        <span className={`px-2 py-0.5 text-xs font-semibold rounded ${getScoreColor(idea.score)}`}>
+                          {idea.score}
+                        </span>
+                      </td>
+                      <td className="px-3 py-2 whitespace-nowrap">
+                        <span className={`px-2 py-0.5 text-xs font-medium rounded ${getStatusBadge(idea.status)}`}>
+                          {idea.status}
+                        </span>
+                      </td>
+                      <td className="px-3 py-2 whitespace-nowrap text-xs text-text-secondary">
+                        {new Date(idea.createdAt).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric',
+                        })}
+                      </td>
+                      <td className="px-3 py-2 whitespace-nowrap text-right">
+                        <Link
+                          href={`/ideas/${idea.id}`}
+                          className="text-xs font-medium text-mint hover:text-mint-light transition-colors"
+                        >
+                          View
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-              {/* Pagination */}
-              <div className="bg-gray-50 dark:bg-gray-700 px-6 py-4 flex items-center justify-between border-t border-gray-200 dark:border-gray-600">
-                <div className="flex-1 flex justify-between items-center">
-                  <div className="text-sm text-gray-700 dark:text-gray-300">
-                    Showing{' '}
-                    <span className="font-medium">{offset + 1}</span> to{' '}
-                    <span className="font-medium">
-                      {Math.min(offset + limit, total)}
-                    </span>{' '}
-                    of <span className="font-medium">{total}</span> results
-                  </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => setOffset(Math.max(0, offset - limit))}
-                      disabled={offset === 0}
-                      className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      Previous
-                    </button>
-                    <button
-                      onClick={() => setOffset(offset + limit)}
-                      disabled={offset + limit >= total}
-                      className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      Next
-                    </button>
-                  </div>
-                </div>
+            {/* Pagination */}
+            <div className="px-3 py-2 flex items-center justify-between border-t border-border-subtle bg-elevated">
+              <span className="text-xs text-text-secondary">
+                Showing {offset + 1} to {Math.min(offset + limit, total)} of {total}
+              </span>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setOffset(Math.max(0, offset - limit))}
+                  disabled={offset === 0}
+                  className="px-3 py-1 text-xs font-medium text-text-primary border border-border-default rounded hover:bg-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={() => setOffset(offset + limit)}
+                  disabled={offset + limit >= total}
+                  className="px-3 py-1 text-xs font-medium text-text-primary border border-border-default rounded hover:bg-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  Next
+                </button>
               </div>
-            </>
-          )}
-        </div>
-      </main>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

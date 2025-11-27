@@ -14,7 +14,7 @@ ProjectIdeaFinder/
 │   ├── CLAUDE.md                    # Claude Code instructions
 │   ├── docs/                        # Project documentation
 │   ├── agents/                      # Custom agents
-│   ├── skills/                      # Custom skills
+│   ├── skills/                      # Custom skills (folder/SKILL.md format)
 │   └── commands/                    # Slash commands
 ├── backend/
 │   ├── config/                      # Default YAML configs (legacy location)
@@ -89,7 +89,9 @@ ProjectIdeaFinder/
 │   │   ├── LogsViewer.tsx           # Real-time SSE log display
 │   │   ├── Navigation.tsx           # App navigation
 │   │   ├── RecentIdeas.tsx          # Latest ideas list
-│   │   └── ThemeProvider.tsx        # Dark mode support
+│   │   ├── Sidebar.tsx              # Collapsible sidebar navigation
+│   │   ├── TopBar.tsx               # Top bar with breadcrumbs
+│   │   └── AppShell.tsx             # Hybrid navigation layout shell
 │   ├── contexts/
 │   │   └── ConfigProfileContext.tsx # Active profile state
 │   ├── lib/

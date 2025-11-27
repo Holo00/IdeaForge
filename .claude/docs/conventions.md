@@ -301,3 +301,88 @@ The following deprecated items exist in code but should not be used:
 - `getRandomTemplate()` → Use `getRandomFramework()`
 - `getTemplate()` → Use `getFramework()`
 - Routes `/api/config/templates` → Use `/api/config/frameworks`
+
+---
+
+## UI Color System (Single Dark Theme)
+
+The application uses a **single dark theme** with semantic color tokens defined in `tailwind.config.js`.
+
+### Background Colors
+
+| Token | CSS Variable | Usage |
+|-------|--------------|-------|
+| `bg-base` | `#0a0a0f` | Page background (darkest) |
+| `bg-surface` | `#12121a` | Cards, panels, modals |
+| `bg-elevated` | `#1a1a24` | Elevated elements, inputs |
+| `bg-hover` | `#22222e` | Hover states |
+
+### Text Colors
+
+| Token | CSS Variable | Usage |
+|-------|--------------|-------|
+| `text-text-primary` | `#f8fafc` | Primary text, headings |
+| `text-text-secondary` | `#94a3b8` | Secondary text, labels |
+| `text-text-muted` | `#64748b` | Muted text, placeholders |
+
+### Border Colors
+
+| Token | CSS Variable | Usage |
+|-------|--------------|-------|
+| `border-border-subtle` | `#1e1e2e` | Subtle separators |
+| `border-border-default` | `#2e2e3e` | Default borders |
+
+### Accent Colors
+
+| Token | CSS Variable | Usage |
+|-------|--------------|-------|
+| `mint` | `#3ecf8e` | Primary action, success |
+| `mint-dark` | `#2eb87a` | Mint hover state |
+| `coral` | `#f97066` | Secondary, warnings |
+| `coral-dark` | `#e85a4f` | Coral hover state |
+
+### Semantic Colors
+
+| Token | CSS Variable | Usage |
+|-------|--------------|-------|
+| `success` | `#22c55e` | Success states |
+| `warning` | `#f59e0b` | Warning states |
+| `error` | `#ef4444` | Error states |
+| `info` | `#3b82f6` | Info states |
+
+### Usage Examples
+
+```tsx
+// Background hierarchy
+<div className="bg-base">                    {/* Page */}
+  <div className="bg-surface">               {/* Card */}
+    <div className="bg-elevated">            {/* Input */}
+    </div>
+  </div>
+</div>
+
+// Text hierarchy
+<h1 className="text-text-primary">Title</h1>
+<p className="text-text-secondary">Description</p>
+<span className="text-text-muted">Hint</span>
+
+// Buttons
+<button className="bg-mint text-base hover:bg-mint-dark">Primary</button>
+<button className="bg-elevated text-text-secondary hover:bg-hover">Secondary</button>
+
+// Semantic badges
+<span className="bg-success/10 text-success">Active</span>
+<span className="bg-error/10 text-error">Failed</span>
+<span className="bg-info/10 text-info">Pending</span>
+
+// Borders
+<div className="border border-border-subtle">Subtle border</div>
+<input className="border border-border-default focus:border-mint" />
+```
+
+### Important Notes
+
+- **No `dark:` prefixes** - Single theme means no dark mode variants
+- **Use semantic tokens** - Never use raw colors like `bg-gray-800`
+- **Opacity modifiers** - Use `bg-mint/10` for subtle backgrounds
+- **Text on mint buttons** - Use `text-base` (darkest background color)

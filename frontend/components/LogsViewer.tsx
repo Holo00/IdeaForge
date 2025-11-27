@@ -25,11 +25,11 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'error':
-        return 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800';
+        return 'text-error bg-error/10 border-error/30';
       case 'warning':
-        return 'text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800';
+        return 'text-warning bg-warning/10 border-warning/30';
       default:
-        return 'text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600';
+        return 'text-text-secondary bg-surface border-border-subtle';
     }
   };
 
@@ -69,15 +69,15 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-4">
-      <div className="flex items-center justify-between border-b dark:border-gray-700 pb-4">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Live Logs</h2>
-        <div className="flex items-center gap-4">
+    <div className="bg-surface rounded-md border border-border-subtle p-4 space-y-3">
+      <div className="flex items-center justify-between pb-3 border-b border-border-subtle">
+        <h2 className="text-sm font-semibold text-text-primary">Live Logs</h2>
+        <div className="flex items-center gap-3">
           {/* Filter */}
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value as any)}
-            className="text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="text-xs border border-border-default bg-base text-text-primary rounded px-2 py-1 focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
           >
             <option value="all">All Logs</option>
             <option value="info">Info Only</option>
@@ -86,12 +86,12 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
           </select>
 
           {/* Auto-scroll toggle */}
-          <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 cursor-pointer">
+          <label className="flex items-center gap-1.5 text-xs text-text-secondary cursor-pointer">
             <input
               type="checkbox"
               checked={autoScroll}
               onChange={(e) => setAutoScroll(e.target.checked)}
-              className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+              className="rounded border-border-default bg-base text-mint focus:ring-mint focus:ring-offset-0 w-3.5 h-3.5"
             />
             Auto-scroll
           </label>
@@ -101,32 +101,32 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
       {/* Logs container */}
       <div
         ref={logsContainerRef}
-        className="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 h-96 overflow-y-auto font-mono text-sm text-gray-100"
+        className="bg-base rounded p-3 h-80 overflow-y-auto font-mono text-xs text-text-primary"
       >
         {filteredLogs.length === 0 ? (
-          <div className="text-center text-gray-300 dark:text-gray-400 py-8">
+          <div className="text-center text-text-muted py-8">
             <p>No logs to display</p>
-            <p className="text-xs mt-2">Logs will appear here as operations run</p>
+            <p className="text-xs mt-1">Logs will appear here as operations run</p>
           </div>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             {filteredLogs.map((log, index) => (
               <div
                 key={`${log.id}-${index}`}
-                className={`p-3 rounded border ${getLevelColor(log.level)}`}
+                className={`p-2 rounded border ${getLevelColor(log.level)}`}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-2">
                   <div className="flex-shrink-0 mt-0.5">{getLevelIcon(log.level)}</div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="font-semibold uppercase text-xs">
+                    <div className="flex items-center justify-between gap-2 mb-0.5">
+                      <span className="font-semibold uppercase text-micro">
                         {log.level}
                       </span>
-                      <span className="text-xs opacity-75">{log.timestamp}</span>
+                      <span className="text-micro opacity-75">{log.timestamp}</span>
                     </div>
-                    <p className="text-sm break-words">{log.message}</p>
+                    <p className="text-xs break-words">{log.message}</p>
                     {log.details && (
-                      <pre className="mt-2 text-xs opacity-75 overflow-x-auto">
+                      <pre className="mt-1 text-micro opacity-75 overflow-x-auto">
                         {JSON.stringify(log.details, null, 2)}
                       </pre>
                     )}
@@ -139,7 +139,7 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
       </div>
 
       {/* Stats */}
-      <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-300 pt-2 border-t dark:border-gray-700">
+      <div className="flex items-center justify-between text-xs text-text-secondary pt-2 border-t border-border-subtle">
         <span>
           Showing {filteredLogs.length} of {logs.length} logs
         </span>
@@ -147,7 +147,7 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
           onClick={() => {
             /* TODO: Clear logs */
           }}
-          className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium"
+          className="text-mint hover:text-mint-light font-medium transition-colors"
         >
           Clear Logs
         </button>

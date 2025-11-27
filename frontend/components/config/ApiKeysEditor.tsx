@@ -32,29 +32,23 @@ export default function ApiKeysEditor() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [keyToDelete, setKeyToDelete] = useState<{ id: string; name: string } | null>(null);
 
-  // Fetch available models from backend
   useEffect(() => {
     loadAvailableModels();
   }, []);
 
   useEffect(() => {
     loadApiKeys();
-  }, [selectedProfileId]); // Reload when profile changes (for consistency)
+  }, [selectedProfileId]);
 
   const loadAvailableModels = async () => {
     try {
       const models = await api.getAIModels();
-
-      // Ensure models is an array before using it
       if (!Array.isArray(models)) {
         console.error('AI models response is not an array:', models);
         setAvailableModels([]);
         return;
       }
-
       setAvailableModels(models);
-
-      // Set default model for initial provider (gemini)
       const defaultGeminiModel = models.find((m: AIModel) => m.provider === 'gemini' && m.is_default);
       if (defaultGeminiModel) {
         setFormData(prev => ({ ...prev, model: defaultGeminiModel.model_id }));
@@ -62,12 +56,9 @@ export default function ApiKeysEditor() {
     } catch (error: any) {
       console.error('Failed to load AI models:', error);
       setAvailableModels([]);
-      // Don't show error toast here - the models list will just be empty
-      // This prevents showing errors during initial auth loading
     }
   };
 
-  // Get model options based on provider from the database
   const getModelOptions = (provider: string) => {
     return availableModels
       .filter(model => model.provider === provider)
@@ -103,7 +94,6 @@ export default function ApiKeysEditor() {
       setShowAddForm(false);
       setEditingKey(null);
 
-      // Reset form with default model for gemini
       const defaultGeminiModel = availableModels.find(m => m.provider === 'gemini' && m.is_default);
       setFormData({
         name: '',
@@ -118,7 +108,6 @@ export default function ApiKeysEditor() {
     }
   };
 
-  // Handle provider change - automatically set default model for that provider
   const handleProviderChange = (newProvider: string) => {
     const defaultModel = availableModels.find(m => m.provider === newProvider && m.is_default);
     setFormData(prev => ({
@@ -133,7 +122,7 @@ export default function ApiKeysEditor() {
     setFormData({
       name: key.name,
       provider: key.provider,
-      api_key: '', // Don't populate the actual key for security
+      api_key: '',
       model: key.model || '',
     });
     setShowAddForm(true);
@@ -156,8 +145,8 @@ export default function ApiKeysEditor() {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8 text-center">
-        <div className="text-gray-600 dark:text-gray-300">Loading API keys...</div>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Loading API keys...</p>
       </div>
     );
   }
@@ -178,110 +167,118 @@ export default function ApiKeysEditor() {
         variant="danger"
       />
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">API Keys Management</h2>
-        <button
-          onClick={() => {
-            setShowAddForm(!showAddForm);
-            setEditingKey(null);
-            const defaultGeminiModel = availableModels.find(m => m.provider === 'gemini' && m.is_default);
-            setFormData({
-              name: '',
-              provider: 'gemini',
-              api_key: '',
-              model: defaultGeminiModel?.model_id || ''
-            });
-          }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-        >
-          {showAddForm ? 'Cancel' : '+ Add API Key'}
-        </button>
-      </div>
+      <div className="p-4 space-y-4">
+        <div className="border-b border-border-subtle pb-3 flex items-center justify-between">
+          <div>
+            <h2 className="text-sm font-semibold text-text-primary mb-1">
+              API Keys Management
+            </h2>
+            <p className="text-xs text-text-secondary">
+              Manage your AI provider API keys
+            </p>
+          </div>
+          <button
+            onClick={() => {
+              setShowAddForm(!showAddForm);
+              setEditingKey(null);
+              const defaultGeminiModel = availableModels.find(m => m.provider === 'gemini' && m.is_default);
+              setFormData({
+                name: '',
+                provider: 'gemini',
+                api_key: '',
+                model: defaultGeminiModel?.model_id || ''
+              });
+            }}
+            className="px-3 py-1 bg-mint text-base rounded hover:bg-mint-dark transition-colors text-xs font-medium"
+          >
+            {showAddForm ? 'Cancel' : '+ Add Key'}
+          </button>
+        </div>
 
-      <div className="p-6 space-y-6">
         {showAddForm && (
-          <form onSubmit={handleSubmit} className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 space-y-4">
-            <h3 className="text-md font-semibold text-gray-900 dark:text-gray-100 mb-4">
+          <form onSubmit={handleSubmit} className="bg-elevated/50 rounded p-4 space-y-3 border border-border-subtle">
+            <h3 className="text-xs font-semibold text-text-primary mb-2">
               {editingKey ? 'Edit API Key' : 'Add New API Key'}
             </h3>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+              <label className="block text-xs font-medium text-text-secondary mb-1">Name</label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-1.5 text-sm border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
                 placeholder="My API Key"
                 required
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Provider</label>
-              <select
-                value={formData.provider}
-                onChange={(e) => handleProviderChange(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              >
-                <option value="gemini">Gemini (Google)</option>
-                <option value="claude">Claude (Anthropic)</option>
-                <option value="openai">OpenAI</option>
-              </select>
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-xs font-medium text-text-secondary mb-1">Provider</label>
+                <select
+                  value={formData.provider}
+                  onChange={(e) => handleProviderChange(e.target.value)}
+                  className="w-full px-3 py-1.5 text-sm border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
+                  required
+                >
+                  <option value="gemini">Gemini (Google)</option>
+                  <option value="claude">Claude (Anthropic)</option>
+                  <option value="openai">OpenAI</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-text-secondary mb-1">Model</label>
+                <select
+                  value={formData.model}
+                  onChange={(e) => setFormData({ ...formData, model: e.target.value })}
+                  className="w-full px-3 py-1.5 text-sm border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
+                  required
+                >
+                  {getModelOptions(formData.provider).map((option) => (
+                    <option key={option.value} value={option.value} title={option.description}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                API Key {editingKey && <span className="text-xs text-gray-500 dark:text-gray-400">(leave empty to keep current)</span>}
+              <label className="block text-xs font-medium text-text-secondary mb-1">
+                API Key {editingKey && <span className="text-text-muted">(leave empty to keep current)</span>}
               </label>
               <input
                 type="password"
                 value={formData.api_key}
                 onChange={(e) => setFormData({ ...formData, api_key: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-1.5 text-sm border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
                 placeholder="sk-..."
                 required={!editingKey}
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Model</label>
-              <select
-                value={formData.model}
-                onChange={(e) => setFormData({ ...formData, model: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              >
-                {getModelOptions(formData.provider).map((option) => (
-                  <option key={option.value} value={option.value} title={option.description}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-              {formData.model && availableModels.find(m => m.model_id === formData.model)?.description && (
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-                  {availableModels.find(m => m.model_id === formData.model)?.description}
-                </p>
-              )}
-            </div>
+            {formData.model && availableModels.find(m => m.model_id === formData.model)?.description && (
+              <p className="text-micro text-text-muted">
+                {availableModels.find(m => m.model_id === formData.model)?.description}
+              </p>
+            )}
 
-            <div className="flex gap-3 pt-4">
+            <div className="flex gap-2 pt-2">
               <button
                 type="submit"
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                className="px-4 py-1.5 bg-mint text-base rounded hover:bg-mint-dark transition-colors text-xs font-medium"
               >
-                {editingKey ? 'Update' : 'Add'} API Key
+                {editingKey ? 'Update' : 'Add'} Key
               </button>
               <button
                 type="button"
                 onClick={() => {
                   setShowAddForm(false);
                   setEditingKey(null);
-                  setFormData({ name: '', provider: 'gemini', api_key: '', model: 'gemini-1.5-flash' });
                 }}
-                className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium"
+                className="px-4 py-1.5 bg-elevated text-text-secondary rounded hover:bg-hover transition-colors text-xs font-medium"
               >
                 Cancel
               </button>
@@ -290,40 +287,40 @@ export default function ApiKeysEditor() {
         )}
 
         {apiKeys.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-            <p>No API keys configured yet.</p>
-            <p className="text-sm mt-2">Click "Add API Key" to get started.</p>
+          <div className="text-center py-8 text-text-muted">
+            <svg className="w-8 h-8 mx-auto mb-2 text-text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+            </svg>
+            <p className="text-sm">No API keys configured yet.</p>
+            <p className="text-xs mt-1">Click "+ Add Key" to get started.</p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-2">
             {apiKeys.map((key) => (
               <div
                 key={key.id}
-                className="border border-gray-300 dark:border-gray-600 rounded-lg p-4"
+                className="border border-border-subtle rounded p-3 hover:border-border-default transition-colors"
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-semibold text-gray-900 dark:text-gray-100">{key.name}</h3>
-                    </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                      <p>
-                        <span className="font-medium">Provider:</span> {key.provider}
-                      </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-medium text-text-primary text-sm">{key.name}</h3>
+                    <div className="flex items-center gap-3 mt-1 text-xs text-text-muted">
+                      <span className="capitalize">{key.provider}</span>
                       {key.model && (
-                        <p>
-                          <span className="font-medium">Model:</span> {key.model}
-                        </p>
+                        <>
+                          <span className="text-border-default">•</span>
+                          <span>{key.model}</span>
+                        </>
                       )}
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        Created: {new Date(key.created_at).toLocaleString()}
-                      </p>
                     </div>
+                    <p className="text-micro text-text-muted mt-1">
+                      Created: {new Date(key.created_at).toLocaleDateString()}
+                    </p>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1.5">
                     <button
                       onClick={() => handleEdit(key)}
-                      className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm"
+                      className="px-2 py-1 bg-info/10 text-info rounded hover:bg-info/20 transition-colors text-xs"
                     >
                       Edit
                     </button>
@@ -332,7 +329,7 @@ export default function ApiKeysEditor() {
                         setKeyToDelete({ id: key.id.toString(), name: key.name });
                         setShowDeleteConfirm(true);
                       }}
-                      className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors text-sm"
+                      className="px-2 py-1 bg-error/10 text-error rounded hover:bg-error/20 transition-colors text-xs"
                     >
                       Delete
                     </button>
@@ -343,7 +340,6 @@ export default function ApiKeysEditor() {
           </div>
         )}
       </div>
-    </div>
     </>
   );
 }

@@ -235,8 +235,8 @@ IMPORTANT:
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300">Loading prompt...</p>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Loading prompt...</p>
       </div>
     );
   }
@@ -254,34 +254,34 @@ IMPORTANT:
         variant="warning"
       />
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-6">
-      <div className="border-b dark:border-gray-700 pb-4">
-        <div className="flex items-start justify-between mb-2">
+      <div className="p-4 space-y-4">
+      <div className="border-b border-border-subtle pb-3">
+        <div className="flex items-start justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+            <h2 className="text-sm font-semibold text-text-primary mb-1">
               AI Generation Prompt
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-xs text-text-secondary">
               Customize the prompt sent to Claude for idea generation. Use placeholders for dynamic content.
             </p>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowPreview(!showPreview)}
-              className="px-3 py-1.5 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900 transition-colors"
+              className="px-2 py-1 text-xs font-medium text-info bg-info/10 rounded hover:bg-info/20 transition-colors"
             >
               {showPreview ? 'Hide' : 'Show'} Preview
             </button>
             <button
               onClick={() => setShowResetConfirm(true)}
-              className="px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              className="px-2 py-1 text-xs font-medium text-text-secondary bg-elevated rounded hover:bg-hover transition-colors"
             >
-              Reset to Default
+              Reset
             </button>
             <button
               onClick={saveData}
               disabled={saving}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 text-sm font-medium"
+              className="px-3 py-1 bg-mint text-base rounded hover:bg-mint-dark transition-colors disabled:opacity-50 text-xs font-medium"
             >
               {saving ? 'Saving...' : 'Save'}
             </button>
@@ -289,44 +289,44 @@ IMPORTANT:
         </div>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <h3 className="text-sm font-semibold text-blue-900 dark:text-blue-200 mb-2">Available Placeholders</h3>
-        <div className="grid grid-cols-2 gap-2 text-xs text-blue-700 dark:text-blue-300">
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{framework_name}'}</code> - Selected framework name</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{framework_description}'}</code> - Framework description</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{framework_template}'}</code> - Framework template text</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{framework_example}'}</code> - Framework example</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{domains}'}</code> - Multiple domain options (3-5)</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{problems}'}</code> - Multiple problem type options (3-5)</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{solutions}'}</code> - Multiple solution type options (3-5)</div>
-          <div><code className="bg-blue-100 dark:bg-blue-900 px-1.5 py-0.5 rounded">{'{criteria}'}</code> - Evaluation criteria list</div>
+      <div className="bg-info/5 border border-info/20 rounded p-3">
+        <h3 className="text-xs font-medium text-info mb-2">Available Placeholders</h3>
+        <div className="grid grid-cols-2 gap-1.5 text-micro text-info/80">
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{framework_name}'}</code> - Framework name</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{framework_description}'}</code> - Description</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{framework_template}'}</code> - Template text</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{framework_example}'}</code> - Example</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{domains}'}</code> - Domain options</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{problems}'}</code> - Problem types</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{solutions}'}</code> - Solution types</div>
+          <div><code className="bg-info/10 px-1 py-0.5 rounded">{'{criteria}'}</code> - Evaluation criteria</div>
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         <div>
-          <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
+          <label className="block text-xs font-medium text-text-secondary mb-1">
             Prompt Template
           </label>
           <textarea
             value={promptText}
             onChange={(e) => setPromptText(e.target.value)}
-            className="w-full h-96 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            className="w-full h-80 px-3 py-2 border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint font-mono text-xs"
             placeholder="Enter your prompt template..."
             spellCheck={false}
           />
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+          <p className="text-micro text-text-muted mt-1">
             {promptText.length} characters
           </p>
         </div>
 
         {showPreview && (
           <div>
-            <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            <label className="block text-xs font-medium text-text-secondary mb-1">
               Preview (with example values)
             </label>
-            <div className="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg p-4 overflow-auto">
-              <pre className="text-xs text-gray-700 dark:text-gray-300 whitespace-pre-wrap font-mono">
+            <div className="bg-base border border-border-default rounded p-3 overflow-auto max-h-60">
+              <pre className="text-micro text-text-secondary whitespace-pre-wrap font-mono">
                 {getPreviewText()}
               </pre>
             </div>

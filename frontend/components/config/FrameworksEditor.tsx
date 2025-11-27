@@ -91,8 +91,8 @@ export default function FrameworksEditor() {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300">Loading frameworks...</p>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Loading frameworks...</p>
       </div>
     );
   }
@@ -104,75 +104,75 @@ export default function FrameworksEditor() {
   const templates = data.generation_templates;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-6">
-      <div className="border-b dark:border-gray-700 pb-4">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+    <div className="p-4 space-y-4">
+      <div className="border-b border-border-subtle pb-3">
+        <h2 className="text-sm font-semibold text-text-primary mb-1">
           Generation Frameworks
         </h2>
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-xs text-text-secondary">
           Enable or disable idea generation frameworks. Enabled frameworks will be randomly selected during generation.
         </p>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         {templates.map((template: any, idx: number) => (
           <div
             key={idx}
-            className={`border-2 rounded-lg p-5 transition-all ${
+            className={`border rounded p-3 transition-all ${
               editingIndex === idx
-                ? 'border-blue-500 dark:border-blue-400 bg-blue-50 dark:bg-gray-700'
+                ? 'border-mint bg-mint/5'
                 : template.enabled
-                ? 'border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-gray-700/50 hover:border-blue-300 dark:hover:border-blue-700'
-                : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'border-success/30 bg-success/5 hover:border-success/50'
+                : 'border-border-subtle bg-elevated/50 hover:border-border-default'
             }`}
           >
             {editingIndex === idx ? (
               // Edit Mode
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-text-secondary mb-1">
                     Template Name
                   </label>
                   <input
                     type="text"
                     value={editForm.name}
                     onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-2 py-1.5 text-sm border border-border-default rounded bg-base text-text-primary focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-text-secondary mb-1">
                     Description
                   </label>
                   <textarea
                     value={editForm.description}
                     onChange={(e) => setEditForm({ ...editForm, description: e.target.value })}
                     rows={2}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-2 py-1.5 text-sm border border-border-default rounded bg-base text-text-primary focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-text-secondary mb-1">
                     Example
                   </label>
                   <textarea
                     value={editForm.example}
                     onChange={(e) => setEditForm({ ...editForm, example: e.target.value })}
                     rows={2}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-2 py-1.5 text-sm border border-border-default rounded bg-base text-text-primary focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
                   />
                 </div>
                 <div className="flex gap-2 justify-end">
                   <button
                     onClick={cancelEdit}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-500 transition-colors"
+                    className="px-3 py-1 text-xs font-medium text-text-secondary bg-elevated border border-border-default rounded hover:bg-hover transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     onClick={() => saveEdit(idx)}
                     disabled={saving}
-                    className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+                    className="px-3 py-1 text-xs font-medium text-base bg-mint rounded hover:bg-mint-dark transition-colors disabled:opacity-50"
                   >
                     {saving ? 'Saving...' : 'Save'}
                   </button>
@@ -180,45 +180,45 @@ export default function FrameworksEditor() {
               </div>
             ) : (
               // View Mode
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-lg">{template.name}</h3>
-                    <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-medium text-text-primary text-sm">{template.name}</h3>
+                    <span className={`text-micro px-1.5 py-0.5 rounded font-medium ${
                       template.enabled
-                        ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200'
-                        : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
+                        ? 'bg-success/10 text-success'
+                        : 'bg-elevated text-text-muted'
                     }`}>
                       {template.enabled ? 'Enabled' : 'Disabled'}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">{template.description}</p>
+                  <p className="text-xs text-text-secondary mb-2 line-clamp-2">{template.description}</p>
                   {template.example && (
-                    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-3 mt-3">
-                      <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mb-1">Example:</p>
-                      <p className="text-sm text-gray-700 dark:text-gray-300 italic">{template.example}</p>
+                    <div className="bg-base border border-border-subtle rounded p-2">
+                      <p className="text-micro text-text-muted mb-0.5">Example:</p>
+                      <p className="text-xs text-text-secondary italic line-clamp-2">{template.example}</p>
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col items-end gap-3">
+                <div className="flex flex-col items-end gap-2">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       toggleTemplate(idx);
                     }}
-                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
-                      template.enabled ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
+                    className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                      template.enabled ? 'bg-mint' : 'bg-elevated'
                     }`}
                   >
                     <span
-                      className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                        template.enabled ? 'translate-x-7' : 'translate-x-1'
+                      className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform ${
+                        template.enabled ? 'translate-x-5' : 'translate-x-0.5'
                       }`}
                     />
                   </button>
                   <button
                     onClick={(e) => startEdit(idx, e)}
-                    className="px-3 py-1.5 text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900 transition-colors"
+                    className="px-2 py-0.5 text-micro font-medium text-mint bg-mint/10 rounded hover:bg-mint/20 transition-colors"
                   >
                     Edit
                   </button>
@@ -229,16 +229,15 @@ export default function FrameworksEditor() {
         ))}
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mt-6">
-        <div className="flex items-start gap-3">
-          <svg className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+      <div className="bg-info/5 border border-info/20 rounded p-3">
+        <div className="flex items-start gap-2">
+          <svg className="w-4 h-4 text-info flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
           </svg>
           <div>
-            <p className="text-sm font-medium text-blue-900 dark:text-blue-200">Framework Selection</p>
-            <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
+            <p className="text-xs font-medium text-info">Framework Selection</p>
+            <p className="text-xs text-info/70 mt-0.5">
               {templates.filter((t: any) => t.enabled).length} of {templates.length} frameworks enabled.
-              The system will randomly select from enabled frameworks when generating ideas.
             </p>
           </div>
         </div>

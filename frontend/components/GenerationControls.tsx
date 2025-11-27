@@ -67,36 +67,34 @@ export default function GenerationControls({
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 space-y-6 border-2 border-gray-100 dark:border-gray-700">
+    <div className="bg-surface rounded-md border border-border-subtle p-4 space-y-4">
       {/* Header with Status Indicator */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b dark:border-gray-700 pb-4">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Generation Control</h2>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700">
-              <div
-                className={`h-2.5 w-2.5 rounded-full ${
-                  isGenerating
-                    ? 'bg-yellow-500 animate-pulse'
-                    : 'bg-gray-400'
-                }`}
-              />
-              <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">
-                {isGenerating ? 'GENERATING' : 'IDLE'}
-              </span>
-            </div>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between pb-3 border-b border-border-subtle">
+          <h2 className="text-sm font-semibold text-text-primary">Generation Control</h2>
+          <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-elevated">
+            <div
+              className={`h-2 w-2 rounded-full ${
+                isGenerating
+                  ? 'bg-warning animate-pulse'
+                  : 'bg-text-muted'
+              }`}
+            />
+            <span className="text-micro font-medium text-text-secondary">
+              {isGenerating ? 'GENERATING' : 'IDLE'}
+            </span>
           </div>
         </div>
 
         {/* Configuration Profile Selector */}
-        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
-          <label className="block text-xs font-semibold text-blue-900 dark:text-blue-200 mb-2">
+        <div className="bg-info/5 border border-info/20 rounded p-3">
+          <label className="block text-xs font-medium text-info mb-1.5">
             Active Configuration Profile
           </label>
           <select
             value={activeProfile?.id || ''}
             onChange={(e) => handleProfileChange(e.target.value)}
-            className="w-full px-3 py-2 text-sm border border-blue-300 dark:border-blue-700 dark:bg-blue-950/50 dark:text-blue-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-2 py-1.5 text-sm border border-info/30 bg-base text-text-primary rounded focus:outline-none focus:border-info focus:ring-1 focus:ring-info"
           >
             {profiles.map((profile) => (
               <option key={profile.id} value={profile.id}>
@@ -104,18 +102,18 @@ export default function GenerationControls({
               </option>
             ))}
           </select>
-          <p className="text-xs text-blue-700 dark:text-blue-300 mt-2">
+          <p className="text-micro text-info/70 mt-1.5">
             This config will be used for all idea generation
           </p>
         </div>
       </div>
 
       {/* Manual Generation Section */}
-      <div className="space-y-4 border dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/20 dark:to-gray-800">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900">
+      <div className="space-y-3 border border-border-subtle rounded p-3 bg-elevated/50">
+        <div className="flex items-center gap-2">
+          <div className="p-1.5 rounded bg-mint/10">
             <svg
-              className="w-6 h-6 text-blue-600 dark:text-blue-400"
+              className="w-4 h-4 text-mint"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -123,31 +121,31 @@ export default function GenerationControls({
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1.5}
                 d="M13 10V3L4 14h7v7l9-11h-7z"
               />
             </svg>
           </div>
           <div>
-            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">Manual Generation</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400">Generate one idea on demand</p>
+            <h3 className="text-sm font-medium text-text-primary">Manual Generation</h3>
+            <p className="text-micro text-text-muted">Generate one idea on demand</p>
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           <button
             onClick={handleManualGenerate}
             disabled={isGenerating || disabled}
-            className={`w-full font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-3 shadow-lg ${
+            className={`w-full font-medium py-2.5 px-4 rounded transition-all flex items-center justify-center gap-2 text-sm ${
               isGenerating || disabled
-                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-blue-500/50 hover:shadow-xl'
+                ? 'bg-elevated text-text-muted cursor-not-allowed'
+                : 'bg-gradient-to-r from-mint to-mint-dark text-base hover:from-mint-light hover:to-mint'
             }`}
           >
             {isGenerating ? (
               <>
                 <svg
-                  className="animate-spin h-6 w-6 text-white"
+                  className="animate-spin h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -166,12 +164,12 @@ export default function GenerationControls({
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   />
                 </svg>
-                <span>GENERATING IDEA...</span>
+                <span>Generating...</span>
               </>
             ) : (
               <>
                 <svg
-                  className="w-6 h-6"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -179,21 +177,19 @@ export default function GenerationControls({
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={1.5}
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
-                <span>GENERATE IDEA NOW</span>
+                <span>Generate Idea</span>
               </>
             )}
           </button>
 
           {lastGeneration && (
-            <div className="text-center">
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                Last manual generation: <span className="font-semibold text-gray-700 dark:text-gray-300">{lastGeneration}</span>
-              </p>
-            </div>
+            <p className="text-center text-micro text-text-muted">
+              Last: <span className="text-text-secondary">{lastGeneration}</span>
+            </p>
           )}
         </div>
       </div>

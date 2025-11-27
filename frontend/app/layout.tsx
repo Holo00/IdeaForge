@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navigation from '@/components/Navigation';
 import { Providers } from '@/components/Providers';
+import AppShell from '@/components/layout/AppShell';
 
 export const metadata: Metadata = {
   title: 'IdeaForge',
@@ -14,11 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <html lang="en">
+      <body className="min-h-screen bg-base text-text-primary">
         <Providers>
-          <Navigation />
-          {children}
+          <AppShell>{children}</AppShell>
         </Providers>
       </body>
     </html>

@@ -20,7 +20,10 @@ Tasks:
 5. Update architecture.md if significant
 ```
 
-### 2. Check Existing Patterns
+### 2. Check Brand & Patterns
+
+**Read brand guidelines first:**
+- `.claude/skills/brand-guidelines/SKILL.md` - IdeaForge colors, typography
 
 Review existing components for patterns:
 
@@ -67,15 +70,25 @@ export default function MyComponent({ prop1, prop2 }: MyComponentProps) {
 }
 ```
 
-### 5. Dark Mode
+### 5. IdeaForge Brand Colors
 
-Always include dark mode variants:
+Use brand colors from `@skills/brand-guidelines/SKILL.md`:
 ```
-bg-white        → dark:bg-gray-800
-bg-gray-50      → dark:bg-gray-700
-text-gray-900   → dark:text-gray-100
-text-gray-600   → dark:text-gray-300
-border-gray-200 → dark:border-gray-700
+// Backgrounds (dark-first)
+bg-[#0f1419]                 // Base
+bg-[#1c2128]                 // Surface/cards
+bg-[#262c36]                 // Elevated
+
+// Primary (Mint)
+text-emerald-400             // #34D399
+bg-emerald-400/500           // Buttons
+
+// Text
+text-[#f0f6fc]               // Primary text
+text-[#8b949e]               // Secondary text
+
+// Accent (Coral - text only)
+text-red-400                 // #FF6B6B
 ```
 
 ### 6. Update Documentation

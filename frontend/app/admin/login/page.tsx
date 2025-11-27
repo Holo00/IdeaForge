@@ -48,32 +48,32 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center px-4">
-      <div className="max-w-md w-full">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+    <div className="min-h-screen bg-base flex items-center justify-center px-4">
+      <div className="max-w-sm w-full">
+        <div className="bg-surface rounded-md border border-border-subtle p-6">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Admin Login
+          <div className="text-center mb-6">
+            <h1 className="text-xl font-semibold text-text-primary">
+              <span className="text-mint">Idea</span>Forge
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
+            <p className="text-xs text-text-secondary mt-1">
               Sign in to access the dashboard
             </p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-              <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+            <div className="mb-4 p-3 bg-error/10 border border-error/30 rounded text-xs text-error">
+              {error}
             </div>
           )}
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="username"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-xs font-medium text-text-secondary mb-1"
               >
                 Username
               </label>
@@ -82,7 +82,7 @@ export default function LoginPage() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-3 py-1.5 text-sm border border-border-default rounded bg-base text-text-primary placeholder-text-muted focus:border-mint focus:ring-1 focus:ring-mint focus:outline-none"
                 placeholder="admin"
                 required
               />
@@ -91,7 +91,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-xs font-medium text-text-secondary mb-1"
               >
                 Password
               </label>
@@ -100,7 +100,7 @@ export default function LoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-3 py-1.5 text-sm border border-border-default rounded bg-base text-text-primary placeholder-text-muted focus:border-mint focus:ring-1 focus:ring-mint focus:outline-none"
                 placeholder="Enter your password"
                 required
               />
@@ -109,17 +109,17 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 px-4 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-2 px-4 bg-gradient-to-r from-mint to-mint-dark text-base font-medium text-sm rounded transition-all hover:from-mint-light hover:to-mint disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
 
           {/* Back Link */}
-          <div className="mt-6 text-center">
+          <div className="mt-4 text-center">
             <Link
               href="/"
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+              className="text-xs text-text-muted hover:text-mint transition-colors"
             >
               Back to home
             </Link>

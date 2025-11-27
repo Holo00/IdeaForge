@@ -17,11 +17,10 @@ export default function SettingsEditor() {
 
   useEffect(() => {
     loadData();
-  }, [selectedProfileId]); // Reload when profile changes
+  }, [selectedProfileId]);
 
   const loadData = async () => {
     if (!selectedProfileId) {
-      // Wait for profile to be loaded
       return;
     }
 
@@ -62,27 +61,27 @@ export default function SettingsEditor() {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300">Loading settings...</p>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Loading settings...</p>
       </div>
     );
   }
 
   if (!data) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300">Failed to load settings</p>
+      <div className="p-4 text-center">
+        <p className="text-text-secondary text-sm">Failed to load settings</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-6">
-      <div className="border-b dark:border-gray-700 pb-4">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+    <div className="p-4 space-y-4">
+      <div className="border-b border-border-subtle pb-3">
+        <h2 className="text-sm font-semibold text-text-primary mb-1">
           System Settings
         </h2>
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-xs text-text-secondary">
           Configure AI provider, API keys, and application preferences.
         </p>
       </div>
@@ -90,32 +89,28 @@ export default function SettingsEditor() {
       {/* API Key Selection */}
       <div className="space-y-4">
         <div>
-          <div className="flex items-center justify-between mb-2">
-            <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100">
+          <div className="flex items-center justify-between mb-1">
+            <label className="block text-xs font-medium text-text-primary">
               Active API Key
             </label>
             <Link
-              href="/config"
-              onClick={() => {
-                const event = new CustomEvent('switchToApiKeys');
-                window.dispatchEvent(event);
-              }}
-              className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 underline"
+              href="/settings"
+              className="text-micro text-mint hover:text-mint-light"
             >
               Manage API Keys →
             </Link>
           </div>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
+          <p className="text-micro text-text-muted mb-2">
             Select the API key to use for idea generation
           </p>
 
           {apiKeys.length === 0 ? (
-            <div className="bg-red-50 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg p-4">
-              <p className="text-sm text-red-800 dark:text-red-200 mb-1">
+            <div className="bg-error/10 border border-error/30 rounded p-3">
+              <p className="text-xs text-error mb-0.5">
                 No API keys configured
               </p>
-              <p className="text-xs text-red-700 dark:text-red-300">
-                Click "Manage API Keys" above to add an API key.
+              <p className="text-micro text-error/80">
+                Go to Settings → API Keys to add an API key.
               </p>
             </div>
           ) : (
@@ -126,14 +121,14 @@ export default function SettingsEditor() {
                 if (keyId) {
                   try {
                     await api.activateApiKey(keyId);
-                    await loadData(); // Reload to get updated active status
+                    await loadData();
                     showSuccess('API key activated successfully!');
                   } catch (error: any) {
                     showError(`Failed to activate API key: ${error.message}`);
                   }
                 }
               }}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-1.5 text-sm border border-border-default bg-base text-text-primary rounded focus:outline-none focus:border-mint focus:ring-1 focus:ring-mint"
             >
               <option value="">Select an API key...</option>
               {apiKeys.map((key) => (
@@ -146,7 +141,7 @@ export default function SettingsEditor() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
+          <label className="block text-xs font-medium text-text-primary mb-1">
             Temperature: {(data.temperature || 1.0).toFixed(1)}
           </label>
           <input
@@ -156,20 +151,20 @@ export default function SettingsEditor() {
             step="0.1"
             value={data.temperature || 1.0}
             onChange={(e) => updateSetting('temperature', parseFloat(e.target.value))}
-            className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full h-1.5 bg-elevated rounded appearance-none cursor-pointer accent-mint"
           />
-          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
+          <div className="flex justify-between text-micro text-text-muted mt-1">
             <span>0.0 (Focused)</span>
             <span>1.0 (Balanced)</span>
             <span>2.0 (Creative)</span>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-            Higher values make output more random, lower values more focused and deterministic
+          <p className="text-micro text-text-muted mt-2">
+            Higher values make output more random, lower values more focused
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
+          <label className="block text-xs font-medium text-text-primary mb-1">
             Max Tokens: {data.max_tokens || 4096}
           </label>
           <input
@@ -179,33 +174,33 @@ export default function SettingsEditor() {
             step="1000"
             value={data.max_tokens || 4096}
             onChange={(e) => updateSetting('max_tokens', parseInt(e.target.value))}
-            className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full h-1.5 bg-elevated rounded appearance-none cursor-pointer accent-mint"
           />
-          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
+          <div className="flex justify-between text-micro text-text-muted mt-1">
             <span>1,000</span>
             <span>16,000</span>
             <span>32,000</span>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-            Controls the maximum length of AI responses. Higher values allow more detailed responses but cost more.
+          <p className="text-micro text-text-muted mt-2">
+            Maximum length of AI responses. Higher values cost more.
           </p>
         </div>
       </div>
 
       {/* Save Button */}
-      <div className="flex items-center justify-end gap-3 pt-4 border-t dark:border-gray-700">
+      <div className="flex items-center justify-end gap-3 pt-3 border-t border-border-subtle">
         {hasChanges && (
-          <span className="text-sm text-amber-600 dark:text-amber-400">
-            You have unsaved changes
+          <span className="text-xs text-warning">
+            Unsaved changes
           </span>
         )}
         <button
           onClick={saveData}
           disabled={saving || !hasChanges}
-          className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+          className={`px-4 py-1.5 rounded text-xs font-medium transition-colors ${
             hasChanges && !saving
-              ? 'bg-blue-600 hover:bg-blue-700 text-white'
-              : 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+              ? 'bg-mint hover:bg-mint-dark text-base'
+              : 'bg-elevated text-text-muted cursor-not-allowed'
           }`}
         >
           {saving ? 'Saving...' : 'Save Changes'}

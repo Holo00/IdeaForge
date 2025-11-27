@@ -1,5 +1,81 @@
 # Recent Changes
 
+## [2025-11-27] - Complete UI Redesign - Single Dark Theme
+
+### Changed
+- **Removed light/dark theme toggle** - Application now uses a single dark theme
+- **New color token system** in `tailwind.config.js`:
+  - Backgrounds: `base` (darkest), `surface`, `elevated`, `hover`
+  - Text: `text-primary`, `text-secondary`, `text-muted`
+  - Borders: `border-subtle`, `border-default`
+  - Accents: `mint` (primary), `coral` (secondary)
+  - Semantic: `success`, `warning`, `error`, `info`
+- **Data-dense UI** - Reduced padding/margins throughout for analytics dashboard aesthetic
+- **Modern analytics dashboard style** - Compact headers, tighter spacing, smaller text sizes
+
+### Updated Components
+All components updated to use new color tokens (removed all `dark:` prefixed classes):
+
+**Layout:**
+- `AppShell.tsx` - New hybrid navigation shell
+- `Sidebar.tsx` - Collapsible sidebar with icon-only mode
+- `TopBar.tsx` - Compact top bar with breadcrumbs
+- `layout.tsx` - Root layout using AppShell
+
+**Pages:**
+- `app/page.tsx` - Public landing page
+- `app/dashboard/page.tsx` - Dashboard with generation controls
+- `app/ideas/page.tsx` - Ideas browser
+- `app/ideas/[id]/page.tsx` - Idea detail view
+- `app/config/page.tsx` - Configuration management
+- `app/settings/page.tsx` - Settings page
+- `app/admin/login/page.tsx` - Admin login
+
+**Config Components:**
+- `HowItWorksSection.tsx`
+- `PromptEditor.tsx`
+- `FrameworksEditor.tsx`
+- `CriteriaEditor.tsx`
+- `DomainsEditor.tsx`
+- `SettingsEditor.tsx`
+- `ExtraFiltersEditor.tsx`
+- `MonetizationModelsEditor.tsx`
+- `TargetAudiencesEditor.tsx`
+
+**Settings Components:**
+- `ApiKeysEditor.tsx`
+- `AIModelsEditor.tsx`
+
+**Other Components:**
+- `GenerationControls.tsx`
+- `LogsViewer.tsx`
+- `ProfileSelector.tsx`
+- `AdvancedFilters.tsx`
+
+### Removed
+- `ThemeProvider.tsx` - No longer needed with single theme
+- All `dark:` prefixed Tailwind classes throughout the application
+
+### Color Token Reference
+```css
+/* Backgrounds */
+--color-base: #0a0a0f       /* Darkest - page background */
+--color-surface: #12121a    /* Cards, panels */
+--color-elevated: #1a1a24   /* Elevated elements */
+--color-hover: #22222e      /* Hover states */
+
+/* Accents */
+--color-mint: #3ecf8e       /* Primary action */
+--color-coral: #f97066      /* Secondary/warning */
+
+/* Text */
+--color-text-primary: #f8fafc
+--color-text-secondary: #94a3b8
+--color-text-muted: #64748b
+```
+
+---
+
 ## [2025-11-26] - Advanced Filtering System
 
 ### Added
