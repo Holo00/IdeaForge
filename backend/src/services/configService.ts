@@ -11,11 +11,34 @@ const CONFIGS_BASE_DIR = path.join(__dirname, '../..', 'configs');
 const MASTER_CONFIG_DIR = path.join(__dirname, '../..', 'config');
 
 export class ConfigService {
+  // Optional profile override for concurrent generation with different profiles
+  private profileIdOverride: string | null = null;
+
+  /**
+   * Set a profile override for this service instance
+   * Used for concurrent generation with different profiles
+   */
+  setProfileOverride(profileId: string | null): void {
+    this.profileIdOverride = profileId;
+  }
+
   /**
    * Get active configuration profile from database
    */
   private async getActiveConfigProfile(): Promise<{ folder_name: string } | null> {
     try {
+      // If profile override is set, use that instead
+      if (this.profileIdOverride) {
+        const result = await pool.query(
+          'SELECT folder_name FROM configuration_profiles WHERE id = $1 LIMIT 1',
+          [this.profileIdOverride]
+        );
+        if (result.rows.length > 0) {
+          return result.rows[0];
+        }
+        console.warn(`Profile override ${this.profileIdOverride} not found, falling back to active`);
+      }
+
       const result = await pool.query(
         'SELECT folder_name FROM configuration_profiles WHERE is_active = true LIMIT 1'
       );
@@ -27,7 +50,7 @@ export class ConfigService {
   }
 
   /**
-   * Get config directory for active profile
+   * Get config directory for active profile (or override profile)
    */
   private async getConfigDir(): Promise<string> {
     const activeProfile = await this.getActiveConfigProfile();

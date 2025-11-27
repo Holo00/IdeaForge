@@ -122,11 +122,26 @@ class ApiClient {
     domain?: string;
     skipDuplicateCheck?: boolean;
     sessionId?: string;
+    profileId?: string;
+    slotNumber?: number;
   }): Promise<GenerationResult> {
     return this.request('/generate', {
       method: 'POST',
       body: JSON.stringify(options || {}),
     });
+  }
+
+  // Get active generation session for a specific slot
+  async getSlotActiveSession(slotNumber: number): Promise<{
+    session_id: string;
+    status: string;
+    current_stage: string;
+    slot_number: number;
+    started_at: string;
+    updated_at: string;
+  } | null> {
+    const response = await this.request<any>(`/logs/slot/${slotNumber}/active`);
+    return response;
   }
 
 
@@ -344,6 +359,29 @@ class ApiClient {
     return this.rawRequest(`/config/profiles/${id}/clone`, {
       method: 'POST',
       body: JSON.stringify(data),
+    });
+  }
+
+  // Generation Slots endpoints
+  async getGenerationSlots(): Promise<any[]> {
+    return this.rawRequest('/config/generation-slots');
+  }
+
+  async getGenerationSlot(slotNumber: number): Promise<any> {
+    return this.rawRequest(`/config/generation-slots/${slotNumber}`);
+  }
+
+  async updateGenerationSlot(slotNumber: number, data: { profile_id?: string | null; is_enabled?: boolean }): Promise<any> {
+    return this.rawRequest(`/config/generation-slots/${slotNumber}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  }
+
+  async ensureGenerationSlots(count: number): Promise<any[]> {
+    return this.rawRequest('/config/generation-slots/ensure', {
+      method: 'POST',
+      body: JSON.stringify({ count }),
     });
   }
 }

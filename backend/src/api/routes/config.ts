@@ -1117,4 +1117,177 @@ router.delete('/ai-models/:id', async (req, res, next) => {
   }
 });
 
+// ============================================
+// GENERATION SLOTS
+// ============================================
+
+/**
+ * GET /api/config/generation-slots
+ * Get all generation slots with their profile configurations
+ */
+router.get('/generation-slots', async (_req, res, next) => {
+  try {
+    const result = await pool.query(`
+      SELECT
+        gs.id,
+        gs.slot_number,
+        gs.profile_id,
+        gs.is_enabled,
+        gs.created_at,
+        gs.updated_at,
+        cp.name as profile_name,
+        cp.folder_name as profile_folder_name
+      FROM generation_slots gs
+      LEFT JOIN configuration_profiles cp ON gs.profile_id = cp.id
+      ORDER BY gs.slot_number
+    `);
+    res.json(result.rows);
+  } catch (error) {
+    next(error);
+  }
+});
+
+/**
+ * GET /api/config/generation-slots/:slotNumber
+ * Get a specific generation slot by slot number
+ */
+router.get('/generation-slots/:slotNumber', async (req, res, next) => {
+  try {
+    const { slotNumber } = req.params;
+    const result = await pool.query(`
+      SELECT
+        gs.id,
+        gs.slot_number,
+        gs.profile_id,
+        gs.is_enabled,
+        gs.created_at,
+        gs.updated_at,
+        cp.name as profile_name,
+        cp.folder_name as profile_folder_name
+      FROM generation_slots gs
+      LEFT JOIN configuration_profiles cp ON gs.profile_id = cp.id
+      WHERE gs.slot_number = $1
+    `, [slotNumber]);
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Generation slot not found' });
+    }
+
+    res.json(result.rows[0]);
+  } catch (error) {
+    next(error);
+  }
+});
+
+/**
+ * PUT /api/config/generation-slots/:slotNumber
+ * Update a generation slot's profile assignment
+ */
+router.put('/generation-slots/:slotNumber', async (req, res, next) => {
+  try {
+    const { slotNumber } = req.params;
+    const { profile_id, is_enabled } = req.body;
+
+    // Build dynamic update
+    const updates: string[] = [];
+    const values: any[] = [];
+    let paramCount = 1;
+
+    if (profile_id !== undefined) {
+      updates.push(`profile_id = $${paramCount++}`);
+      values.push(profile_id || null);
+    }
+    if (is_enabled !== undefined) {
+      updates.push(`is_enabled = $${paramCount++}`);
+      values.push(is_enabled);
+    }
+
+    if (updates.length === 0) {
+      throw new ValidationError('No fields to update');
+    }
+
+    values.push(slotNumber);
+
+    // Use upsert to create slot if it doesn't exist
+    await pool.query(`
+      INSERT INTO generation_slots (slot_number, profile_id, is_enabled)
+      VALUES ($${paramCount}, $1, ${is_enabled !== undefined ? `$${paramCount - 1}` : 'true'})
+      ON CONFLICT (slot_number) DO UPDATE SET
+        ${updates.join(', ')},
+        updated_at = NOW()
+      RETURNING id, slot_number, profile_id, is_enabled, created_at, updated_at
+    `, values);
+
+    // Fetch with profile info
+    const fullResult = await pool.query(`
+      SELECT
+        gs.id,
+        gs.slot_number,
+        gs.profile_id,
+        gs.is_enabled,
+        gs.created_at,
+        gs.updated_at,
+        cp.name as profile_name,
+        cp.folder_name as profile_folder_name
+      FROM generation_slots gs
+      LEFT JOIN configuration_profiles cp ON gs.profile_id = cp.id
+      WHERE gs.slot_number = $1
+    `, [slotNumber]);
+
+    res.json(fullResult.rows[0]);
+  } catch (error) {
+    next(error);
+  }
+});
+
+/**
+ * POST /api/config/generation-slots/ensure
+ * Ensure slots exist for the given count (creates missing slots with default profile)
+ */
+router.post('/generation-slots/ensure', async (req, res, next) => {
+  try {
+    const { count } = req.body;
+
+    if (!count || count < 1 || count > 10) {
+      throw new ValidationError('count must be between 1 and 10');
+    }
+
+    // Get active profile as default
+    const activeProfile = await pool.query(
+      'SELECT id FROM configuration_profiles WHERE is_active = true LIMIT 1'
+    );
+    const defaultProfileId = activeProfile.rows.length > 0 ? activeProfile.rows[0].id : null;
+
+    // Insert missing slots
+    for (let i = 1; i <= count; i++) {
+      await pool.query(`
+        INSERT INTO generation_slots (slot_number, profile_id, is_enabled)
+        VALUES ($1, $2, true)
+        ON CONFLICT (slot_number) DO NOTHING
+      `, [i, defaultProfileId]);
+    }
+
+    // Return all slots
+    const result = await pool.query(`
+      SELECT
+        gs.id,
+        gs.slot_number,
+        gs.profile_id,
+        gs.is_enabled,
+        gs.created_at,
+        gs.updated_at,
+        cp.name as profile_name,
+        cp.folder_name as profile_folder_name
+      FROM generation_slots gs
+      LEFT JOIN configuration_profiles cp ON gs.profile_id = cp.id
+      WHERE gs.slot_number <= $1
+      ORDER BY gs.slot_number
+    `, [count]);
+
+    res.json(result.rows);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export default router;

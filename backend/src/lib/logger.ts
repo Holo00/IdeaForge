@@ -35,11 +35,13 @@ export interface GenerationLog {
 export class GenerationLogger {
   private logs: GenerationLog[] = [];
   private sessionId: string;
+  private slotNumber: number | null;
   private startTime: Date;
   private stageStartTime: Date;
 
-  constructor(sessionId: string) {
+  constructor(sessionId: string, slotNumber?: number) {
     this.sessionId = sessionId;
+    this.slotNumber = slotNumber ?? null;
     this.startTime = new Date();
     this.stageStartTime = new Date();
 
@@ -52,11 +54,11 @@ export class GenerationLogger {
   private async initializeStatus(): Promise<void> {
     try {
       await pool.query(
-        `INSERT INTO generation_status (session_id, status, current_stage, started_at, updated_at)
-         VALUES ($1, $2, $3, NOW(), NOW())
+        `INSERT INTO generation_status (session_id, status, current_stage, slot_number, started_at, updated_at)
+         VALUES ($1, $2, $3, $4, NOW(), NOW())
          ON CONFLICT (session_id) DO UPDATE
-         SET status = $2, current_stage = $3, updated_at = NOW()`,
-        [this.sessionId, 'in_progress', GenerationStage.INIT]
+         SET status = $2, current_stage = $3, slot_number = $4, updated_at = NOW()`,
+        [this.sessionId, 'in_progress', GenerationStage.INIT, this.slotNumber]
       );
     } catch (error) {
       console.error('Error initializing generation status:', error);

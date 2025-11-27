@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import ApiKeysEditor from '@/components/config/ApiKeysEditor';
 import AIModelsEditor from '@/components/settings/AIModelsEditor';
+import GenerationSettingsEditor from '@/components/settings/GenerationSettingsEditor';
 
-type SettingsSection = 'apiKeys' | 'aiModels';
+type SettingsSection = 'apiKeys' | 'aiModels' | 'generation';
 
 const tabs: { key: SettingsSection; label: string; icon: React.ReactNode }[] = [
   {
@@ -16,6 +17,11 @@ const tabs: { key: SettingsSection; label: string; icon: React.ReactNode }[] = [
     key: 'aiModels',
     label: 'AI Models',
     icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+  },
+  {
+    key: 'generation',
+    label: 'Generation',
+    icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
   },
 ];
 
@@ -57,9 +63,10 @@ export default function SettingsPage() {
       </div>
 
       {/* Content Area */}
-      <div className="bg-surface rounded-md border border-border-subtle">
+      <div className="bg-surface rounded-md border border-border-subtle p-4">
         {activeSection === 'apiKeys' && <ApiKeysEditor />}
         {activeSection === 'aiModels' && <AIModelsEditor />}
+        {activeSection === 'generation' && <GenerationSettingsEditor />}
       </div>
     </div>
   );

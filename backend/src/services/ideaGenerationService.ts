@@ -15,6 +15,8 @@ export interface GenerationOptions {
   domain?: string;
   skipDuplicateCheck?: boolean;
   sessionId?: string;
+  profileId?: string; // Override active profile with specific profile
+  slotNumber?: number; // Links generation to a dashboard slot for real-time monitoring
 }
 
 export interface GenerationResult {
@@ -70,7 +72,18 @@ export class IdeaGenerationService {
    */
   async generateIdea(options: GenerationOptions = {}): Promise<GenerationResult> {
     const sessionId = options.sessionId || randomUUID();
-    const logger = new GenerationLogger(sessionId);
+    const logger = new GenerationLogger(sessionId, options.slotNumber);
+
+    // For concurrent generation with different profiles, create a dedicated ConfigService instance
+    // This ensures parallel generations don't interfere with each other's config
+    let configService = this.configService;
+    let promptBuilder = this.promptBuilder;
+
+    if (options.profileId) {
+      configService = new ConfigService();
+      configService.setProfileOverride(options.profileId);
+      promptBuilder = new PromptBuilder(configService);
+    }
 
     try {
       // Stage 1: Initialization
@@ -79,6 +92,7 @@ export class IdeaGenerationService {
         framework: framework || 'random',
         domain: options.domain,
         skipDuplicateCheck: options.skipDuplicateCheck,
+        profileId: options.profileId || 'active',
       });
 
       // Check if AI provider is configured
@@ -104,7 +118,7 @@ export class IdeaGenerationService {
         framework: framework || 'random',
       });
 
-      const { prompt, frameworkName: actualFramework } = await this.promptBuilder.buildGenerationPrompt(framework);
+      const { prompt, frameworkName: actualFramework } = await promptBuilder.buildGenerationPrompt(framework);
 
       logger.success(GenerationStage.PROMPT_BUILD, 'Prompt built successfully', {
         promptLength: prompt.length,
@@ -112,7 +126,7 @@ export class IdeaGenerationService {
       });
 
       // Get AI settings from config
-      const generationSettings = await this.configService.getGenerationSettings();
+      const generationSettings = await configService.getGenerationSettings();
       const temperature = generationSettings.temperature || 1.0;
       const maxTokens = generationSettings.max_tokens || 16384;
 
@@ -144,7 +158,7 @@ export class IdeaGenerationService {
       ideaData.aiPrompt = prompt;
 
       // Validate that all required criteria are present
-      const criteria = await this.configService.getEvaluationCriteria();
+      const criteria = await configService.getEvaluationCriteria();
       const expectedCriteriaCount = criteria?.draft_phase_criteria?.length || 10;
       const actualCriteriaCount = Object.keys(ideaData.evaluation).length;
 

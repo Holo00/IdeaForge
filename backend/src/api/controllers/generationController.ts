@@ -10,10 +10,12 @@ const GenerateIdeaSchema = z.object({
   domain: z.string().optional(),
   skipDuplicateCheck: z.boolean().optional(),
   sessionId: z.string().optional(),
+  profileId: z.string().optional(), // Override active profile with specific profile
+  slotNumber: z.number().int().min(1).max(10).optional(), // Links to dashboard slot
 });
 
-// Global mutex to prevent concurrent idea generation
-let isGenerating = false;
+// Track active generations by sessionId (allows concurrent generations)
+const activeGenerations = new Set<string>();
 
 export class GenerationController {
   constructor(private generationService: IdeaGenerationService) {}
@@ -25,29 +27,22 @@ export class GenerationController {
     return res.json({
       success: true,
       data: {
-        isGenerating,
+        isGenerating: activeGenerations.size > 0,
+        activeCount: activeGenerations.size,
+        activeSessions: Array.from(activeGenerations),
       },
     });
   }
 
   async generateIdea(req: Request, res: Response, next: NextFunction): Promise<any> {
-    try {
-      // Check if generation is already in progress
-      if (isGenerating) {
-        return res.status(409).json({
-          success: false,
-          error: {
-            message: 'Idea generation already in progress. Please wait for the current generation to complete.',
-            code: 'GENERATION_IN_PROGRESS'
-          }
-        });
-      }
+    const sessionId = req.body.sessionId || `gen-${Date.now()}`;
 
+    try {
       const options = GenerateIdeaSchema.parse(req.body);
 
-      // Set mutex
-      isGenerating = true;
-      console.log('[Generation] Starting manual idea generation...');
+      // Track this generation
+      activeGenerations.add(sessionId);
+      console.log(`[Generation] Starting idea generation for session ${sessionId}...`);
 
       try {
         const result = await this.generationService.generateIdea(options);
@@ -62,6 +57,7 @@ export class GenerationController {
             framework: string;
             domain?: string;
             skipDuplicateCheck: boolean;
+            profileId?: string;
             timestamp: string;
           };
         }> = {
@@ -74,21 +70,22 @@ export class GenerationController {
               framework: framework,
               domain: options.domain,
               skipDuplicateCheck: options.skipDuplicateCheck || false,
+              profileId: options.profileId,
               timestamp: new Date().toISOString(),
             },
           },
         };
 
-        console.log('[Generation] Manual idea generation completed successfully');
+        console.log(`[Generation] Idea generation completed for session ${sessionId}`);
         res.status(201).json(response);
       } finally {
-        // Always release mutex, even if generation fails
-        isGenerating = false;
-        console.log('[Generation] Mutex released');
+        // Remove from active generations
+        activeGenerations.delete(sessionId);
+        console.log(`[Generation] Session ${sessionId} removed from active generations`);
       }
     } catch (error) {
-      // Ensure mutex is released on validation errors too
-      isGenerating = false;
+      // Ensure session is removed on errors too
+      activeGenerations.delete(sessionId);
       next(error);
     }
   }

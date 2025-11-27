@@ -1,5 +1,48 @@
 # Recent Changes
 
+## [2025-11-27] - Parallel Generation Slots
+
+### Added
+- **Multiple concurrent generation slots** on dashboard
+  - Each slot has its own profile selector, generate button, and logs viewer
+  - Slots run independently with isolated polling mechanisms
+  - Collapsible UI to manage screen real estate
+
+- **Generation Settings** in Settings page
+  - New "Generation" tab with max slots configuration (1-10)
+  - Settings persist to localStorage (`ideaforge_max_generation_slots`)
+
+- **New Components**
+  - `GenerationSlot.tsx` - Self-contained generation unit with profile selector, status, and logs
+  - `GenerationSettingsEditor.tsx` - Settings UI for generation configuration
+
+### Changed
+- **Backend concurrent generation support**
+  - Removed global mutex that blocked parallel generations
+  - `generationController.ts` now tracks active sessions by sessionId in a Set
+  - `configService.ts` supports profile override via `setProfileOverride()`
+  - `ideaGenerationService.ts` creates dedicated ConfigService instances for profile overrides
+
+- **Dashboard redesign**
+  - Replaced single GenerationControls + LogsViewer with dynamic GenerationSlot list
+  - "Add Slot" button with slot count limit
+  - Each slot is independently collapsible
+  - Cannot remove slots while generation is running
+
+- **API Changes**
+  - `/api/generate` now accepts optional `profileId` parameter
+  - Generation status includes `activeCount` and `activeSessions` array
+
+### Technical Details
+- Each GenerationSlot manages its own:
+  - `isGenerating` state
+  - `logs` array
+  - Polling interval
+  - Selected `profileId`
+- Profile override creates isolated ConfigService to prevent race conditions in concurrent generations
+
+---
+
 ## [2025-11-27] - Complete UI Redesign - Single Dark Theme
 
 ### Changed

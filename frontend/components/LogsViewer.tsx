@@ -101,12 +101,13 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
       {/* Logs container */}
       <div
         ref={logsContainerRef}
-        className="bg-base rounded p-3 h-80 overflow-y-auto font-mono text-xs text-text-primary"
+        className={`bg-base rounded p-3 overflow-y-auto font-mono text-xs text-text-primary ${
+          filteredLogs.length === 0 ? 'h-16' : 'h-64 max-h-80'
+        }`}
       >
         {filteredLogs.length === 0 ? (
-          <div className="text-center text-text-muted py-8">
-            <p>No logs to display</p>
-            <p className="text-xs mt-1">Logs will appear here as operations run</p>
+          <div className="text-center text-text-muted py-2">
+            <p className="text-xs">Logs will appear here when generation starts</p>
           </div>
         ) : (
           <div className="space-y-1.5">

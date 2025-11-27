@@ -71,7 +71,7 @@ router.get('/status/:sessionId', async (req: Request, res: Response) => {
 router.get('/active', async (req: Request, res: Response) => {
   try {
     const result = await pool.query(
-      `SELECT session_id, status, current_stage, started_at, updated_at
+      `SELECT session_id, status, current_stage, slot_number, started_at, updated_at
        FROM generation_status
        WHERE status = 'in_progress'
        ORDER BY started_at DESC
@@ -87,6 +87,43 @@ router.get('/active', async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       error: 'Failed to fetch active status',
+    });
+  }
+});
+
+/**
+ * Get active generation for a specific slot
+ * Returns the in_progress session for this slot, if any
+ */
+router.get('/slot/:slotNumber/active', async (req: Request, res: Response) => {
+  try {
+    const slotNumber = parseInt(req.params.slotNumber, 10);
+
+    if (isNaN(slotNumber) || slotNumber < 1 || slotNumber > 10) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid slot number',
+      });
+    }
+
+    const result = await pool.query(
+      `SELECT session_id, status, current_stage, slot_number, started_at, updated_at
+       FROM generation_status
+       WHERE slot_number = $1 AND status = 'in_progress'
+       ORDER BY started_at DESC
+       LIMIT 1`,
+      [slotNumber]
+    );
+
+    res.json({
+      success: true,
+      data: result.rows.length > 0 ? result.rows[0] : null,
+    });
+  } catch (error: any) {
+    console.error('Error fetching slot active status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch slot active status',
     });
   }
 });
