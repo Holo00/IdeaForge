@@ -86,15 +86,22 @@ export default function LogsViewer({ logs }: LogsViewerProps) {
           </select>
 
           {/* Auto-scroll toggle */}
-          <label className="flex items-center gap-1.5 text-xs text-text-secondary cursor-pointer">
-            <input
-              type="checkbox"
-              checked={autoScroll}
-              onChange={(e) => setAutoScroll(e.target.checked)}
-              className="rounded border-border-default bg-base text-mint focus:ring-mint focus:ring-offset-0 w-3.5 h-3.5"
-            />
-            Auto-scroll
-          </label>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-text-secondary">Auto-scroll</span>
+            <button
+              onClick={() => setAutoScroll(!autoScroll)}
+              className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                autoScroll ? 'bg-mint' : 'bg-elevated'
+              }`}
+              aria-label={autoScroll ? 'Disable auto-scroll' : 'Enable auto-scroll'}
+            >
+              <span
+                className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform ${
+                  autoScroll ? 'translate-x-5' : 'translate-x-1'
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </div>
 

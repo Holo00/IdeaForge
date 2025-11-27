@@ -18,6 +18,7 @@ export enum GenerationStage {
   DB_SAVE = 'database_save',
   COMPLETE = 'complete',
   FAILED = 'failed',
+  WAITING = 'waiting', // For auto-generation countdown logs
 }
 
 export interface GenerationLog {

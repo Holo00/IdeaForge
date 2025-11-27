@@ -1133,6 +1133,10 @@ router.get('/generation-slots', async (_req, res, next) => {
         gs.slot_number,
         gs.profile_id,
         gs.is_enabled,
+        gs.auto_generate,
+        gs.auto_generate_interval_minutes,
+        gs.next_auto_generate_at,
+        gs.last_auto_generate_at,
         gs.created_at,
         gs.updated_at,
         cp.name as profile_name,
@@ -1160,6 +1164,10 @@ router.get('/generation-slots/:slotNumber', async (req, res, next) => {
         gs.slot_number,
         gs.profile_id,
         gs.is_enabled,
+        gs.auto_generate,
+        gs.auto_generate_interval_minutes,
+        gs.next_auto_generate_at,
+        gs.last_auto_generate_at,
         gs.created_at,
         gs.updated_at,
         cp.name as profile_name,
@@ -1181,12 +1189,34 @@ router.get('/generation-slots/:slotNumber', async (req, res, next) => {
 
 /**
  * PUT /api/config/generation-slots/:slotNumber
- * Update a generation slot's profile assignment
+ * Update a generation slot's configuration (profile, auto-generate settings)
  */
 router.put('/generation-slots/:slotNumber', async (req, res, next) => {
   try {
-    const { slotNumber } = req.params;
-    const { profile_id, is_enabled } = req.body;
+    const slotNumber = parseInt(req.params.slotNumber, 10);
+    const { profile_id, is_enabled, auto_generate, auto_generate_interval_minutes } = req.body;
+
+    // Validate auto_generate_interval_minutes if provided
+    if (auto_generate_interval_minutes !== undefined) {
+      const interval = parseInt(auto_generate_interval_minutes, 10);
+      if (isNaN(interval) || interval < 1 || interval > 1440) {
+        throw new ValidationError('auto_generate_interval_minutes must be between 1 and 1440');
+      }
+    }
+
+    // Check if slot exists
+    const existing = await pool.query(
+      'SELECT * FROM generation_slots WHERE slot_number = $1',
+      [slotNumber]
+    );
+
+    if (existing.rows.length === 0) {
+      // Create slot with defaults
+      await pool.query(
+        'INSERT INTO generation_slots (slot_number, is_enabled) VALUES ($1, true)',
+        [slotNumber]
+      );
+    }
 
     // Build dynamic update
     const updates: string[] = [];
@@ -1201,22 +1231,43 @@ router.put('/generation-slots/:slotNumber', async (req, res, next) => {
       updates.push(`is_enabled = $${paramCount++}`);
       values.push(is_enabled);
     }
+    if (auto_generate !== undefined) {
+      updates.push(`auto_generate = $${paramCount++}`);
+      values.push(auto_generate);
+
+      // If turning on auto-generate, compute next_auto_generate_at
+      if (auto_generate) {
+        const interval = auto_generate_interval_minutes || 60;
+        updates.push(`next_auto_generate_at = NOW() + INTERVAL '${interval} minutes'`);
+      } else {
+        // If turning off, clear the next scheduled time
+        updates.push(`next_auto_generate_at = NULL`);
+      }
+    }
+    if (auto_generate_interval_minutes !== undefined) {
+      updates.push(`auto_generate_interval_minutes = $${paramCount++}`);
+      values.push(auto_generate_interval_minutes);
+
+      // If auto_generate is already on (or being turned on), update next_auto_generate_at
+      if (auto_generate === undefined) {
+        const currentState = existing.rows[0];
+        if (currentState && currentState.auto_generate) {
+          updates.push(`next_auto_generate_at = NOW() + INTERVAL '${auto_generate_interval_minutes} minutes'`);
+        }
+      }
+    }
 
     if (updates.length === 0) {
       throw new ValidationError('No fields to update');
     }
 
+    updates.push('updated_at = NOW()');
     values.push(slotNumber);
 
-    // Use upsert to create slot if it doesn't exist
-    await pool.query(`
-      INSERT INTO generation_slots (slot_number, profile_id, is_enabled)
-      VALUES ($${paramCount}, $1, ${is_enabled !== undefined ? `$${paramCount - 1}` : 'true'})
-      ON CONFLICT (slot_number) DO UPDATE SET
-        ${updates.join(', ')},
-        updated_at = NOW()
-      RETURNING id, slot_number, profile_id, is_enabled, created_at, updated_at
-    `, values);
+    await pool.query(
+      `UPDATE generation_slots SET ${updates.join(', ')} WHERE slot_number = $${paramCount}`,
+      values
+    );
 
     // Fetch with profile info
     const fullResult = await pool.query(`
@@ -1225,6 +1276,10 @@ router.put('/generation-slots/:slotNumber', async (req, res, next) => {
         gs.slot_number,
         gs.profile_id,
         gs.is_enabled,
+        gs.auto_generate,
+        gs.auto_generate_interval_minutes,
+        gs.next_auto_generate_at,
+        gs.last_auto_generate_at,
         gs.created_at,
         gs.updated_at,
         cp.name as profile_name,

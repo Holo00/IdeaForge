@@ -8,6 +8,7 @@ interface GenerationControlsProps {
   onGenerationComplete?: (idea: any) => void;
   onError?: (error: string) => void;
   disabled?: boolean;
+  isGenerating?: boolean;
 }
 
 export default function GenerationControls({
@@ -15,8 +16,12 @@ export default function GenerationControls({
   onGenerationComplete,
   onError,
   disabled = false,
+  isGenerating: externalIsGenerating,
 }: GenerationControlsProps) {
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [localIsGenerating, setLocalIsGenerating] = useState(false);
+
+  // Use external state if provided, otherwise fall back to local state
+  const isGenerating = externalIsGenerating ?? localIsGenerating;
   const [lastGeneration, setLastGeneration] = useState<string | null>(null);
   const [profiles, setProfiles] = useState<any[]>([]);
   const [activeProfile, setActiveProfile] = useState<any>(null);
@@ -48,7 +53,7 @@ export default function GenerationControls({
   };
 
   const handleManualGenerate = async () => {
-    setIsGenerating(true);
+    setLocalIsGenerating(true);
 
     // Generate session ID and notify parent to connect to SSE
     const sessionId = `manual-${Date.now()}`;
@@ -62,7 +67,7 @@ export default function GenerationControls({
     } catch (error: any) {
       onError?.(error.message || 'Generation failed');
     } finally {
-      setIsGenerating(false);
+      setLocalIsGenerating(false);
     }
   };
 

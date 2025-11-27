@@ -1,5 +1,45 @@
 # Recent Changes
 
+## [2025-11-27] - Auto-Generation Scheduler
+
+### Added
+- **Auto-generation toggle** for each generation slot
+  - Toggle switch to enable/disable automatic idea generation
+  - Interval input for frequency in minutes (1-1440)
+  - Visual "AUTO" badge on slot header when enabled
+  - Next scheduled time display
+
+- **Database schema updates** (`backend/db/migrations/015_add_auto_generation_fields.sql`)
+  - `auto_generate` (boolean) - Enable/disable auto-generation
+  - `auto_generate_interval_minutes` (integer 1-1440) - Generation frequency
+  - `next_auto_generate_at` (timestamp) - Next scheduled generation time
+  - `last_auto_generate_at` (timestamp) - Last successful generation time
+  - Partial index for efficient due-slot queries
+
+- **Backend scheduler** (`backend/src/services/autoGenerationScheduler.ts`)
+  - Polls every 30 seconds for due slots
+  - Triggers generation for enabled slots past their `next_auto_generate_at` time
+  - Automatically reschedules next generation after completion
+  - Skips slots with active in-progress generation
+  - Graceful shutdown support
+
+- **Updated API endpoints**
+  - `PUT /api/config/generation-slots/:slotNumber` now accepts `auto_generate` and `auto_generate_interval_minutes`
+  - Automatically computes `next_auto_generate_at` when enabling
+
+### Changed
+- `GenerationSlot.tsx` component now includes auto-generation controls
+- Toggle cannot be enabled while a manual generation is in progress
+- Auto-generation indicator badge shows in slot header
+
+### Technical Details
+- Scheduler starts on server boot (`startAutoGenerationScheduler()`)
+- Scheduler stops on graceful shutdown
+- Uses in-process setInterval (no Redis/BullMQ dependency)
+- Each slot generation is independent and doesn't block others
+
+---
+
 ## [2025-11-27] - Parallel Generation Slots
 
 ### Added

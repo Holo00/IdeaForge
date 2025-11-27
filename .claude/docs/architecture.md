@@ -85,7 +85,11 @@ ProjectIdeaFinder/
 │   │   │   ├── ProfileSelector.tsx
 │   │   │   ├── PromptEditor.tsx
 │   │   │   └── SettingsEditor.tsx
+│   │   ├── settings/                # Settings editor components
+│   │   │   ├── AIModelsEditor.tsx
+│   │   │   └── GenerationSettingsEditor.tsx
 │   │   ├── GenerationControls.tsx   # Start/stop generation
+│   │   ├── GenerationSlot.tsx       # Self-contained generation unit with profile, status, logs
 │   │   ├── LogsViewer.tsx           # Real-time SSE log display
 │   │   ├── Navigation.tsx           # App navigation
 │   │   ├── RecentIdeas.tsx          # Latest ideas list
@@ -189,8 +193,10 @@ ProjectIdeaFinder/
 | File | Purpose |
 |------|---------|
 | `frontend/components/GenerationControls.tsx` | Start generation, show status, profile selector |
+| `frontend/components/GenerationSlot.tsx` | Self-contained generation unit: profile selector, generate button, logs viewer |
 | `frontend/components/LogsViewer.tsx` | Real-time SSE log display during generation |
 | `frontend/components/config/ProfileSelector.tsx` | Profile management: switch, create, clone, delete profiles |
+| `frontend/components/settings/GenerationSettingsEditor.tsx` | Settings for generation slots (max slots count) |
 | `frontend/components/Navigation.tsx` | Auth-aware navigation with logout |
 | `frontend/contexts/AuthContext.tsx` | Authentication state and route protection |
 | `frontend/lib/api.ts` | API client with auth token injection |

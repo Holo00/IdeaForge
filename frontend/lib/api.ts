@@ -371,7 +371,12 @@ class ApiClient {
     return this.rawRequest(`/config/generation-slots/${slotNumber}`);
   }
 
-  async updateGenerationSlot(slotNumber: number, data: { profile_id?: string | null; is_enabled?: boolean }): Promise<any> {
+  async updateGenerationSlot(slotNumber: number, data: {
+    profile_id?: string | null;
+    is_enabled?: boolean;
+    auto_generate?: boolean;
+    auto_generate_interval_minutes?: number;
+  }): Promise<any> {
     return this.rawRequest(`/config/generation-slots/${slotNumber}`, {
       method: 'PUT',
       body: JSON.stringify(data),

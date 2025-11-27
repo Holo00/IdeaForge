@@ -8,6 +8,7 @@ import generationRouter from './api/routes/generation';
 import configRouter from './api/routes/config';
 import logsRouter from './api/routes/logs';
 import authRouter, { requireAuth } from './api/routes/auth';
+import { startAutoGenerationScheduler, stopAutoGenerationScheduler } from './services/autoGenerationScheduler';
 
 dotenv.config();
 
@@ -51,9 +52,9 @@ async function startServer() {
     await pool.query('SELECT NOW()');
     console.log('✓ Database connection successful');
 
-    // Skip job queue initialization (Redis not running)
-    // Manual idea generation still works via API
-    console.log('⚠ Job queue disabled (Redis not running) - Manual generation available via API');
+    // Start auto-generation scheduler
+    startAutoGenerationScheduler();
+    console.log('✓ Auto-generation scheduler started');
 
     app.listen(PORT, () => {
       console.log(`\n✓ Server running on port ${PORT}`);
@@ -70,12 +71,14 @@ async function startServer() {
 // Handle graceful shutdown
 process.on('SIGTERM', async () => {
   console.log('SIGTERM received, shutting down gracefully');
+  stopAutoGenerationScheduler();
   await pool.end();
   process.exit(0);
 });
 
 process.on('SIGINT', async () => {
   console.log('SIGINT received, shutting down gracefully');
+  stopAutoGenerationScheduler();
   await pool.end();
   process.exit(0);
 });

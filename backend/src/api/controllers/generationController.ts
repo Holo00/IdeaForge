@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { IdeaGenerationService } from '../../services/ideaGenerationService';
 import { ApiResponse } from '../../types';
 import { z } from 'zod';
+import { pool } from '../../lib/db';
 
 // Zod schemas for validation
 const GenerateIdeaSchema = z.object({
@@ -39,6 +40,21 @@ export class GenerationController {
 
     try {
       const options = GenerateIdeaSchema.parse(req.body);
+
+      // Check if slot has auto-generate enabled (block manual generation)
+      if (options.slotNumber) {
+        const slotResult = await pool.query(
+          `SELECT auto_generate FROM generation_slots WHERE slot_number = $1`,
+          [options.slotNumber]
+        );
+
+        if (slotResult.rows.length > 0 && slotResult.rows[0].auto_generate === true) {
+          return res.status(400).json({
+            success: false,
+            error: 'Manual generation is disabled for this slot while auto-generate is enabled. Disable auto-generate first to manually generate ideas.',
+          });
+        }
+      }
 
       // Track this generation
       activeGenerations.add(sessionId);
