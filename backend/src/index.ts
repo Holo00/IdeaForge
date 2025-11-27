@@ -1,0 +1,83 @@
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { errorHandler } from './api/middleware/errorHandler';
+import { pool } from './lib/db';
+import ideasRouter from './api/routes/ideas';
+import generationRouter from './api/routes/generation';
+import configRouter from './api/routes/config';
+import logsRouter from './api/routes/logs';
+import authRouter, { requireAuth } from './api/routes/auth';
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+  next();
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// API routes
+app.use('/api/auth', authRouter);
+
+// Public API routes (ideas has internal auth for write operations)
+app.use('/api/ideas', ideasRouter);
+
+// Protected API routes (require authentication)
+app.use('/api', requireAuth, generationRouter);
+app.use('/api/config', requireAuth, configRouter);
+app.use('/api/logs', requireAuth, logsRouter);
+
+// Error handling middleware (must be last)
+app.use(errorHandler);
+
+// Start server
+async function startServer() {
+  try {
+    // Test database connection
+    await pool.query('SELECT NOW()');
+    console.log('✓ Database connection successful');
+
+    // Skip job queue initialization (Redis not running)
+    // Manual idea generation still works via API
+    console.log('⚠ Job queue disabled (Redis not running) - Manual generation available via API');
+
+    app.listen(PORT, () => {
+      console.log(`\n✓ Server running on port ${PORT}`);
+      console.log(`  Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`  API: http://localhost:${PORT}/api`);
+      console.log(`  Health: http://localhost:${PORT}/health`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+// Handle graceful shutdown
+process.on('SIGTERM', async () => {
+  console.log('SIGTERM received, shutting down gracefully');
+  await pool.end();
+  process.exit(0);
+});
+
+process.on('SIGINT', async () => {
+  console.log('SIGINT received, shutting down gracefully');
+  await pool.end();
+  process.exit(0);
+});
+
+startServer();

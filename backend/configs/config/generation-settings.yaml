@@ -1,0 +1,94 @@
+ai_provider: openai
+model: claude-3-5-sonnet-20241022
+temperature: 1
+max_tokens: 16384
+idea_generation_prompt: >
+  You are an expert at generating comprehensive software business ideas. Generate a new, specific, well-researched
+  software business idea using the following framework and constraints.
+
+  **Generation Framework**: {framework_name}
+  {framework_description}
+  {framework_template}
+  {framework_example}
+
+  **Constraints** (choose from the options provided):
+  - **Domain Options** (pick one or combine related ones):
+  - {domains}
+
+  - **Problem Type Options** (select the most relevant):
+  - {problems}
+
+  - **Solution Type Options** (choose the best fit):
+  - {solutions}
+  {extra_filters}
+
+  **Evaluation Criteria** (each scored 1-10): {criteria}
+
+  ---
+
+  Generate a unique, viable idea that addresses a real problem in the specified domain. For each evaluation criterion,
+  provide 2-3 follow-up questions with detailed answers that demonstrate deep thinking about the idea.
+
+  Return ONLY valid JSON in this exact format: ```json {
+    "name": "Idea Name (max 60 characters)",
+    "domain": "Parent Domain → Subdomain",
+    "problem": "Brief problem description",
+    "solution": "Brief solution description",
+    "quickSummary": "1-2 sentence elevator pitch explaining the value proposition",
+
+    "concreteExample": {
+      "currentState": "Detailed description of how users handle this problem today (2-3 sentences with specific pain points)",
+      "yourSolution": "Step-by-step walkthrough of how they would use your solution (2-3 sentences)",
+      "keyImprovement": "Quantifiable improvements with specific metrics (time saved, cost reduction, etc.)"
+    },
+
+    "ideaComponents": {
+      "monetization": "Revenue model (e.g., 'Monthly subscription ($50-150/user)', 'Commission-based (15%)')",
+      "targetAudience": "Specific user segment with demographics (e.g., 'Small business owners (10-50 employees)')",
+      "technology": "Core tech stack needed (e.g., 'React/Node.js web app + OpenAI API + Stripe')",
+      "marketSize": "Market size category with numbers (e.g., 'Mid-Market (500K potential users, $50M TAM)')"
+    },
+
+    {evaluation_schema},
+
+    "quickNotes": {
+      "strengths": [
+        "3-5 bullet points highlighting the strongest aspects of this idea",
+        "Focus on unique advantages, market opportunity, clear ROI, etc."
+      ],
+      "weaknesses": [
+        "3-5 bullet points identifying potential risks and challenges",
+        "Be honest about gaps, competition, complexity, etc."
+      ],
+      "keyAssumptions": [
+        "3-5 critical assumptions this idea depends on",
+        "What needs to be true for this to succeed?"
+      ],
+      "nextSteps": [
+        "3-5 actionable validation steps to test this idea quickly",
+        "Include research, interviews, prototypes, etc."
+      ],
+      "references": [
+        "3-5 data points, sources, or facts supporting the analysis",
+        "Include market size, competitor info, research citations, etc."
+      ]
+    },
+
+    "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"]
+  } ```
+
+  CRITICAL REQUIREMENTS - YOU MUST FOLLOW THESE EXACTLY:
+
+  1. **ALL {criteria_count} EVALUATION CRITERIA ARE REQUIRED**: Your response MUST include every single criterion listed above. Missing even ONE criterion makes your response INVALID.
+
+  2. **EACH CRITERION NEEDS 3 QUESTIONS**: Every evaluation criterion MUST have exactly 3 questions with detailed, thoughtful answers (minimum 20 words each).
+
+  3. **COMPLETE STRUCTURE**: Include all required sections: name, domain, problem, solution, quickSummary, concreteExample, ideaComponents, evaluation (with ALL {criteria_count} criteria), quickNotes, and tags.
+
+  4. **QUALITY STANDARDS**:
+     - Quick notes sections MUST have 3-5 items each (strengths, weaknesses, assumptions, next steps, references)
+     - Use specific numbers, metrics, and evidence throughout
+     - Be realistic and honest in scoring - not everything should be 8-10
+     - Provide actionable insights that help evaluate if this idea is worth pursuing
+
+  5. **VALIDATION**: Before responding, count your evaluation criteria. If you don't have exactly {criteria_count} criteria with 3 questions each, your response is INCOMPLETE and REJECTED.

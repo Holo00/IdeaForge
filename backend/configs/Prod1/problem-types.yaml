@@ -1,0 +1,213 @@
+# Problem Types
+# Categories of problems that software can solve
+
+problem_types:
+  - name: High Cost
+    description: Solutions are too expensive for target users
+    examples:
+      - Healthcare costs
+      - Legal services fees
+      - Education expenses
+
+  - name: Time Consuming
+    description: Tasks take too much time to complete manually
+    examples:
+      - Data entry
+      - Report generation
+      - Scheduling coordination
+
+  - name: Lack of Access
+    description: Services or information are difficult to obtain
+    examples:
+      - Rural healthcare access
+      - Educational resources in developing areas
+      - Expert consultation availability
+
+  - name: Inefficiency
+    description: Wasteful processes that could be streamlined
+    examples:
+      - Manual approval workflows
+      - Paper-based tracking
+      - Redundant data entry
+
+  - name: Poor Communication
+    description: Information doesn't flow effectively between parties
+    examples:
+      - Team miscommunication
+      - Customer support delays
+      - Cross-department silos
+
+  - name: Lack of Transparency
+    description: Information is hidden or difficult to access
+    examples:
+      - Pricing opacity
+      - Supply chain visibility
+      - Government processes
+
+  - name: Fragmentation
+    description: Solutions are scattered across multiple platforms
+    examples:
+      - Multiple software tools for one workflow
+      - Disconnected data sources
+      - Siloed systems
+
+  - name: Complexity
+    description: Systems or processes are too complicated
+    examples:
+      - Difficult user interfaces
+      - Confusing regulations
+      - Overcomplicated workflows
+
+  - name: Lack of Personalization
+    description: One-size-fits-all solutions don't meet individual needs
+    examples:
+      - Generic recommendations
+      - Standardized services
+      - Non-customizable products
+
+  - name: Poor Quality
+    description: Existing solutions don't meet quality standards
+    examples:
+      - Unreliable services
+      - Low-quality products
+      - Inaccurate information
+
+  - name: Security & Privacy Concerns
+    description: Data or system vulnerabilities
+    examples:
+      - Data breaches
+      - Privacy violations
+      - Unauthorized access
+
+  - name: Scalability Issues
+    description: Solutions don't grow with user needs
+    examples:
+      - Systems that break with growth
+      - Manual processes that don't scale
+      - Infrastructure limitations
+
+  - name: Lack of Integration
+    description: Systems don't work together
+    examples:
+      - Incompatible software
+      - Manual data transfer between systems
+      - API limitations
+
+  - name: Discovery Problem
+    description: Hard to find the right solution or information
+    examples:
+      - Finding local services
+      - Discovering relevant content
+      - Matching buyers and sellers
+
+  - name: Trust Issues
+    description: Difficulty verifying credibility or authenticity
+    examples:
+      - Fake reviews
+      - Unverified credentials
+      - Scam concerns
+
+  - name: Coordination Challenges
+    description: Difficulty organizing multiple parties or resources
+    examples:
+      - Event planning
+      - Group decision making
+      - Resource allocation
+
+  - name: Knowledge Gap
+    description: Lack of expertise or information
+    examples:
+      - Learning new skills
+      - Understanding complex topics
+      - Finding expert guidance
+
+  - name: Maintenance Burden
+    description: Ongoing upkeep is difficult or expensive
+    examples:
+      - System updates
+      - Equipment maintenance
+      - Content updates
+
+  - name: Compliance & Regulations
+    description: Meeting legal or industry requirements is difficult
+    examples:
+      - Tax compliance
+      - Industry certifications
+      - Regulatory reporting
+
+  - name: Waste & Sustainability
+    description: Environmental or resource waste
+    examples:
+      - Energy waste
+      - Material waste
+      - Carbon emissions
+
+  - name: Inconsistency
+    description: Lack of standardization or reliability
+    examples:
+      - Variable service quality
+      - Inconsistent data formats
+      - Unpredictable outcomes
+
+  - name: Limited Availability
+    description: Services or products aren't available when needed
+    examples:
+      - Limited business hours
+      - Geographic restrictions
+      - Seasonal availability
+
+  - name: Poor User Experience
+    description: Frustrating or confusing interactions
+    examples:
+      - Difficult navigation
+      - Slow performance
+      - Unintuitive design
+
+  - name: Lack of Automation
+    description: Manual tasks that could be automated
+    examples:
+      - Repetitive data entry
+      - Manual report generation
+      - Routine notifications
+
+  - name: Information Overload
+    description: Too much data to process effectively
+    examples:
+      - Email overload
+      - Social media noise
+      - Data analysis paralysis
+
+  - name: Delayed Feedback
+    description: Long wait times for results or responses
+    examples:
+      - Slow customer support
+      - Delayed test results
+      - Late performance reviews
+
+  - name: Geographic Barriers
+    description: Physical distance creates problems
+    examples:
+      - Remote team collaboration
+      - Long-distance services
+      - International transactions
+
+  - name: Language Barriers
+    description: Communication hindered by language differences
+    examples:
+      - International business
+      - Multilingual customer support
+      - Translation needs
+
+  - name: Lack of Accountability
+    description: Difficult to track responsibility or performance
+    examples:
+      - Project tracking
+      - Vendor performance
+      - Team productivity
+
+  - name: Resource Constraints
+    description: Limited budget, time, or personnel
+    examples:
+      - Small business limitations
+      - Nonprofit resource gaps
+      - Startup constraints

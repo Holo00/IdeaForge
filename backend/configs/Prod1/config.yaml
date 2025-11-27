@@ -1,0 +1,13 @@
+# Configuration Profile Metadata
+name: Default Configuration
+description: Standard configuration copied from research-system with proven templates and frameworks
+created_at: 2025-01-22
+version: 1.0.0
+
+# Configuration structure notes:
+# - business-domains.yaml: Industry domains and subdomains
+# - problem-types.yaml: Types of problems to solve
+# - solution-types.yaml: Approaches to solutions
+# - evaluation-criteria.yaml: Scoring criteria with weights
+# - idea-prompts.yaml: Generation frameworks (renamed from "templates")
+# - generation-settings.yaml: AI prompt template and settings

@@ -1,0 +1,4599 @@
+# Business Domains
+# Hierarchical list of business domains and subdomains for software projects
+
+domains:
+  - name: Healthcare & Medical
+    subdomains:
+      - name: Telemedicine
+        description: Remote medical consultations and diagnostics
+      - name: Mental Health Services
+        description: Therapy, counseling, wellness apps
+      - name: Fitness & Wellness
+        description: Exercise tracking, nutrition, personal training
+      - name: Medical Devices
+        description: Connected health devices and monitoring equipment
+      - name: Pharmacy Services
+        description: Prescription management, drug delivery
+      - name: Medical Records
+        description: Electronic health records, patient data management
+      - name: Clinical Trials
+        description: Research participant recruitment and management
+      - name: Medical Imaging
+        description: X-ray, MRI, CT scan analysis and storage
+      - name: Dental Care
+        description: Dentistry practice management and patient care
+      - name: Veterinary Services
+        description: Animal healthcare management
+      - name: Hospital Management
+        description: Hospital operations and administration
+      - name: Ambulatory Care
+        description: Outpatient clinic management
+      - name: Urgent Care Centers
+        description: Walk-in clinic operations
+      - name: Home Healthcare
+        description: In-home patient care coordination
+      - name: Hospice & Palliative Care
+        description: End-of-life care management
+      - name: Rehabilitation Services
+        description: Physical and occupational therapy
+      - name: Dialysis Centers
+        description: Kidney dialysis facility management
+      - name: Oncology Practice
+        description: Cancer treatment center operations
+      - name: Cardiology Practice
+        description: Heart care practice management
+      - name: Orthopedic Practice
+        description: Bone and joint care management
+      - name: Dermatology Practice
+        description: Skin care clinic operations
+      - name: Ophthalmology Practice
+        description: Eye care and vision services
+      - name: Pediatric Care
+        description: Children's healthcare management
+      - name: Geriatric Care
+        description: Senior patient care coordination
+      - name: Women's Health
+        description: OB-GYN and women's care services
+      - name: Fertility Services
+        description: IVF and reproductive health clinics
+      - name: Sleep Medicine
+        description: Sleep disorder diagnosis and treatment
+      - name: Pain Management
+        description: Chronic pain treatment centers
+      - name: Addiction Treatment
+        description: Substance abuse recovery programs
+      - name: Behavioral Health
+        description: Psychiatric care and services
+      - name: Medical Billing
+        description: Healthcare billing and coding
+      - name: Revenue Cycle Management
+        description: Healthcare payment processing
+      - name: Prior Authorization
+        description: Insurance pre-approval management
+      - name: Patient Scheduling
+        description: Appointment booking systems
+      - name: Patient Engagement
+        description: Patient communication and portals
+      - name: Care Coordination
+        description: Multi-provider care management
+      - name: Remote Patient Monitoring
+        description: Home-based health tracking
+      - name: Medical Transcription
+        description: Clinical documentation services
+      - name: Health Information Exchange
+        description: Medical data sharing platforms
+      - name: Population Health
+        description: Community health management
+      - name: Value-Based Care
+        description: Outcome-based healthcare delivery
+      - name: Credentialing Services
+        description: Provider verification and licensing
+      - name: Medical Staffing
+        description: Healthcare workforce placement
+      - name: Ambulance Services
+        description: Emergency medical transport
+      - name: Blood Bank Management
+        description: Blood donation and storage
+      - name: Pathology Services
+        description: Laboratory diagnostic testing
+      - name: Radiology Services
+        description: Imaging center management
+      - name: Surgical Centers
+        description: Ambulatory surgery operations
+      - name: Anesthesia Management
+        description: Anesthesia practice operations
+      - name: Medical Equipment Maintenance
+        description: Healthcare device servicing
+      - name: Infection Control
+        description: Healthcare-acquired infection prevention
+      - name: Clinical Decision Support
+        description: AI-assisted diagnosis tools
+      - name: Healthcare Analytics
+        description: Medical data analysis platforms
+
+  - name: Education & Learning
+    subdomains:
+      - name: K-12 Education
+        description: Primary and secondary school learning tools
+      - name: Higher Education
+        description: University and college platforms
+      - name: Online Courses
+        description: E-learning platforms and MOOCs
+      - name: Corporate Training
+        description: Employee development and skill building
+      - name: Language Learning
+        description: Foreign language education tools
+      - name: Test Preparation
+        description: Exam prep for standardized tests
+      - name: Educational Content
+        description: Curriculum development and teaching materials
+      - name: Student Information Systems
+        description: School administration and enrollment management
+      - name: Learning Management Systems
+        description: Course delivery and tracking platforms
+      - name: Tutoring Services
+        description: One-on-one educational support
+      - name: Early Childhood Education
+        description: Preschool and daycare learning programs
+      - name: Special Education
+        description: Learning tools for students with disabilities
+      - name: STEM Education
+        description: Science, technology, engineering, math learning
+      - name: Music Education
+        description: Music lessons and practice platforms
+      - name: Art Education
+        description: Visual arts instruction and portfolio tools
+      - name: Vocational Training
+        description: Trade skill and career-focused education
+      - name: Continuing Education
+        description: Adult learning and professional development
+      - name: Homeschool Curriculum
+        description: Home education resources and tracking
+      - name: Educational Assessment
+        description: Student testing and evaluation tools
+      - name: Adaptive Learning
+        description: AI-powered personalized learning paths
+      - name: Virtual Classrooms
+        description: Live online teaching environments
+      - name: Educational Games
+        description: Game-based learning platforms
+      - name: Coding Education
+        description: Programming and computer science learning
+      - name: Literacy Programs
+        description: Reading and writing instruction tools
+      - name: Math Education
+        description: Mathematics learning and practice platforms
+      - name: Science Labs
+        description: Virtual and physical science lab management
+      - name: Library Management
+        description: School and public library systems
+      - name: Student Engagement
+        description: Student participation and motivation tools
+      - name: Parent Communication
+        description: School-to-home messaging platforms
+      - name: Teacher Professional Development
+        description: Educator training and certification
+      - name: Classroom Management
+        description: In-class behavior and activity tools
+      - name: Grade Management
+        description: Gradebook and academic tracking
+      - name: Attendance Tracking
+        description: Student attendance monitoring
+      - name: School Transportation
+        description: Bus routing and student transport
+      - name: School Nutrition
+        description: Cafeteria and meal program management
+      - name: School Safety
+        description: Campus security and emergency systems
+      - name: College Admissions
+        description: Application and enrollment management
+      - name: Financial Aid Management
+        description: Scholarship and aid administration
+      - name: Student Housing
+        description: Campus residence management
+      - name: Campus Recreation
+        description: University sports and fitness facilities
+      - name: Study Abroad Programs
+        description: International education coordination
+      - name: Academic Advising
+        description: Student counseling and course planning
+      - name: Research Administration
+        description: University research project management
+      - name: Alumni Relations
+        description: Graduate engagement and fundraising
+      - name: Credentialing & Certificates
+        description: Professional certificate programs
+      - name: Microlearning
+        description: Bite-sized learning content delivery
+      - name: Peer Learning
+        description: Student-to-student knowledge sharing
+      - name: Simulation Training
+        description: Immersive training environments
+      - name: Skills Assessment
+        description: Competency evaluation and badging
+      - name: Learning Analytics
+        description: Educational data and performance insights
+      - name: Content Authoring
+        description: Educational content creation tools
+      - name: Exam Proctoring
+        description: Online test supervision solutions
+      - name: Academic Integrity
+        description: Plagiarism detection and prevention
+      - name: Disability Services
+        description: Accessibility accommodations management
+      - name: Student Success
+        description: Retention and completion support tools
+      - name: Career Services
+        description: Job placement and career counseling
+      - name: Internship Management
+        description: Internship placement and tracking
+      - name: Student Portfolios
+        description: Academic work showcase platforms
+      - name: Competency-Based Education
+        description: Mastery-based learning systems
+      - name: Dual Enrollment
+        description: High school to college programs
+      - name: Education Compliance
+        description: Accreditation and regulatory tracking
+
+  - name: Finance & Banking
+    subdomains:
+      - name: Personal Banking
+        description: Consumer banking services and accounts
+      - name: Business Banking
+        description: Commercial banking for enterprises
+      - name: Investment Management
+        description: Portfolio management and trading platforms
+      - name: Cryptocurrency
+        description: Digital currency trading and wallets
+      - name: Payment Processing
+        description: Transaction handling and merchant services
+      - name: Peer-to-Peer Payments
+        description: Personal money transfers between individuals
+      - name: Accounting Software
+        description: Bookkeeping and financial reporting tools
+      - name: Tax Preparation
+        description: Tax filing and compliance software
+      - name: Insurance Technology
+        description: Policy management and claims processing
+      - name: Lending Platforms
+        description: Loan origination and management
+      - name: Credit Scoring
+        description: Credit assessment and monitoring
+      - name: Wealth Management
+        description: Financial planning and advisory services
+      - name: Expense Management
+        description: Business expense tracking and reimbursement
+      - name: Invoicing & Billing
+        description: Invoice creation and payment collection
+      - name: Payroll Services
+        description: Employee compensation management
+      - name: Corporate Treasury
+        description: Cash management and liquidity optimization
+      - name: Trade Finance
+        description: Import/export financing and letters of credit
+      - name: Asset Management
+        description: Institutional investment and fund management
+      - name: Hedge Fund Technology
+        description: Alternative investment management platforms
+      - name: Private Equity Software
+        description: Deal sourcing and portfolio management
+      - name: Venture Capital Tools
+        description: Startup investment and due diligence platforms
+      - name: Mortgage Technology
+        description: Home loan origination and servicing
+      - name: Auto Lending
+        description: Vehicle financing and loan management
+      - name: Student Lending
+        description: Education financing and repayment management
+      - name: Microfinance
+        description: Small-scale lending for underbanked populations
+      - name: Buy Now Pay Later
+        description: Point-of-sale installment payment solutions
+      - name: Invoice Factoring
+        description: Receivables financing and cash flow acceleration
+      - name: Equipment Financing
+        description: Asset-based lending for business equipment
+      - name: Working Capital Solutions
+        description: Short-term business financing platforms
+      - name: Treasury Management
+        description: Corporate cash and liquidity management
+      - name: Foreign Exchange
+        description: Currency trading and hedging platforms
+      - name: Derivatives Trading
+        description: Options, futures, and swaps platforms
+      - name: Fixed Income Trading
+        description: Bond trading and fixed income management
+      - name: Equity Trading
+        description: Stock trading platforms and execution
+      - name: Algorithmic Trading
+        description: Automated trading strategy execution
+      - name: Market Data Services
+        description: Financial data feeds and analytics
+      - name: Financial Research
+        description: Investment research and analysis platforms
+      - name: ESG Investing
+        description: Environmental, social, governance investment tools
+      - name: Robo-Advisory
+        description: Automated investment advice platforms
+      - name: Retirement Planning
+        description: 401k, IRA, and pension management
+      - name: Estate Planning
+        description: Wealth transfer and inheritance planning
+      - name: Trust Administration
+        description: Trust management and fiduciary services
+      - name: Fund Administration
+        description: NAV calculation and investor reporting
+      - name: Compliance & RegTech
+        description: Regulatory compliance automation
+      - name: Anti-Money Laundering
+        description: AML monitoring and suspicious activity detection
+      - name: Know Your Customer
+        description: Identity verification and customer due diligence
+      - name: Fraud Detection
+        description: Financial fraud prevention and monitoring
+      - name: Risk Management
+        description: Financial risk assessment and mitigation
+      - name: Credit Risk Analysis
+        description: Lending risk assessment platforms
+      - name: Market Risk Systems
+        description: Trading risk monitoring and VaR calculation
+      - name: Operational Risk
+        description: Business process risk management
+      - name: Core Banking Systems
+        description: Banking transaction processing platforms
+      - name: Digital Banking
+        description: Mobile and online banking platforms
+      - name: Open Banking
+        description: API-based banking data sharing
+      - name: Banking as a Service
+        description: Embedded banking infrastructure
+      - name: Neobanking
+        description: Digital-only banking platforms
+      - name: Financial Inclusion
+        description: Banking for underserved populations
+      - name: Remittances
+        description: Cross-border money transfer services
+      - name: Corporate Cards
+        description: Business credit and expense cards
+      - name: Virtual Cards
+        description: Digital payment card generation
+      - name: Merchant Acquiring
+        description: Payment acceptance for businesses
+      - name: Payment Gateway
+        description: Online payment processing integration
+      - name: Cross-Border Payments
+        description: International payment facilitation
+      - name: Real-Time Payments
+        description: Instant payment settlement systems
+      - name: Bill Pay Services
+        description: Consumer and business bill payment
+      - name: Revenue Recognition
+        description: Accounting revenue tracking software
+      - name: Financial Close Management
+        description: Month-end and year-end close automation
+      - name: Audit Management
+        description: Financial audit planning and execution
+      - name: Financial Planning & Analysis
+        description: Budgeting and forecasting platforms
+      - name: Spend Management
+        description: Corporate procurement and spending control
+      - name: Accounts Payable Automation
+        description: Invoice processing and payment automation
+      - name: Accounts Receivable Automation
+        description: Collections and cash application
+      - name: Financial Data Aggregation
+        description: Multi-account financial data consolidation
+      - name: Alternative Data Analytics
+        description: Non-traditional data for financial insights
+      - name: Crowdfunding Platforms
+        description: Reward and equity crowdfunding
+      - name: Securities Lending
+        description: Stock lending and borrowing platforms
+      - name: Custody Services
+        description: Asset safekeeping and administration
+      - name: Shareholder Services
+        description: Investor relations and proxy voting
+
+  - name: E-commerce & Retail
+    subdomains:
+      - name: Online Retail
+        description: E-commerce storefronts and platforms
+      - name: Marketplace Platforms
+        description: Multi-vendor selling platforms
+      - name: Subscription Commerce
+        description: Recurring product delivery services
+      - name: Dropshipping
+        description: Inventory-less retail fulfillment
+      - name: Social Commerce
+        description: Shopping through social media platforms
+      - name: Fashion & Apparel
+        description: Clothing and accessories retail
+      - name: Electronics Retail
+        description: Consumer electronics sales
+      - name: Grocery Delivery
+        description: Food and household goods delivery
+      - name: Furniture & Home Goods
+        description: Home furnishing sales
+      - name: Beauty & Cosmetics
+        description: Personal care product retail
+      - name: Automotive Parts
+        description: Vehicle parts and accessories sales
+      - name: Pet Supplies
+        description: Pet food, toys, and care products
+      - name: Sports Equipment
+        description: Athletic gear and equipment
+      - name: Books & Media
+        description: Publishing and media content sales
+      - name: Jewelry & Luxury Goods
+        description: High-end product retail
+      - name: B2B E-commerce
+        description: Business-to-business online selling
+      - name: Wholesale Distribution
+        description: Bulk product sales platforms
+      - name: Product Information Management
+        description: Product data and catalog management
+      - name: Order Management Systems
+        description: Multi-channel order processing
+      - name: Inventory Optimization
+        description: Stock level and reorder management
+      - name: Warehouse Automation
+        description: Fulfillment center technology
+      - name: Shipping & Fulfillment
+        description: Logistics and delivery management
+      - name: Returns Management
+        description: Product returns and exchanges processing
+      - name: Customer Reviews & Ratings
+        description: Product review collection and display
+      - name: Personalization Engines
+        description: AI-powered product recommendations
+      - name: Shopping Cart Solutions
+        description: E-commerce checkout systems
+      - name: Payment Gateway Integration
+        description: Online payment processing
+      - name: Fraud Prevention
+        description: E-commerce fraud detection systems
+      - name: Price Optimization
+        description: Dynamic pricing and repricing tools
+      - name: Competitor Monitoring
+        description: Market and pricing intelligence
+      - name: Product Sourcing
+        description: Supplier discovery and sourcing
+      - name: Vendor Management
+        description: Supplier relationship platforms
+      - name: Print on Demand
+        description: Custom printed product fulfillment
+      - name: White Label Products
+        description: Private label e-commerce
+      - name: Reselling Platforms
+        description: Second-hand goods marketplaces
+      - name: Flash Sales Platforms
+        description: Time-limited deal sites
+      - name: Group Buying
+        description: Collective purchasing platforms
+      - name: Gift Registry Services
+        description: Wedding and event gift registries
+      - name: Loyalty & Rewards
+        description: Customer loyalty programs
+      - name: Referral Programs
+        description: Customer referral and affiliate systems
+      - name: Abandoned Cart Recovery
+        description: Cart abandonment solutions
+      - name: Product Bundling
+        description: Package deals and kits
+      - name: Pre-order Management
+        description: Pre-launch product sales
+      - name: Backorder Management
+        description: Out-of-stock order handling
+      - name: Multi-channel Selling
+        description: Cross-platform inventory sync
+      - name: Headless Commerce
+        description: API-first e-commerce platforms
+      - name: Mobile Commerce
+        description: Mobile shopping apps and experiences
+      - name: Voice Commerce
+        description: Voice assistant shopping
+      - name: Visual Search
+        description: Image-based product search
+      - name: Size & Fit Technology
+        description: Virtual fitting and sizing tools
+      - name: Product Customization
+        description: Configure-to-order products
+      - name: Live Shopping
+        description: Live stream commerce platforms
+      - name: Conversational Commerce
+        description: Chat-based shopping experiences
+      - name: Customer Segmentation
+        description: Shopper profiling and targeting
+      - name: Email Commerce
+        description: Transactional email marketing
+      - name: Exit Intent Technology
+        description: Cart abandonment popups
+      - name: Product Launch Management
+        description: New product release coordination
+      - name: Retail Analytics
+        description: E-commerce performance insights
+      - name: Attribution Modeling
+        description: Marketing channel attribution
+      - name: Cross-selling Tools
+        description: Related product recommendations
+      - name: Upselling Solutions
+        description: Premium product suggestions
+      - name: Customer Service for Retail
+        description: E-commerce support platforms
+
+  - name: Productivity & Collaboration
+    subdomains:
+      - name: Task Management
+        description: To-do lists and project tracking
+      - name: Note-Taking
+        description: Digital notebooks and documentation
+      - name: Calendar & Scheduling
+        description: Time management and appointment booking
+      - name: Email Management
+        description: Email organization and workflow tools
+      - name: Document Collaboration
+        description: Shared document editing and review
+      - name: Password Management
+        description: Secure credential storage
+      - name: File Storage & Sharing
+        description: Cloud storage and file sync
+      - name: Time Tracking
+        description: Work hour logging and billing
+      - name: Focus & Concentration
+        description: Distraction blocking and productivity timers
+      - name: Habit Tracking
+        description: Personal goal and routine monitoring
+      - name: Project Management
+        description: Team project planning and execution
+      - name: Kanban Boards
+        description: Visual workflow management tools
+      - name: Gantt Charts
+        description: Timeline and dependency planning
+      - name: Resource Management
+        description: Team capacity and allocation planning
+      - name: Sprint Planning
+        description: Agile sprint management tools
+      - name: Backlog Management
+        description: Feature and task prioritization
+      - name: Meeting Management
+        description: Meeting scheduling and notes
+      - name: Agenda Management
+        description: Meeting agenda creation and tracking
+      - name: Action Item Tracking
+        description: Meeting follow-up task management
+      - name: OKR Management
+        description: Objectives and key results tracking
+      - name: Goal Setting
+        description: Personal and team goal planning
+      - name: Knowledge Management
+        description: Organizational knowledge bases
+      - name: Wiki Platforms
+        description: Internal documentation systems
+      - name: Process Documentation
+        description: Standard operating procedure tools
+      - name: Workflow Automation
+        description: Business process automation
+      - name: Form Builders
+        description: Custom form creation tools
+      - name: Approval Workflows
+        description: Document approval routing
+      - name: Digital Signatures
+        description: Electronic signature platforms
+      - name: Version Control
+        description: Document versioning systems
+      - name: Mind Mapping
+        description: Visual brainstorming tools
+      - name: Whiteboarding
+        description: Digital collaborative whiteboards
+      - name: Diagramming Tools
+        description: Flowchart and diagram creation
+      - name: Presentation Software
+        description: Slide deck creation tools
+      - name: Spreadsheet Collaboration
+        description: Shared spreadsheet platforms
+      - name: Database Tools
+        description: No-code database builders
+      - name: Reporting Dashboards
+        description: Business metrics visualization
+      - name: Bookmarking Tools
+        description: Link saving and organization
+      - name: Read Later Apps
+        description: Content saving for later reading
+      - name: Clipboard Managers
+        description: Copy-paste history tools
+      - name: Text Expansion
+        description: Typing shortcut and template tools
+      - name: Screenshot Tools
+        description: Screen capture and annotation
+      - name: Screen Recording
+        description: Video capture of screen activity
+      - name: PDF Tools
+        description: PDF editing and manipulation
+      - name: OCR Software
+        description: Text recognition from images
+      - name: Translation Tools
+        description: Quick text translation utilities
+      - name: Writing Assistants
+        description: Grammar and style checking
+      - name: Citation Management
+        description: Reference and bibliography tools
+      - name: Research Tools
+        description: Information gathering platforms
+      - name: Contact Management
+        description: Personal CRM and address books
+      - name: Business Card Scanners
+        description: Contact digitization tools
+      - name: Expense Reporting
+        description: Receipt capture and reporting
+      - name: Invoice Management
+        description: Personal invoice tracking
+      - name: Subscription Tracking
+        description: Personal subscription management
+
+  - name: Communication & Social
+    subdomains:
+      - name: Team Chat
+        description: Internal messaging for organizations
+      - name: Video Conferencing
+        description: Virtual meetings and webinars
+      - name: Email Services
+        description: Email hosting and delivery
+      - name: Social Networking
+        description: Personal connection platforms
+      - name: Professional Networking
+        description: Career-focused social platforms
+      - name: Community Forums
+        description: Discussion boards and Q&A platforms
+      - name: Customer Support Chat
+        description: Help desk and support messaging
+      - name: Voice over IP
+        description: Internet-based calling services
+      - name: Screen Sharing
+        description: Remote desktop and presentation tools
+      - name: SMS & Messaging
+        description: Text messaging platforms
+      - name: Push Notifications
+        description: Mobile and web alert systems
+      - name: In-App Messaging
+        description: Embedded chat for applications
+      - name: Chatbots & Virtual Assistants
+        description: Automated conversation agents
+      - name: Internal Communications
+        description: Corporate announcements and updates
+      - name: Employee Intranets
+        description: Internal company portals
+      - name: Knowledge Bases
+        description: Searchable information repositories
+      - name: Wiki Platforms
+        description: Collaborative documentation systems
+      - name: Discussion Management
+        description: Threaded conversation platforms
+      - name: Comment Systems
+        description: Content commenting and moderation
+      - name: Review Platforms
+        description: Customer feedback and ratings
+      - name: Feedback Collection
+        description: Survey and opinion gathering tools
+      - name: Poll & Voting Systems
+        description: Opinion polling platforms
+      - name: Live Streaming Communication
+        description: Real-time broadcast interaction
+      - name: Webinar Platforms
+        description: Online seminar and presentation hosting
+      - name: Virtual Events
+        description: Online conference and meetup platforms
+      - name: Online Meeting Scheduling
+        description: Calendar coordination tools
+      - name: Contact Management
+        description: Address book and contact organization
+      - name: Unified Communications
+        description: Integrated voice, video, and messaging
+      - name: Call Center Software
+        description: Customer service phone systems
+      - name: IVR Systems
+        description: Interactive voice response platforms
+      - name: Call Recording
+        description: Voice call capture and storage
+      - name: Transcription Services
+        description: Audio to text conversion
+      - name: Translation Communication
+        description: Multi-language messaging tools
+      - name: Deaf & Hard of Hearing Communication
+        description: Accessibility communication tools
+      - name: Emergency Alerts
+        description: Crisis notification systems
+      - name: Mass Notification
+        description: Bulk communication platforms
+      - name: Newsletter Platforms
+        description: Email newsletter creation and distribution
+      - name: Announcement Systems
+        description: Official communication channels
+      - name: Social Media Management
+        description: Multi-platform posting and scheduling
+      - name: Social Listening
+        description: Brand mention and sentiment tracking
+      - name: Influencer Communication
+        description: Creator relationship management
+      - name: Fan Engagement
+        description: Audience interaction platforms
+      - name: Alumni Networks
+        description: Graduate community platforms
+      - name: Association Communication
+        description: Member organization messaging
+      - name: Church Communication
+        description: Religious community messaging
+      - name: Parent-Teacher Communication
+        description: School family engagement
+      - name: Healthcare Messaging
+        description: Patient-provider communication
+      - name: Legal Communication
+        description: Attorney-client secure messaging
+      - name: Investor Relations
+        description: Shareholder communication platforms
+      - name: Press Release Distribution
+        description: Media announcement services
+      - name: Crisis Communication
+        description: Emergency response messaging
+      - name: Async Video Messaging
+        description: Recorded video message platforms
+      - name: Voice Messaging
+        description: Audio message and voicemail systems
+      - name: Encrypted Messaging
+        description: Secure end-to-end communication
+      - name: Disappearing Messages
+        description: Self-destructing message platforms
+      - name: Group Communication
+        description: Team and group messaging coordination
+      - name: Broadcast Messaging
+        description: One-to-many message distribution
+      - name: Read Receipts & Analytics
+        description: Message delivery tracking
+
+  - name: Real Estate & Property
+    subdomains:
+      - name: Real Estate Listings
+        description: Property search and listing platforms
+      - name: Property Management
+        description: Landlord and tenant management tools
+      - name: Commercial Real Estate
+        description: Office and retail space management
+      - name: Home Rentals
+        description: Short-term and vacation rental platforms
+      - name: Real Estate Investment
+        description: Property investment and crowdfunding
+      - name: Mortgage Services
+        description: Home loan origination and servicing
+      - name: Home Inspection
+        description: Property assessment and reporting
+      - name: Interior Design
+        description: Home decoration and space planning
+      - name: Home Improvement
+        description: Renovation and contractor services
+      - name: Moving Services
+        description: Relocation and logistics support
+      - name: Real Estate CRM
+        description: Agent client relationship management
+      - name: Real Estate Marketing
+        description: Property marketing and listing promotion
+      - name: Virtual Tours
+        description: 3D property walkthrough tools
+      - name: Property Valuation
+        description: Automated property appraisal tools
+      - name: Real Estate Analytics
+        description: Market trends and pricing analysis
+      - name: Lease Management
+        description: Commercial and residential lease tracking
+      - name: Rent Collection
+        description: Tenant payment processing systems
+      - name: Tenant Screening
+        description: Background check and verification
+      - name: Maintenance Requests
+        description: Property repair ticket management
+      - name: HOA Management
+        description: Homeowner association software
+      - name: Condo Management
+        description: Condominium property operations
+      - name: Co-op Management
+        description: Housing cooperative administration
+      - name: Student Housing
+        description: University housing management
+      - name: Senior Living
+        description: Retirement community management
+      - name: Affordable Housing
+        description: Section 8 and subsidized housing
+      - name: Mixed-Use Development
+        description: Multi-purpose property management
+      - name: Industrial Real Estate
+        description: Warehouse and industrial property
+      - name: Land Development
+        description: Raw land and subdivision management
+      - name: Real Estate Syndication
+        description: Group investment property platforms
+      - name: REIT Management
+        description: Real estate investment trust operations
+      - name: Property Tax Management
+        description: Real estate tax tracking and appeals
+      - name: Title & Escrow
+        description: Title insurance and closing services
+      - name: Real Estate Closing
+        description: Transaction closing coordination
+      - name: Real Estate Document Management
+        description: Contract and document storage
+      - name: MLS Integration
+        description: Multiple listing service connections
+      - name: Real Estate Lead Generation
+        description: Buyer and seller lead capture
+      - name: Open House Management
+        description: Property showing scheduling
+      - name: Comparative Market Analysis
+        description: CMA report generation tools
+      - name: Real Estate Commission
+        description: Agent commission tracking
+      - name: Brokerage Management
+        description: Real estate brokerage operations
+      - name: Real Estate Team Management
+        description: Agent team coordination
+      - name: Property Insurance
+        description: Real estate insurance management
+      - name: Vacation Rental Management
+        description: Short-term rental property operations
+      - name: Property Renovation
+        description: Renovation project management
+      - name: Real Estate Photography
+        description: Property photo and video services
+      - name: Floor Plan Software
+        description: Property floor plan creation
+      - name: Building Management Systems
+        description: Commercial building automation
+      - name: Facilities Management
+        description: Property maintenance coordination
+      - name: Parking Management
+        description: Property parking operations
+      - name: Self-Storage Management
+        description: Storage facility operations
+      - name: Mobile Home Parks
+        description: Manufactured housing community management
+      - name: RV Parks & Campgrounds
+        description: Recreational property management
+      - name: Marina Property Management
+        description: Boat slip and marina operations
+
+  - name: Food & Beverage
+    subdomains:
+      - name: Restaurant Management
+        description: POS systems and kitchen operations
+      - name: Food Delivery
+        description: Meal delivery and logistics
+      - name: Catering Services
+        description: Event food service management
+      - name: Recipe Management
+        description: Meal planning and cooking tools
+      - name: Bar & Nightlife
+        description: Beverage service and venue management
+      - name: Ghost Kitchens
+        description: Delivery-only restaurant operations
+      - name: Food Trucks
+        description: Mobile food service management
+      - name: Restaurant Reservations
+        description: Table booking and waitlist management
+      - name: Menu Management
+        description: Digital menus and ordering systems
+      - name: Food Safety & Compliance
+        description: Health code tracking and certification
+      - name: Kitchen Display Systems
+        description: Order management for kitchens
+      - name: Restaurant POS
+        description: Point of sale for restaurants
+      - name: Online Ordering
+        description: Website and app ordering platforms
+      - name: Restaurant Inventory
+        description: Food and supply inventory tracking
+      - name: Restaurant Accounting
+        description: Restaurant financial management
+      - name: Restaurant Analytics
+        description: Sales and performance insights
+      - name: Staff Scheduling
+        description: Restaurant employee scheduling
+      - name: Tip Management
+        description: Gratuity distribution and tracking
+      - name: Table Management
+        description: Seating and floor plan optimization
+      - name: Waitlist Management
+        description: Queue and wait time management
+      - name: Customer Loyalty
+        description: Restaurant rewards programs
+      - name: Gift Cards
+        description: Restaurant gift card systems
+      - name: Multi-Location Restaurant
+        description: Chain restaurant management
+      - name: QSR Operations
+        description: Quick service restaurant software
+      - name: Fine Dining
+        description: Upscale restaurant management
+      - name: Coffee Shop Management
+        description: Cafe operations software
+      - name: Bakery Management
+        description: Bakery production and sales
+      - name: Ice Cream Shop
+        description: Frozen dessert shop operations
+      - name: Juice Bar Management
+        description: Juice and smoothie shop software
+      - name: Brewery Management
+        description: Craft brewery operations
+      - name: Winery Management
+        description: Wine production and tasting rooms
+      - name: Distillery Management
+        description: Spirits production operations
+      - name: Beverage Distribution
+        description: Drink wholesaler management
+      - name: Food Manufacturing
+        description: Food production facility software
+      - name: Commercial Kitchen Rental
+        description: Shared kitchen space management
+      - name: Food Truck Tracking
+        description: Mobile kitchen location and scheduling
+      - name: Meal Prep Services
+        description: Meal preparation business software
+      - name: Corporate Cafeteria
+        description: Workplace dining management
+      - name: School Food Service
+        description: K-12 meal program management
+      - name: Hospital Food Service
+        description: Healthcare dietary management
+      - name: Sports Venue Concessions
+        description: Stadium food service operations
+      - name: Catering Software
+        description: Event catering coordination
+      - name: Food Costing
+        description: Recipe cost calculation tools
+      - name: Menu Engineering
+        description: Menu profitability optimization
+      - name: Supplier Management
+        description: Food vendor relationships
+      - name: Food Waste Reduction
+        description: Waste tracking and prevention
+      - name: Allergen Management
+        description: Dietary restriction tracking
+      - name: Nutrition Labeling
+        description: Nutritional information calculation
+      - name: Food Photography
+        description: Menu photography services
+      - name: Restaurant Marketing
+        description: Food service promotion tools
+      - name: Review Management
+        description: Restaurant reputation monitoring
+      - name: Delivery Fleet Management
+        description: Restaurant delivery operations
+      - name: Third-Party Delivery Integration
+        description: Aggregator platform connections
+      - name: Virtual Brand Management
+        description: Ghost brand operations
+      - name: Commissary Kitchen
+        description: Central kitchen operations
+
+  - name: Travel & Hospitality
+    subdomains:
+      - name: Hotel Management
+        description: Hospitality operations and booking
+      - name: Vacation Rentals
+        description: Short-term accommodation platforms
+      - name: Travel Planning
+        description: Trip itinerary and booking tools
+      - name: Flight Booking
+        description: Airline ticket search and purchase
+      - name: Travel Insurance
+        description: Trip protection and coverage
+      - name: Tour Operations
+        description: Guided tour management and booking
+      - name: Destination Guides
+        description: Travel information and recommendations
+      - name: Luggage Services
+        description: Baggage storage and shipping
+      - name: Travel Expense Management
+        description: Business travel tracking and reimbursement
+      - name: Loyalty Programs
+        description: Travel rewards and points management
+      - name: Property Management Systems
+        description: Hotel PMS software solutions
+      - name: Channel Management
+        description: Multi-platform inventory distribution
+      - name: Revenue Management
+        description: Dynamic pricing and yield optimization
+      - name: Booking Engines
+        description: Direct reservation systems
+      - name: Central Reservations
+        description: Multi-property booking coordination
+      - name: Guest Experience Platforms
+        description: Personalized hospitality services
+      - name: Concierge Services
+        description: Guest assistance and recommendations
+      - name: Housekeeping Management
+        description: Room cleaning and maintenance scheduling
+      - name: Front Desk Systems
+        description: Check-in and reception operations
+      - name: Corporate Travel Management
+        description: Business travel booking and policy
+      - name: Travel Management Companies
+        description: TMC software and operations
+      - name: OTA Integration
+        description: Online travel agency connectivity
+      - name: GDS Systems
+        description: Global distribution system access
+      - name: Metasearch Integration
+        description: Price comparison platform feeds
+      - name: Bed & Breakfast Software
+        description: Small inn management tools
+      - name: Hostel Management
+        description: Budget accommodation operations
+      - name: Boutique Hotel Software
+        description: Unique property management
+      - name: Resort Management
+        description: Full-service destination operations
+      - name: Glamping & Eco-Lodges
+        description: Alternative accommodation platforms
+      - name: Timeshare Management
+        description: Vacation ownership administration
+      - name: Cruise Line Operations
+        description: Cruise ship booking and management
+      - name: River Cruise Software
+        description: Inland waterway cruise operations
+      - name: Yacht Charter
+        description: Private boat rental platforms
+      - name: Airport Services
+        description: Terminal and passenger operations
+      - name: Airline Operations
+        description: Carrier management systems
+      - name: Private Aviation
+        description: Charter and jet management
+      - name: Airport Lounges
+        description: Premium waiting area management
+      - name: Ground Transportation
+        description: Airport transfer services
+      - name: Travel Visa Services
+        description: Immigration document assistance
+      - name: Travel Document Management
+        description: Passport and ID organization
+      - name: Trip Sharing Platforms
+        description: Group travel coordination
+      - name: Solo Travel Services
+        description: Independent traveler support
+      - name: Adventure Travel
+        description: Outdoor and extreme tourism
+      - name: Ecotourism Platforms
+        description: Sustainable travel experiences
+      - name: Cultural Tourism
+        description: Heritage and arts travel
+      - name: Medical Tourism
+        description: Healthcare travel coordination
+      - name: Wellness Tourism
+        description: Spa and health retreat travel
+      - name: Food & Wine Tourism
+        description: Culinary travel experiences
+      - name: Sports Tourism
+        description: Athletic event travel packages
+      - name: Religious Tourism
+        description: Pilgrimage and spiritual travel
+      - name: Business Event Travel
+        description: Conference and meeting travel
+      - name: Incentive Travel
+        description: Corporate reward trip management
+      - name: Group Tour Software
+        description: Multi-traveler coordination tools
+      - name: Self-Guided Tours
+        description: Audio and mobile tour apps
+      - name: Travel Photography
+        description: Destination photo services
+      - name: Travel Content Platforms
+        description: Review and blog aggregation
+      - name: Travel Influencer Tools
+        description: Content creator travel platforms
+      - name: Currency Exchange
+        description: Foreign money conversion services
+      - name: Travel SIM & Connectivity
+        description: International phone and data
+      - name: Travel Safety & Alerts
+        description: Destination risk monitoring
+      - name: Trip Cancellation
+        description: Booking modification and refunds
+      - name: Lost & Found Services
+        description: Traveler item recovery systems
+      - name: Airport Parking
+        description: Long-term vehicle storage
+      - name: Pet Travel Services
+        description: Animal transportation coordination
+
+  - name: Transportation & Logistics
+    subdomains:
+      - name: Ridesharing
+        description: Peer-to-peer transportation services
+      - name: Package Delivery
+        description: Courier and shipping services
+      - name: Freight & Logistics
+        description: Commercial transportation management
+      - name: Fleet Management
+        description: Vehicle tracking and maintenance
+      - name: Parking Services
+        description: Parking space finding and payment
+      - name: Public Transit
+        description: Bus, train, and metro systems
+      - name: Bike Sharing
+        description: Bicycle rental networks
+      - name: Scooter Sharing
+        description: Electric scooter rental services
+      - name: Car Rentals
+        description: Vehicle rental platforms
+      - name: Route Optimization
+        description: Delivery and travel route planning
+      - name: Last Mile Delivery
+        description: Final delivery leg optimization
+      - name: Trucking Management
+        description: Trucking company operations software
+      - name: Freight Brokerage
+        description: Freight broker matching platforms
+      - name: Load Boards
+        description: Freight load matching marketplaces
+      - name: Dispatch Software
+        description: Driver dispatch and assignment
+      - name: Driver Management
+        description: Driver scheduling and compliance
+      - name: Hours of Service
+        description: HOS and ELD compliance tracking
+      - name: Fuel Management
+        description: Fleet fuel tracking and optimization
+      - name: Vehicle Telematics
+        description: GPS and vehicle data analytics
+      - name: Trailer Tracking
+        description: Trailer location and utilization
+      - name: Cold Chain Logistics
+        description: Temperature-controlled shipping
+      - name: Warehouse Management
+        description: Warehouse operations software
+      - name: Yard Management
+        description: Loading dock and yard coordination
+      - name: Cross-Docking
+        description: Direct transfer logistics
+      - name: Intermodal Transportation
+        description: Multi-mode freight coordination
+      - name: Rail Freight
+        description: Railroad shipping management
+      - name: Air Cargo
+        description: Air freight management systems
+      - name: Ocean Freight
+        description: Maritime shipping platforms
+      - name: Customs Brokerage
+        description: Import/export customs clearance
+      - name: Trade Compliance
+        description: International trade regulations
+      - name: Transportation Procurement
+        description: Carrier rate shopping and bidding
+      - name: Freight Auditing
+        description: Shipping invoice verification
+      - name: Carrier Management
+        description: Carrier onboarding and performance
+      - name: Shipping Insurance
+        description: Cargo insurance management
+      - name: Proof of Delivery
+        description: Delivery confirmation systems
+      - name: Returns Logistics
+        description: Reverse logistics management
+      - name: White Glove Delivery
+        description: Premium delivery services
+      - name: Medical Courier
+        description: Healthcare specimen transport
+      - name: Legal Courier
+        description: Legal document delivery services
+      - name: Food Delivery Logistics
+        description: Restaurant delivery coordination
+      - name: Grocery Delivery
+        description: Grocery fulfillment logistics
+      - name: Furniture Delivery
+        description: Large item delivery management
+      - name: Appliance Delivery
+        description: Major appliance installation delivery
+      - name: Moving & Relocation
+        description: Moving company operations
+      - name: Self-Service Moving
+        description: Portable storage container logistics
+      - name: Towing Services
+        description: Tow truck dispatch management
+      - name: Roadside Assistance
+        description: Emergency roadside service dispatch
+      - name: Bus Operations
+        description: Bus company management software
+      - name: School Bus Transportation
+        description: Student transportation logistics
+      - name: Charter Bus Services
+        description: Bus charter booking and operations
+      - name: Taxi & Limousine
+        description: Taxi dispatch and management
+      - name: Medical Transportation
+        description: Non-emergency medical transport
+      - name: Paratransit Services
+        description: Accessible transportation services
+      - name: Shuttle Services
+        description: Airport and corporate shuttles
+      - name: Microtransit
+        description: On-demand public transit
+      - name: Autonomous Vehicle Fleet
+        description: Self-driving vehicle operations
+      - name: Drone Delivery
+        description: UAV delivery logistics
+      - name: Bicycle Courier
+        description: Bike messenger dispatch
+      - name: Pipeline Transportation
+        description: Pipeline logistics management
+      - name: Bulk Cargo
+        description: Bulk material shipping
+
+  - name: Human Resources
+    subdomains:
+      - name: Applicant Tracking
+        description: Recruitment and hiring workflows
+      - name: Employee Onboarding
+        description: New hire training and setup
+      - name: Performance Management
+        description: Employee reviews and goal tracking
+      - name: Benefits Administration
+        description: Health insurance and perks management
+      - name: Workforce Scheduling
+        description: Shift planning and time management
+      - name: Internal Communications
+        description: Company announcements and updates
+      - name: Employee Engagement
+        description: Culture and satisfaction monitoring
+      - name: Learning & Development
+        description: Skills training and career growth
+      - name: HR Analytics
+        description: Workforce data and reporting
+      - name: Compliance Management
+        description: HR policy and legal requirement tracking
+      - name: Recruiting Software
+        description: Full-cycle recruitment platforms
+      - name: Candidate Sourcing
+        description: Talent pipeline and outreach tools
+      - name: Interview Scheduling
+        description: Candidate interview coordination
+      - name: Video Interviewing
+        description: Recorded and live video interviews
+      - name: Assessment Tools
+        description: Pre-employment testing platforms
+      - name: Reference Checking
+        description: Employment reference verification
+      - name: Offer Management
+        description: Job offer creation and tracking
+      - name: HRIS Systems
+        description: Human resources information systems
+      - name: Employee Self-Service
+        description: Employee HR portal platforms
+      - name: Time & Attendance
+        description: Clock-in and attendance tracking
+      - name: Leave Management
+        description: PTO and absence tracking
+      - name: Payroll Processing
+        description: Salary calculation and distribution
+      - name: Compensation Management
+        description: Salary planning and equity analysis
+      - name: Commission Tracking
+        description: Sales compensation management
+      - name: Expense Reimbursement
+        description: Employee expense processing
+      - name: 401k Administration
+        description: Retirement plan management
+      - name: Health Benefits
+        description: Medical and dental plan administration
+      - name: Open Enrollment
+        description: Benefits enrollment periods
+      - name: FSA & HSA Administration
+        description: Flexible spending account management
+      - name: COBRA Administration
+        description: Continuation coverage management
+      - name: Workers Comp Management
+        description: Workplace injury claims
+      - name: Employee Recognition
+        description: Awards and recognition programs
+      - name: Pulse Surveys
+        description: Quick employee feedback collection
+      - name: Annual Reviews
+        description: Yearly performance evaluation
+      - name: 360 Feedback
+        description: Multi-source performance feedback
+      - name: Goal Management
+        description: Employee goal setting and tracking
+      - name: Succession Planning
+        description: Leadership pipeline planning
+      - name: Career Pathing
+        description: Employee career development planning
+      - name: Skills Management
+        description: Employee competency tracking
+      - name: Training Management
+        description: Employee training programs
+      - name: Certification Tracking
+        description: Professional certification management
+      - name: Mentorship Programs
+        description: Employee mentoring coordination
+      - name: Employee Directory
+        description: Organizational contact database
+      - name: Org Chart Software
+        description: Organizational structure visualization
+      - name: Headcount Planning
+        description: Workforce planning and forecasting
+      - name: Diversity & Inclusion
+        description: DEI programs and metrics
+      - name: Employee Wellness
+        description: Wellness program management
+      - name: EAP Management
+        description: Employee assistance program coordination
+      - name: Exit Interviews
+        description: Departing employee feedback
+      - name: Offboarding
+        description: Employee separation processes
+      - name: Alumni Networks
+        description: Former employee engagement
+      - name: Contractor Management
+        description: Contingent workforce tracking
+      - name: Vendor Management
+        description: HR vendor and staffing agency coordination
+      - name: Background Screening
+        description: Criminal and employment background checks
+      - name: I-9 Verification
+        description: Employment eligibility verification
+      - name: E-Verify Integration
+        description: Federal work authorization verification
+      - name: Labor Relations
+        description: Union and collective bargaining
+      - name: Grievance Management
+        description: Employee complaint handling
+      - name: Workplace Safety
+        description: OSHA compliance and safety programs
+      - name: HR Case Management
+        description: Employee relations case tracking
+      - name: Policy Management
+        description: HR policy creation and distribution
+      - name: Handbook Builder
+        description: Employee handbook creation
+      - name: HR Document Management
+        description: Personnel file storage
+      - name: HR Reporting
+        description: Workforce analytics and reports
+      - name: People Analytics
+        description: Advanced HR data insights
+      - name: Turnover Analysis
+        description: Employee retention analytics
+      - name: Compensation Benchmarking
+        description: Market salary comparison tools
+
+  - name: Marketing & Advertising
+    subdomains:
+      - name: CRM Systems
+        description: Customer relationship management
+      - name: Email Marketing
+        description: Email campaign creation and sending
+      - name: Social Media Marketing
+        description: Social platform content and advertising
+      - name: SEO Tools
+        description: Search engine optimization software
+      - name: Content Marketing
+        description: Blog and content strategy management
+      - name: Marketing Automation
+        description: Multi-channel campaign automation
+      - name: Analytics & Reporting
+        description: Marketing performance measurement
+      - name: Influencer Marketing
+        description: Creator partnership management
+      - name: Affiliate Marketing
+        description: Partner referral tracking
+      - name: Survey & Feedback
+        description: Customer feedback collection
+      - name: A/B Testing
+        description: Conversion optimization experiments
+      - name: Video Marketing
+        description: Video content creation and distribution
+      - name: Event Marketing
+        description: Conference and event promotion
+      - name: Brand Management
+        description: Brand asset and guideline management
+      - name: Public Relations
+        description: Media relations and press management
+      - name: Account-Based Marketing
+        description: Targeted B2B marketing to specific accounts
+      - name: Demand Generation
+        description: Pipeline building and lead nurturing campaigns
+      - name: Lead Scoring
+        description: Prospect qualification and prioritization
+      - name: Marketing Attribution
+        description: Channel performance and ROI tracking
+      - name: Customer Data Platforms
+        description: Unified customer data management
+      - name: Marketing Operations
+        description: Marketing process and technology management
+      - name: Conversational Marketing
+        description: Chatbot and live chat marketing
+      - name: Competitive Intelligence
+        description: Market and competitor analysis tools
+      - name: Market Research
+        description: Consumer insights and survey platforms
+      - name: Product Marketing
+        description: Go-to-market strategy and positioning
+      - name: Partner Marketing
+        description: Co-marketing and channel partner campaigns
+      - name: Loyalty Programs
+        description: Customer reward and retention systems
+      - name: Referral Marketing
+        description: Customer referral program management
+      - name: Direct Mail
+        description: Physical mail campaign automation
+      - name: Display Advertising
+        description: Banner ads and programmatic display
+      - name: Native Advertising
+        description: Sponsored content and in-feed ads
+      - name: Retargeting
+        description: Behavioral remarketing campaigns
+      - name: Podcast Advertising
+        description: Audio ad placement and sponsorships
+      - name: Connected TV Advertising
+        description: OTT and streaming TV ad platforms
+      - name: Out-of-Home Advertising
+        description: Digital billboard and signage advertising
+      - name: Mobile Marketing
+        description: SMS, push notifications, and in-app marketing
+      - name: App Store Optimization
+        description: Mobile app discovery and ranking
+      - name: Voice Search Marketing
+        description: Voice assistant optimization
+      - name: Personalization Engines
+        description: Dynamic content customization
+      - name: Marketing Mix Modeling
+        description: Budget allocation optimization
+      - name: Sales Enablement
+        description: Marketing content for sales teams
+      - name: Customer Journey Mapping
+        description: Touchpoint analysis and optimization
+      - name: Intent Data
+        description: Buyer intent signal platforms
+      - name: Interactive Content
+        description: Quizzes, calculators, and assessments
+      - name: User-Generated Content
+        description: Customer content curation and promotion
+      - name: Review Management
+        description: Online reputation and review monitoring
+      - name: Local Marketing
+        description: Location-based marketing campaigns
+      - name: Franchise Marketing
+        description: Multi-location marketing management
+      - name: Cause Marketing
+        description: Social cause and purpose-driven campaigns
+      - name: Experiential Marketing
+        description: Brand experience and activation platforms
+      - name: Trade Show Marketing
+        description: Exhibition and conference promotion
+      - name: Webinar Platforms
+        description: Online event hosting and promotion
+      - name: Landing Page Builders
+        description: Campaign-specific page creation
+      - name: Form Builders
+        description: Lead capture and data collection forms
+      - name: Pop-up Tools
+        description: Website overlay and exit-intent tools
+      - name: Heat Mapping
+        description: User behavior visualization
+      - name: Session Recording
+        description: Website visitor session playback
+      - name: Marketing Calendar
+        description: Campaign planning and scheduling
+      - name: Creative Management
+        description: Ad creative production and versioning
+      - name: Digital Asset Distribution
+        description: Marketing material sharing portals
+      - name: Pricing Optimization
+        description: Dynamic pricing and promotion testing
+      - name: Coupon Management
+        description: Discount code creation and tracking
+      - name: Gift Card Platforms
+        description: Branded gift card programs
+      - name: Subscription Marketing
+        description: Recurring revenue marketing strategies
+      - name: Win-Back Campaigns
+        description: Churned customer re-engagement
+
+  - name: Content & Media
+    subdomains:
+      - name: CMS Platforms
+        description: Content management systems
+      - name: Website Builders
+        description: No-code website creation tools
+      - name: Blogging Platforms
+        description: Blog publishing and hosting
+      - name: Digital Asset Management
+        description: Media file organization and storage
+      - name: Video Streaming
+        description: Live and on-demand video platforms
+      - name: Podcast Hosting
+        description: Audio content distribution
+      - name: Photo Sharing
+        description: Image hosting and galleries
+      - name: Music Streaming
+        description: Audio streaming services
+      - name: E-book Publishing
+        description: Digital book creation and distribution
+      - name: News & Media
+        description: Journalism and news platforms
+      - name: Headless CMS
+        description: API-first content management systems
+      - name: Content Personalization
+        description: Dynamic content delivery based on user behavior
+      - name: Content Localization
+        description: Multi-language content management
+      - name: Content Scheduling
+        description: Automated content publishing timing
+      - name: Content Analytics
+        description: Content performance measurement tools
+      - name: Content Collaboration
+        description: Team content creation workflows
+      - name: Content Approval Workflows
+        description: Editorial review and sign-off systems
+      - name: Content Syndication
+        description: Content distribution across multiple channels
+      - name: User-Generated Content
+        description: Community content moderation platforms
+      - name: Content Curation
+        description: Third-party content aggregation tools
+      - name: Content Repurposing
+        description: Multi-format content transformation
+      - name: Video Editing Tools
+        description: Online video creation and editing
+      - name: Image Editing Tools
+        description: Browser-based photo editing platforms
+      - name: Audio Editing Tools
+        description: Online audio production software
+      - name: Live Streaming Platforms
+        description: Real-time video broadcast services
+      - name: Webinar Platforms
+        description: Online presentation and event hosting
+      - name: Screen Recording
+        description: Screen capture and tutorial creation
+      - name: Transcription Services
+        description: Audio to text conversion platforms
+      - name: Closed Captioning
+        description: Video accessibility captioning tools
+      - name: Content Monetization
+        description: Creator revenue and paywall platforms
+      - name: Paywalls & Subscriptions
+        description: Premium content access management
+      - name: Content Licensing
+        description: Media rights and usage management
+      - name: Stock Media Marketplaces
+        description: Licensed photo, video, and audio sales
+      - name: 3D Content Creation
+        description: 3D modeling and rendering tools
+      - name: AR Content Creation
+        description: Augmented reality content tools
+      - name: VR Content Creation
+        description: Virtual reality content production
+      - name: Interactive Media
+        description: Clickable and branching content formats
+      - name: Data Visualization
+        description: Infographic and chart creation tools
+      - name: Content Migration
+        description: CMS data transfer and migration
+      - name: Content Backup
+        description: Content archival and recovery systems
+      - name: Content Delivery Networks
+        description: Global content distribution infrastructure
+      - name: Media Transcoding
+        description: Video and audio format conversion
+      - name: Content Tagging
+        description: Metadata and taxonomy management
+      - name: Content Search
+        description: Site search and content discovery
+      - name: Content Recommendation
+        description: AI-powered content suggestions
+      - name: Content Compliance
+        description: Copyright and legal content checking
+      - name: Content Moderation
+        description: Automated and manual content review
+      - name: Newsletter Publishing
+        description: Email newsletter creation and delivery
+      - name: Magazine Publishing
+        description: Digital magazine production platforms
+      - name: Academic Publishing
+        description: Scholarly journal management systems
+      - name: Corporate Communications
+        description: Internal content distribution platforms
+
+  - name: Infrastructure & Cloud
+    subdomains:
+      - name: Cloud Computing
+        description: Virtual server and infrastructure services
+      - name: Web Hosting
+        description: Website server hosting
+      - name: Domain Registration
+        description: Domain name services
+      - name: CDN Services
+        description: Content delivery networks
+      - name: Database Management
+        description: Database hosting and administration
+      - name: Backup & Recovery
+        description: Data backup and disaster recovery
+      - name: Server Monitoring
+        description: Infrastructure health tracking
+      - name: DevOps Tools
+        description: Development operations automation
+      - name: API Management
+        description: API gateway and developer tools
+      - name: Container Orchestration
+        description: Docker and Kubernetes management
+      - name: Serverless Computing
+        description: Function-as-a-service platforms
+      - name: Edge Computing
+        description: Distributed edge infrastructure
+      - name: Infrastructure as Code
+        description: Terraform and configuration management
+      - name: CI/CD Pipelines
+        description: Continuous integration and deployment
+      - name: Version Control Systems
+        description: Git hosting and repository management
+      - name: Log Management
+        description: Centralized logging and analysis
+      - name: Application Performance Monitoring
+        description: APM and distributed tracing
+      - name: Service Mesh
+        description: Microservices networking and observability
+      - name: Load Balancing
+        description: Traffic distribution and failover
+      - name: Auto-Scaling
+        description: Dynamic resource scaling platforms
+      - name: Cloud Cost Management
+        description: Cloud spending optimization tools
+      - name: Multi-Cloud Management
+        description: Cross-cloud infrastructure orchestration
+      - name: Hybrid Cloud
+        description: On-premise and cloud integration
+      - name: Platform as a Service
+        description: PaaS application hosting platforms
+      - name: Virtual Private Cloud
+        description: Isolated cloud network environments
+      - name: Container Registry
+        description: Docker image storage and distribution
+      - name: Secret Management
+        description: Credentials and secrets vault
+      - name: Configuration Management
+        description: Infrastructure configuration tools
+      - name: Feature Flags
+        description: Feature toggle and experimentation
+      - name: Chaos Engineering
+        description: System resilience testing tools
+      - name: Incident Management
+        description: On-call scheduling and alerting
+      - name: Status Pages
+        description: Public service status communication
+      - name: DNS Management
+        description: Domain name system administration
+      - name: SSL Certificate Management
+        description: TLS certificate lifecycle management
+      - name: Object Storage
+        description: S3-compatible blob storage
+      - name: Block Storage
+        description: Persistent disk storage services
+      - name: File Storage
+        description: Network file system services
+      - name: Database as a Service
+        description: Managed database platforms
+      - name: Message Queues
+        description: Async messaging and queue systems
+      - name: Event Streaming
+        description: Real-time event processing platforms
+      - name: Cache Services
+        description: Redis and in-memory caching
+      - name: Search Services
+        description: Elasticsearch and search infrastructure
+      - name: AI/ML Infrastructure
+        description: Machine learning compute platforms
+      - name: GPU Computing
+        description: Graphics processing cloud services
+      - name: Bare Metal Servers
+        description: Dedicated physical server hosting
+      - name: Colocation Services
+        description: Data center space and power
+      - name: Disaster Recovery
+        description: Cross-region failover and DR planning
+      - name: Network Automation
+        description: SDN and network orchestration
+      - name: VPN Services
+        description: Virtual private network infrastructure
+      - name: Proxy Services
+        description: Reverse proxy and traffic routing
+      - name: Developer Portals
+        description: API documentation and developer tools
+      - name: Test Environments
+        description: On-demand staging and test infrastructure
+
+  - name: Security & Privacy
+    subdomains:
+      - name: Cybersecurity
+        description: Threat detection and prevention
+      - name: Identity Management
+        description: User authentication and authorization
+      - name: Data Privacy
+        description: Privacy compliance and data protection
+      - name: Network Security
+        description: Firewall and network protection
+      - name: Endpoint Security
+        description: Device protection and monitoring
+      - name: Security Awareness Training
+        description: Employee security education
+      - name: Penetration Testing
+        description: Security vulnerability assessment
+      - name: Incident Response
+        description: Security breach management
+      - name: Compliance & Audit
+        description: Regulatory compliance tracking
+      - name: Encryption Services
+        description: Data encryption solutions
+      - name: Single Sign-On
+        description: Unified authentication platforms
+      - name: Multi-Factor Authentication
+        description: MFA and 2FA solutions
+      - name: Privileged Access Management
+        description: Admin and root access control
+      - name: Zero Trust Security
+        description: Zero trust architecture implementation
+      - name: Cloud Security
+        description: Cloud workload protection platforms
+      - name: Container Security
+        description: Docker and Kubernetes security
+      - name: Application Security
+        description: AppSec testing and vulnerability scanning
+      - name: API Security
+        description: API protection and threat detection
+      - name: Email Security
+        description: Phishing and spam protection
+      - name: Web Application Firewall
+        description: WAF and DDoS protection
+      - name: SIEM Solutions
+        description: Security event and incident management
+      - name: SOAR Platforms
+        description: Security orchestration and automation
+      - name: Threat Intelligence
+        description: Cyber threat data and analysis
+      - name: Vulnerability Management
+        description: Vulnerability scanning and remediation
+      - name: Bug Bounty Platforms
+        description: Crowdsourced security testing
+      - name: Security Operations Center
+        description: SOC as a service platforms
+      - name: Data Loss Prevention
+        description: DLP and data exfiltration prevention
+      - name: Secure File Sharing
+        description: Encrypted file transfer solutions
+      - name: Digital Rights Management
+        description: Content protection and licensing
+      - name: Privacy Management
+        description: GDPR and CCPA compliance tools
+      - name: Consent Management
+        description: Cookie consent and preference centers
+      - name: Data Discovery
+        description: Sensitive data identification
+      - name: Data Masking
+        description: Data anonymization and pseudonymization
+      - name: Secure Access Service Edge
+        description: SASE and secure network access
+      - name: Mobile Device Management
+        description: MDM and mobile security
+      - name: Browser Security
+        description: Secure browser and isolation
+      - name: Password Management
+        description: Enterprise password vaults
+      - name: Certificate Management
+        description: PKI and certificate lifecycle
+      - name: Hardware Security Modules
+        description: HSM and key management
+      - name: Fraud Prevention
+        description: Transaction fraud detection
+      - name: Bot Management
+        description: Bot detection and mitigation
+      - name: Account Takeover Prevention
+        description: Credential stuffing protection
+      - name: Insider Threat Detection
+        description: Internal threat monitoring
+      - name: Security Ratings
+        description: Third-party security assessment
+      - name: Vendor Risk Management
+        description: Supply chain security evaluation
+      - name: Security Compliance Automation
+        description: SOC 2 and compliance frameworks
+      - name: Digital Forensics
+        description: Cyber investigation tools
+      - name: Malware Analysis
+        description: Threat sample analysis platforms
+      - name: Deception Technology
+        description: Honeypots and decoy systems
+      - name: Network Detection & Response
+        description: NDR and traffic analysis
+      - name: Endpoint Detection & Response
+        description: EDR and threat hunting
+      - name: Extended Detection & Response
+        description: XDR unified security platforms
+      - name: Security Posture Management
+        description: CSPM and configuration monitoring
+      - name: Attack Surface Management
+        description: External attack surface discovery
+      - name: Breach & Attack Simulation
+        description: Continuous security validation
+      - name: Security Awareness Platforms
+        description: Phishing simulation and training
+      - name: Identity Governance
+        description: Identity lifecycle and access reviews
+      - name: Customer Identity Management
+        description: CIAM for consumer applications
+
+  - name: Data & Analytics
+    subdomains:
+      - name: Business Intelligence
+        description: Data analytics and reporting platforms
+      - name: Data Visualization
+        description: Chart and dashboard creation tools
+      - name: Predictive Analytics
+        description: Machine learning forecasting
+      - name: Customer Analytics
+        description: Customer behavior analysis
+      - name: Web Analytics
+        description: Website traffic and conversion tracking
+      - name: Mobile Analytics
+        description: App usage and performance tracking
+      - name: Product Analytics
+        description: Feature usage and adoption metrics
+      - name: Data Warehousing
+        description: Centralized data storage solutions
+      - name: ETL Tools
+        description: Data extraction and transformation
+      - name: Real-time Analytics
+        description: Live data processing and insights
+      - name: Data Integration
+        description: Data pipeline and integration platforms
+      - name: Data Catalog
+        description: Data asset discovery and documentation
+      - name: Data Quality
+        description: Data cleansing and validation tools
+      - name: Data Governance
+        description: Data policy and compliance management
+      - name: Master Data Management
+        description: Golden record and MDM platforms
+      - name: Metadata Management
+        description: Data lineage and metadata tracking
+      - name: Data Observability
+        description: Data pipeline monitoring and alerting
+      - name: Reverse ETL
+        description: Warehouse to operational systems sync
+      - name: Data Lakehouse
+        description: Unified analytics architecture
+      - name: Streaming Analytics
+        description: Real-time data stream processing
+      - name: Graph Analytics
+        description: Network and relationship analysis
+      - name: Text Analytics
+        description: Natural language processing and mining
+      - name: Sentiment Analysis
+        description: Opinion and emotion detection
+      - name: Location Analytics
+        description: Geospatial data analysis
+      - name: Marketing Analytics
+        description: Campaign and attribution analysis
+      - name: Sales Analytics
+        description: Pipeline and revenue analytics
+      - name: Financial Analytics
+        description: Financial data analysis platforms
+      - name: HR Analytics
+        description: Workforce and talent analytics
+      - name: Supply Chain Analytics
+        description: Logistics and inventory analysis
+      - name: Healthcare Analytics
+        description: Clinical and operational health data
+      - name: Retail Analytics
+        description: Store and shopper analysis
+      - name: IoT Analytics
+        description: Connected device data analysis
+      - name: Manufacturing Analytics
+        description: Production and quality analysis
+      - name: Energy Analytics
+        description: Utility and consumption analysis
+      - name: Social Media Analytics
+        description: Social platform data analysis
+      - name: Competitive Analytics
+        description: Market and competitor analysis
+      - name: Pricing Analytics
+        description: Price optimization and analysis
+      - name: Fraud Analytics
+        description: Fraud pattern detection
+      - name: Risk Analytics
+        description: Risk modeling and scoring
+      - name: Cohort Analysis
+        description: User behavior segmentation
+      - name: Funnel Analysis
+        description: Conversion path analysis
+      - name: A/B Test Analytics
+        description: Experiment analysis platforms
+      - name: Attribution Analytics
+        description: Multi-touch attribution modeling
+      - name: Customer 360
+        description: Unified customer view platforms
+      - name: Self-Service Analytics
+        description: Business user analytics tools
+      - name: Embedded Analytics
+        description: In-app analytics integration
+      - name: Data Storytelling
+        description: Narrative and insight communication
+      - name: Augmented Analytics
+        description: AI-powered insight generation
+      - name: Data Democratization
+        description: Enterprise data access platforms
+
+  - name: Gaming & Entertainment
+    subdomains:
+      - name: Video Game Development
+        description: Game creation and publishing
+      - name: Game Streaming
+        description: Live gaming broadcast platforms
+      - name: Esports
+        description: Competitive gaming platforms
+      - name: Game Distribution
+        description: Digital game marketplaces
+      - name: Gaming Communities
+        description: Player social networks
+      - name: In-game Advertising
+        description: Gaming ad networks
+      - name: Game Analytics
+        description: Player behavior tracking
+      - name: Virtual Reality Gaming
+        description: VR game experiences
+      - name: Mobile Gaming
+        description: Smartphone and tablet games
+      - name: Cloud Gaming
+        description: Streaming game services
+      - name: Game Engine Development
+        description: Game development frameworks and tools
+      - name: Game Monetization
+        description: In-app purchases and revenue optimization
+      - name: Gaming Hardware
+        description: Controllers, peripherals, and accessories
+      - name: Game Localization
+        description: Multi-language game translation
+      - name: Game QA & Testing
+        description: Bug testing and quality assurance
+      - name: Game Art & Design
+        description: Visual asset creation and design
+      - name: Game Audio
+        description: Sound effects and music composition
+      - name: Game Marketing
+        description: Game promotion and user acquisition
+      - name: Gaming Tournaments
+        description: Tournament organization and brackets
+      - name: Gaming Guilds & Clans
+        description: Team management and coordination
+      - name: Game Modding
+        description: User-generated content and modifications
+      - name: Gaming Influencer Platforms
+        description: Gaming content creator tools
+      - name: Game Streaming Tools
+        description: Broadcasting software and overlays
+      - name: Gaming Subscription Services
+        description: Game pass and subscription management
+      - name: Retro Gaming
+        description: Classic game emulation and preservation
+      - name: Casual Gaming
+        description: Puzzle and hyper-casual games
+      - name: Idle & Clicker Games
+        description: Incremental game mechanics
+      - name: Battle Royale
+        description: Last-player-standing game mode platforms
+      - name: MMO Management
+        description: Massively multiplayer game operations
+      - name: Game Server Hosting
+        description: Dedicated gaming server infrastructure
+      - name: Anti-Cheat Systems
+        description: Cheat detection and prevention
+      - name: Game Matchmaking
+        description: Player matching and lobby systems
+      - name: Game Leaderboards
+        description: Ranking and achievement systems
+      - name: Gaming Social Features
+        description: Friends, chat, and party systems
+      - name: Game Save Systems
+        description: Cloud save and progress sync
+      - name: Gaming Accessibility
+        description: Inclusive gaming features and tools
+      - name: AR Gaming
+        description: Augmented reality game experiences
+      - name: Educational Gaming
+        description: Learning through game mechanics
+      - name: Fitness Gaming
+        description: Exercise-based gaming platforms
+      - name: Gambling & Casino Gaming
+        description: Online casino and betting games
+      - name: Fantasy Sports Gaming
+        description: Daily fantasy and sports prediction
+      - name: Board Game Digital
+        description: Digital board and tabletop games
+      - name: Card Game Platforms
+        description: Digital collectible card games
+      - name: Racing Games
+        description: Vehicle racing game platforms
+      - name: Sports Simulation Games
+        description: Sports franchise and management games
+      - name: Strategy Gaming
+        description: Turn-based and real-time strategy
+      - name: Sandbox Games
+        description: Open-world creative gaming
+      - name: Game Asset Marketplaces
+        description: Trading in-game items and NFTs
+      - name: Game Analytics & Insights
+        description: Player engagement and retention analysis
+      - name: LiveOps Tools
+        description: Live game operations and events
+      - name: Player Support Systems
+        description: Gaming customer service platforms
+
+  - name: Media & Entertainment
+    subdomains:
+      - name: Streaming Entertainment
+        description: On-demand video platforms
+      - name: Music Production
+        description: Audio recording and editing software
+      - name: Event Ticketing
+        description: Concert and event ticket sales
+      - name: Movie Production
+        description: Film creation and distribution
+      - name: Live Events
+        description: Concert and performance platforms
+      - name: Fan Engagement
+        description: Artist and fan interaction tools
+      - name: Talent Management
+        description: Artist booking and representation
+      - name: Theater Management
+        description: Stage performance operations
+      - name: Audio Equipment Rental
+        description: Sound system rental services
+      - name: Photography Services
+        description: Professional photo shoots and editing
+      - name: Animation Studios
+        description: Animated content production
+      - name: Visual Effects Studios
+        description: VFX and CGI production services
+      - name: Post-Production Services
+        description: Video editing and finishing
+      - name: Sound Design Studios
+        description: Audio post-production and mixing
+      - name: Voice Over Services
+        description: Voice talent and recording studios
+      - name: Music Licensing
+        description: Music rights and sync licensing
+      - name: Music Distribution
+        description: Digital music release platforms
+      - name: Artist Management Software
+        description: Music artist career management
+      - name: Record Label Operations
+        description: Music label business management
+      - name: Concert Promotion
+        description: Live event promotion platforms
+      - name: Venue Management
+        description: Entertainment venue operations
+      - name: Festival Management
+        description: Music and arts festival coordination
+      - name: Backstage Management
+        description: Backstage operations and logistics
+      - name: Merchandise Management
+        description: Artist merch sales and inventory
+      - name: Royalty Management
+        description: Music royalty tracking and distribution
+      - name: Music Publishing
+        description: Song rights and publishing admin
+      - name: Casting Services
+        description: Actor and talent casting platforms
+      - name: Script Management
+        description: Screenplay tracking and collaboration
+      - name: Production Scheduling
+        description: Film and TV production planning
+      - name: Location Scouting
+        description: Filming location management
+      - name: Film Distribution
+        description: Movie distribution and licensing
+      - name: Box Office Management
+        description: Theater ticketing and revenue tracking
+      - name: Cinema Operations
+        description: Movie theater management
+      - name: Drive-In Theaters
+        description: Outdoor cinema operations
+      - name: Media Asset Management
+        description: Video and audio asset organization
+      - name: Rights Management
+        description: Content rights and licensing tracking
+      - name: Subtitle Management
+        description: Caption and subtitle creation
+      - name: Dubbing Services
+        description: Voice dubbing coordination
+      - name: Screening Room Software
+        description: Private viewing and review platforms
+      - name: Talent Booking
+        description: Entertainment talent scheduling
+      - name: Entertainment Insurance
+        description: Production insurance management
+      - name: Film Financing
+        description: Movie funding and investment platforms
+      - name: Entertainment Law
+        description: Legal services for entertainment industry
+      - name: Award Show Management
+        description: Award ceremony coordination
+
+  - name: Sports & Fitness
+    subdomains:
+      - name: Youth Sports
+        description: Kids sports league management
+      - name: Professional Sports
+        description: Pro team operations and analytics
+      - name: Fantasy Sports
+        description: Fantasy league platforms
+      - name: Sports Betting
+        description: Wagering and odds platforms
+      - name: Gym Management
+        description: Fitness facility operations
+      - name: Personal Training
+        description: One-on-one fitness coaching
+      - name: Sports Equipment Rental
+        description: Gear rental services
+      - name: Athlete Performance
+        description: Training and analytics for athletes
+      - name: Sports Streaming
+        description: Live sports broadcast platforms
+      - name: Team Management
+        description: Roster and schedule coordination
+      - name: Sports Medicine
+        description: Athletic injury treatment and prevention
+      - name: Sports Nutrition
+        description: Athletic diet and supplement planning
+      - name: Fitness Tracking Apps
+        description: Workout and exercise logging
+      - name: Wearable Fitness Devices
+        description: Fitness tracker and smartwatch platforms
+      - name: Group Fitness Classes
+        description: Class scheduling and management
+      - name: Yoga Studios
+        description: Yoga studio management software
+      - name: Pilates Studios
+        description: Pilates class and equipment management
+      - name: Martial Arts Schools
+        description: Dojo and martial arts management
+      - name: CrossFit Gyms
+        description: CrossFit box management software
+      - name: Boutique Fitness Studios
+        description: Specialty fitness studio operations
+      - name: Swimming & Aquatics
+        description: Pool and swim school management
+      - name: Golf Course Management
+        description: Golf facility operations and tee times
+      - name: Tennis Club Management
+        description: Tennis court booking and leagues
+      - name: Bowling Alley Management
+        description: Bowling center operations
+      - name: Skating Rink Management
+        description: Ice and roller rink operations
+      - name: Climbing Gym Management
+        description: Rock climbing facility software
+      - name: Ski Resort Management
+        description: Ski area operations and lifts
+      - name: Sports League Management
+        description: Recreational league coordination
+      - name: Tournament Management
+        description: Sports tournament brackets and scheduling
+      - name: Referee & Official Management
+        description: Sports official scheduling and payment
+      - name: Sports Scouting
+        description: Athlete recruitment and evaluation
+      - name: Sports Video Analysis
+        description: Game film and performance review
+      - name: Sports Scheduling Software
+        description: Game and practice scheduling
+      - name: Athletic Scholarship Management
+        description: College sports recruiting platforms
+      - name: Sports Facility Booking
+        description: Field and court reservation systems
+      - name: Sports Retail
+        description: Athletic gear and apparel sales
+      - name: Fitness Apparel
+        description: Activewear and workout clothing
+      - name: Sports Photography
+        description: Team and action photography services
+      - name: Sports Media Rights
+        description: Broadcasting rights management
+      - name: Athletic Training Software
+        description: Strength and conditioning programs
+      - name: Recovery & Rehabilitation
+        description: Post-workout and injury recovery
+      - name: Sports Psychology
+        description: Mental performance coaching
+      - name: Running Clubs
+        description: Running group management
+      - name: Cycling Clubs
+        description: Cycling group and event coordination
+      - name: Triathlon Management
+        description: Multi-sport event coordination
+      - name: Adventure Sports
+        description: Extreme sports and outdoor activities
+      - name: Water Sports
+        description: Surfing, kayaking, and paddleboarding
+      - name: Combat Sports
+        description: Boxing, MMA, and wrestling management
+      - name: Equestrian Sports
+        description: Horse riding and competition management
+      - name: Motorsports Management
+        description: Racing team and event coordination
+      - name: Sports Sponsorship
+        description: Athletic sponsorship management
+      - name: Sports Memorabilia
+        description: Collectibles and merchandise authentication
+      - name: Stadium Operations
+        description: Sports venue management
+      - name: Ticketing & Access Control
+        description: Sports event ticketing systems
+      - name: Fan Experience
+        description: In-venue entertainment and engagement
+      - name: Sports Data & Statistics
+        description: Athletic performance data platforms
+      - name: Athlete NIL Management
+        description: Name, image, likeness deal platforms
+      - name: Sports Agent Software
+        description: Agent and representation management
+      - name: Sports Compliance
+        description: NCAA and athletic compliance tracking
+
+  - name: Fashion & Style
+    subdomains:
+      - name: Fashion Design
+        description: Clothing design and creation tools
+      - name: Personal Styling
+        description: Fashion advice and outfit planning
+      - name: Wardrobe Management
+        description: Closet organization tools
+      - name: Custom Clothing
+        description: Made-to-order apparel services
+      - name: Fashion Rental
+        description: Clothing rental and subscription
+      - name: Resale & Consignment
+        description: Second-hand fashion marketplaces
+      - name: Sustainable Fashion
+        description: Eco-friendly clothing platforms
+      - name: Fashion Photography
+        description: Product and editorial photo services
+      - name: Textile Manufacturing
+        description: Fabric production and sourcing
+      - name: Fashion Events
+        description: Fashion show and event management
+
+  - name: Agriculture & Farming
+    subdomains:
+      - name: Crop Management
+        description: Farm planning and yield optimization
+      - name: Livestock Tracking
+        description: Animal health and location monitoring
+      - name: Agricultural Equipment
+        description: Farm machinery and tools
+      - name: Precision Agriculture
+        description: Data-driven farming techniques
+      - name: Farm-to-Table
+        description: Direct farmer to consumer sales
+      - name: Agricultural Finance
+        description: Farm loans and insurance
+      - name: Supply Chain Management
+        description: Agricultural logistics and distribution
+      - name: Organic Farming
+        description: Sustainable agriculture practices
+      - name: Hydroponics & Vertical Farming
+        description: Indoor and soil-less farming
+      - name: Agricultural Marketplaces
+        description: Commodity trading platforms
+
+  - name: Construction & Engineering
+    subdomains:
+      - name: Residential Construction
+        description: Home building and renovation
+      - name: Commercial Construction
+        description: Office and retail building
+      - name: Project Management
+        description: Construction planning and tracking
+      - name: Building Materials
+        description: Material sourcing and supply
+      - name: Heavy Equipment
+        description: Construction machinery rental
+      - name: Architecture Services
+        description: Building design and planning
+      - name: Engineering Services
+        description: Structural and civil engineering
+      - name: Contractor Management
+        description: Subcontractor coordination
+      - name: Safety & Compliance
+        description: Construction site safety tracking
+      - name: Blueprint Management
+        description: Design document storage and sharing
+
+  - name: Manufacturing & Production
+    subdomains:
+      - name: Manufacturing Operations
+        description: Factory production management
+      - name: Quality Control
+        description: Product inspection and testing
+      - name: Inventory Management
+        description: Parts and materials tracking
+      - name: Supply Chain Planning
+        description: Production scheduling and logistics
+      - name: Equipment Maintenance
+        description: Machinery servicing and tracking
+      - name: Industrial IoT
+        description: Connected factory sensors
+      - name: 3D Printing
+        description: Additive manufacturing services
+      - name: Assembly Line Automation
+        description: Robotic production systems
+      - name: Warehouse Management
+        description: Storage and fulfillment operations
+      - name: Product Lifecycle Management
+        description: Design to retirement tracking
+
+  - name: Energy & Utilities
+    subdomains:
+      - name: Energy Management
+        description: Energy usage monitoring and optimization
+      - name: Solar Power
+        description: Solar panel installation and management
+      - name: Wind Energy
+        description: Wind turbine operations
+      - name: Electric Vehicle Charging
+        description: EV charging infrastructure
+      - name: Battery Storage
+        description: Energy storage systems
+      - name: Smart Grid
+        description: Electrical grid optimization
+      - name: Oil & Gas
+        description: Fossil fuel exploration and production
+      - name: Energy Trading
+        description: Commodity energy markets
+      - name: Carbon Tracking
+        description: Emissions monitoring and offsetting
+      - name: Energy Efficiency
+        description: Building energy optimization
+
+  - name: Environmental & Sustainability
+    subdomains:
+      - name: Waste Management
+        description: Trash collection and disposal
+      - name: Recycling Services
+        description: Material recovery and processing
+      - name: Water Treatment
+        description: Water purification and distribution
+      - name: Air Quality Monitoring
+        description: Pollution tracking and reporting
+      - name: Environmental Compliance
+        description: Regulatory requirement tracking
+      - name: Sustainability Consulting
+        description: Corporate environmental strategy
+      - name: Wildlife Conservation
+        description: Species protection and tracking
+      - name: Forestry Management
+        description: Forest resource management
+      - name: Climate Monitoring
+        description: Weather and climate data collection
+      - name: Green Building
+        description: Sustainable construction practices
+
+  - name: Legal & Compliance
+    subdomains:
+      - name: Courts & Justice
+        description: Legal case management systems
+      - name: Law Practice Management
+        description: Law firm operations software
+      - name: Legal Research
+        description: Case law and statute databases
+      - name: Contract Management
+        description: Contract creation and tracking
+      - name: E-discovery
+        description: Digital evidence collection
+      - name: Legal Document Automation
+        description: Form and template generation
+      - name: Compliance Tracking
+        description: Regulatory requirement management
+      - name: Intellectual Property
+        description: Patent and trademark management
+      - name: Legal Billing
+        description: Time tracking and invoicing for lawyers
+      - name: Online Dispute Resolution
+        description: Digital mediation and arbitration
+
+  - name: Government & Public Sector
+    subdomains:
+      - name: Public Safety
+        description: Emergency services coordination
+      - name: Smart Cities
+        description: Urban infrastructure management
+      - name: Citizen Services
+        description: Government service delivery platforms
+      - name: Voting Systems
+        description: Election and ballot management
+      - name: Permit Management
+        description: License and permit processing
+      - name: Public Records
+        description: Government document management
+      - name: Tax Collection
+        description: Municipal tax processing
+      - name: Transportation Planning
+        description: Urban transit and road planning
+      - name: Emergency Management
+        description: Disaster response coordination
+      - name: Code Enforcement
+        description: Municipal code violation tracking
+
+  - name: Nonprofit & Social Impact
+    subdomains:
+      - name: Nonprofit Management
+        description: Charity operations software
+      - name: Fundraising Platforms
+        description: Donation collection and management
+      - name: Volunteer Management
+        description: Volunteer recruitment and scheduling
+      - name: Grant Management
+        description: Grant application and tracking
+      - name: Donor Relations
+        description: Donor engagement and stewardship
+      - name: Impact Measurement
+        description: Social impact tracking and reporting
+      - name: Advocacy & Campaigns
+        description: Social cause promotion tools
+      - name: Community Organizing
+        description: Grassroots movement coordination
+      - name: Charity Marketplaces
+        description: Nonprofit discovery platforms
+      - name: Microfinance
+        description: Small loan platforms for underserved
+
+  - name: Religious & Spiritual
+    subdomains:
+      - name: Religious Organizations
+        description: Church and ministry management
+      - name: Online Worship
+        description: Virtual service streaming
+      - name: Member Management
+        description: Congregation tracking and engagement
+      - name: Donation Processing
+        description: Tithe and offering collection
+      - name: Event Planning
+        description: Religious event coordination
+      - name: Study Resources
+        description: Religious text study tools
+      - name: Community Outreach
+        description: Mission and service coordination
+      - name: Facility Management
+        description: Religious building operations
+      - name: Youth Programs
+        description: Youth group management
+      - name: Prayer & Meditation
+        description: Spiritual practice apps
+
+  - name: Research & Science
+    subdomains:
+      - name: Laboratory Management
+        description: Lab operations and sample tracking
+      - name: Research Collaboration
+        description: Scientific team coordination
+      - name: Grant Management
+        description: Research funding tracking
+      - name: Data Analysis
+        description: Scientific data processing
+      - name: Publication Management
+        description: Academic paper writing and submission
+      - name: Equipment Booking
+        description: Lab equipment reservation systems
+      - name: Chemical Inventory
+        description: Laboratory chemical tracking
+      - name: Experiment Logging
+        description: Research notebook and documentation
+      - name: Peer Review
+        description: Academic paper review systems
+      - name: Conference Management
+        description: Academic event organization
+
+  - name: Pets & Animals
+    subdomains:
+      - name: Veterinary Services
+        description: Animal healthcare management
+      - name: Pet Adoption
+        description: Animal rescue and adoption platforms
+      - name: Pet Sitting & Walking
+        description: Pet care service marketplaces
+      - name: Pet Grooming
+        description: Grooming appointment and management
+      - name: Pet Training
+        description: Animal behavior training tools
+      - name: Pet Health Insurance
+        description: Veterinary cost coverage
+      - name: Pet Supplies E-commerce
+        description: Pet product online retail
+      - name: Livestock Management
+        description: Farm animal tracking and health
+      - name: Equestrian Services
+        description: Horse care and stable management
+      - name: Exotic Pets
+        description: Specialized exotic animal care
+      - name: Pet Boarding
+        description: Overnight pet care facilities
+      - name: Pet Daycare
+        description: Daytime pet care services
+      - name: Pet Transportation
+        description: Animal transport and travel services
+      - name: Pet Photography
+        description: Professional animal photography
+      - name: Pet Food Delivery
+        description: Subscription pet food services
+      - name: Raw Pet Food
+        description: Raw diet pet food services
+      - name: Pet Nutrition
+        description: Animal dietary consulting
+      - name: Pet Weight Management
+        description: Animal obesity and diet programs
+      - name: Pet Dental Care
+        description: Animal dental health services
+      - name: Pet Rehabilitation
+        description: Animal physical therapy services
+      - name: Pet Hospice
+        description: End-of-life pet care services
+      - name: Pet Cremation
+        description: Animal remains cremation services
+      - name: Pet Burial
+        description: Pet cemetery and burial services
+      - name: Pet Memorial
+        description: Pet remembrance products and services
+      - name: Pet DNA Testing
+        description: Breed identification and health testing
+      - name: Pet Microchipping
+        description: Animal identification implants
+      - name: Lost Pet Services
+        description: Missing pet finding platforms
+      - name: Pet Registration
+        description: Animal licensing and registration
+      - name: Animal Shelters
+        description: Shelter management software
+      - name: Animal Rescue
+        description: Rescue organization platforms
+      - name: Foster Pet Networks
+        description: Temporary pet placement coordination
+      - name: Pet Behavioral Consulting
+        description: Animal behavior analysis services
+      - name: Service Animal Training
+        description: Assistance animal certification
+      - name: Therapy Animal Programs
+        description: Emotional support animal services
+      - name: Pet Breeding
+        description: Professional breeding management
+      - name: Kennel Management
+        description: Breeding facility operations
+      - name: Pet Show Management
+        description: Dog and cat show coordination
+      - name: Pet Competition Tracking
+        description: Animal competition records
+      - name: Aquarium Services
+        description: Fish tank maintenance and supplies
+      - name: Reptile Care
+        description: Reptile pet care services
+      - name: Bird Care
+        description: Avian pet care and supplies
+      - name: Small Animal Care
+        description: Hamster, rabbit, guinea pig care
+      - name: Farm Animal Veterinary
+        description: Large animal veterinary services
+      - name: Poultry Management
+        description: Chicken and poultry flock management
+      - name: Apiary Management
+        description: Beekeeping software and services
+      - name: Zoo Management
+        description: Zoological facility operations
+      - name: Wildlife Rehabilitation
+        description: Wild animal rescue and care
+      - name: Animal Sanctuary
+        description: Animal refuge operations
+      - name: Pet Insurance Claims
+        description: Insurance claim processing for pets
+      - name: Veterinary Telemedicine
+        description: Remote animal healthcare
+      - name: Veterinary Lab Services
+        description: Animal diagnostic testing
+      - name: Veterinary Pharmacy
+        description: Pet medication dispensing
+      - name: Veterinary Equipment
+        description: Animal healthcare equipment
+      - name: Veterinary Practice Management
+        description: Vet clinic operations software
+      - name: Veterinary Referral Networks
+        description: Specialist vet referral coordination
+      - name: Pet Subscription Boxes
+        description: Recurring pet product deliveries
+      - name: Pet Toys & Accessories
+        description: Pet product retail platforms
+      - name: Pet Furniture
+        description: Pet beds and furniture retail
+      - name: Pet Apparel
+        description: Pet clothing and costumes
+      - name: Pet Tech Devices
+        description: Smart collars and pet gadgets
+      - name: Pet Activity Trackers
+        description: Animal fitness monitoring devices
+      - name: Pet Cameras
+        description: Remote pet monitoring cameras
+      - name: Pet Feeders
+        description: Automated pet feeding devices
+      - name: Pet Doors
+        description: Smart pet door systems
+      - name: Pet Waste Management
+        description: Pet waste cleanup services
+
+  - name: Family & Childcare
+    subdomains:
+      - name: Childcare Management
+        description: Daycare operations software
+      - name: Nanny Services
+        description: In-home childcare marketplaces
+      - name: Family Scheduling
+        description: Household calendar and coordination
+      - name: Parenting Resources
+        description: Child development information
+      - name: Baby Products
+        description: Infant care product retail
+      - name: Pregnancy Tracking
+        description: Prenatal health monitoring
+      - name: Elder Care
+        description: Senior care coordination
+      - name: Family Tree & Genealogy
+        description: Ancestry research platforms
+      - name: Family Communication
+        description: Private family social networks
+      - name: Home Security
+        description: Residential security systems
+      - name: Babysitter Booking
+        description: On-demand babysitter marketplace
+      - name: Au Pair Services
+        description: Au pair placement and management
+      - name: Child Development Tracking
+        description: Milestone and growth monitoring
+      - name: Pediatric Health Tracking
+        description: Child health record management
+      - name: Child Activity Planning
+        description: Kids activity and class scheduling
+      - name: Summer Camp Management
+        description: Kids camp registration and operations
+      - name: After School Programs
+        description: After school care coordination
+      - name: Tutoring for Kids
+        description: Children's tutoring marketplace
+      - name: Special Needs Childcare
+        description: Special needs child care coordination
+      - name: Newborn Care Services
+        description: Postpartum support and doula services
+      - name: Lactation Services
+        description: Breastfeeding support and consulting
+      - name: Pediatric Dental
+        description: Children's dental care management
+      - name: Child Nutrition
+        description: Kids meal planning and nutrition
+      - name: Kids Clothing Resale
+        description: Children's clothing consignment
+      - name: Kids Equipment Rental
+        description: Baby gear rental services
+      - name: Child Safety Products
+        description: Child safety and monitoring products
+      - name: Parental Controls
+        description: Digital parenting and screen time
+      - name: Kids Social Activities
+        description: Playdate and social coordination
+      - name: Birthday Party Planning
+        description: Kids party planning services
+      - name: Family Photo Services
+        description: Family photography booking
+      - name: School Supplies
+        description: Educational supply management
+      - name: College Savings
+        description: 529 plan and education savings
+      - name: Child Custody Management
+        description: Co-parenting coordination tools
+      - name: Family Legal Services
+        description: Family law document preparation
+      - name: Adoption Services
+        description: Adoption process management
+      - name: Foster Care Management
+        description: Foster family coordination
+      - name: Surrogate Services
+        description: Surrogacy coordination platforms
+      - name: Fertility Tracking
+        description: Family planning and ovulation tracking
+      - name: Baby Registry Services
+        description: Baby shower gift registry
+      - name: Maternity Services
+        description: Pregnancy support and resources
+      - name: Postpartum Care
+        description: New mother support services
+      - name: Infant Sleep Training
+        description: Baby sleep coaching services
+      - name: Pediatric Therapy
+        description: Child therapy and counseling
+      - name: Speech Therapy
+        description: Pediatric speech services
+      - name: Occupational Therapy
+        description: Child OT services coordination
+      - name: ABA Therapy
+        description: Applied behavior analysis services
+      - name: Early Intervention
+        description: Early childhood intervention programs
+      - name: Home Schooling Support
+        description: Homeschool curriculum and community
+      - name: Kids Sports Registration
+        description: Youth athletics enrollment
+      - name: Music Lessons for Kids
+        description: Children's music instruction
+      - name: Art Classes for Kids
+        description: Youth art and creative programs
+      - name: STEM Programs for Kids
+        description: Science and tech youth programs
+      - name: Kids Coding Classes
+        description: Programming courses for children
+      - name: Religious Education
+        description: Sunday school and faith programs
+      - name: Senior Care Coordination
+        description: Elder care planning and services
+      - name: In-Home Senior Care
+        description: Home health aide management
+      - name: Senior Living Placement
+        description: Assisted living search services
+      - name: Memory Care Services
+        description: Dementia and Alzheimer's care
+      - name: Senior Transportation
+        description: Elder transportation services
+      - name: Senior Meal Services
+        description: Meals on wheels and nutrition
+      - name: Caregiver Support
+        description: Family caregiver resources
+      - name: Senior Activities
+        description: Senior center program management
+      - name: Multi-Generational Services
+        description: Whole family care coordination
+
+  - name: Employment & Recruiting
+    subdomains:
+      - name: Job Boards
+        description: Employment listing platforms
+      - name: Freelance Marketplaces
+        description: Independent contractor platforms
+      - name: Resume Building
+        description: CV creation and optimization tools
+      - name: Interview Preparation
+        description: Job interview practice platforms
+      - name: Career Coaching
+        description: Professional development guidance
+      - name: Skill Assessment
+        description: Competency testing platforms
+      - name: Background Checks
+        description: Employment verification services
+      - name: Recruiting Agencies
+        description: Headhunting and placement services
+      - name: Gig Economy
+        description: Short-term task marketplaces
+      - name: Remote Work Tools
+        description: Distributed team collaboration
+      - name: Executive Search
+        description: C-suite and senior leadership recruiting
+      - name: Talent Acquisition
+        description: Enterprise recruiting platforms
+      - name: Campus Recruiting
+        description: University and college recruitment
+      - name: Diversity Recruiting
+        description: DEI-focused hiring platforms
+      - name: Technical Recruiting
+        description: Software and engineering hiring
+      - name: Healthcare Recruiting
+        description: Medical and nursing staffing
+      - name: Legal Recruiting
+        description: Law firm and attorney placement
+      - name: Finance Recruiting
+        description: Financial services staffing
+      - name: Sales Recruiting
+        description: Sales team hiring platforms
+      - name: Creative Recruiting
+        description: Design and marketing talent
+      - name: Temporary Staffing
+        description: Temp worker placement platforms
+      - name: Contract Staffing
+        description: Contract and project-based hiring
+      - name: RPO Services
+        description: Recruitment process outsourcing
+      - name: Employer Branding
+        description: Recruitment marketing platforms
+      - name: Job Description Tools
+        description: JD writing and optimization
+      - name: Candidate Experience
+        description: Applicant journey optimization
+      - name: Employee Referrals
+        description: Referral program management
+      - name: Social Recruiting
+        description: Social media hiring tools
+      - name: Recruitment CRM
+        description: Candidate relationship management
+      - name: Talent Pools
+        description: Candidate database management
+      - name: Hiring Assessments
+        description: Pre-employment testing platforms
+      - name: Coding Challenges
+        description: Technical assessment platforms
+      - name: Video Screening
+        description: One-way video interview tools
+      - name: Interview Intelligence
+        description: AI interview analysis tools
+      - name: Offer Letter Tools
+        description: Offer generation and tracking
+      - name: Salary Benchmarking
+        description: Compensation data platforms
+      - name: Job Aggregators
+        description: Multi-board job distribution
+      - name: Recruitment Analytics
+        description: Hiring metrics and reporting
+      - name: Workforce Planning
+        description: Hiring forecasting tools
+      - name: Internal Mobility
+        description: Internal job posting and transfers
+      - name: Succession Planning
+        description: Leadership pipeline tools
+      - name: Skills-Based Hiring
+        description: Competency-based recruitment
+      - name: Blind Hiring
+        description: Bias-reduction hiring tools
+      - name: AI Recruiting
+        description: AI-powered candidate matching
+      - name: Chatbot Recruiting
+        description: Recruitment chatbots
+      - name: High-Volume Hiring
+        description: Mass recruitment platforms
+      - name: Seasonal Hiring
+        description: Seasonal workforce management
+      - name: Hourly Worker Hiring
+        description: Shift worker recruitment
+      - name: Blue Collar Recruiting
+        description: Trades and labor hiring
+      - name: Veteran Hiring
+        description: Military veteran placement
+      - name: Re-Entry Hiring
+        description: Second chance employment
+      - name: Disability Hiring
+        description: Accessible employment platforms
+      - name: International Hiring
+        description: Global recruitment platforms
+      - name: Visa & Immigration
+        description: Work visa management
+      - name: EOR Services
+        description: Employer of record platforms
+      - name: PEO Services
+        description: Professional employer organizations
+      - name: Staffing Agency Software
+        description: Staffing firm operations
+      - name: Recruitment Marketplace
+        description: Recruiter-employer platforms
+      - name: Career Site Builders
+        description: Employer career page tools
+      - name: Recruitment Advertising
+        description: Job ad placement and optimization
+
+  - name: Events & Celebrations
+    subdomains:
+      - name: Event Planning
+        description: Event coordination and management
+      - name: Wedding Planning
+        description: Marriage ceremony coordination
+      - name: Party Supplies
+        description: Event decoration and supplies
+      - name: Venue Booking
+        description: Event space reservation
+      - name: Catering Coordination
+        description: Event food service planning
+      - name: Event Registration
+        description: Attendee signup and ticketing
+      - name: Event Marketing
+        description: Event promotion and advertising
+      - name: Virtual Events
+        description: Online conference platforms
+      - name: Event Check-in
+        description: Attendee registration systems
+      - name: Event Analytics
+        description: Event performance measurement
+
+  - name: Publishing & Writing
+    subdomains:
+      - name: Book Publishing
+        description: Traditional publishing services
+      - name: Self-Publishing
+        description: Independent author platforms
+      - name: Literary Agents
+        description: Author representation services
+      - name: Editing Services
+        description: Professional manuscript editing
+      - name: Book Distribution
+        description: Book retail and wholesale
+      - name: Author Marketing
+        description: Book promotion tools
+      - name: Writing Tools
+        description: Creative writing software
+      - name: Book Reviews
+        description: Reader review platforms
+      - name: Book Clubs
+        description: Reading group coordination
+      - name: Libraries
+        description: Public lending institutions
+
+  - name: Automotive & Vehicles
+    subdomains:
+      - name: Automotive Repair
+        description: Vehicle maintenance and service
+      - name: Car Dealerships
+        description: New and used vehicle sales
+      - name: Auto Insurance
+        description: Vehicle insurance services
+      - name: Vehicle Inspection
+        description: Safety and emissions testing
+      - name: Car Wash Services
+        description: Vehicle cleaning operations
+      - name: Automotive Parts
+        description: Replacement parts retail
+      - name: Vehicle Tracking
+        description: GPS fleet and personal tracking
+      - name: Roadside Assistance
+        description: Emergency vehicle services
+      - name: Electric Vehicles
+        description: EV sales and service
+      - name: Autonomous Vehicles
+        description: Self-driving car technology
+
+  - name: Aviation & Aerospace
+    subdomains:
+      - name: Aviation Services
+        description: Aircraft operations and management
+      - name: Private Jet Charter
+        description: On-demand private flights
+      - name: Pilot Training
+        description: Flight instruction and certification
+      - name: Aircraft Maintenance
+        description: Airplane repair and servicing
+      - name: Airport Operations
+        description: Airport management systems
+      - name: Air Traffic Control
+        description: Flight coordination systems
+      - name: Drone Services
+        description: UAV operations and delivery
+      - name: Aviation Fuel
+        description: Aircraft refueling services
+      - name: Flight Planning
+        description: Route and logistics planning
+      - name: Aviation Safety
+        description: Flight safety monitoring
+
+  - name: Marine & Maritime
+    subdomains:
+      - name: Marine Transportation
+        description: Shipping and maritime logistics
+      - name: Yacht & Boat Rental
+        description: Watercraft rental services
+      - name: Marina Management
+        description: Dock and slip operations
+      - name: Fishing Industry
+        description: Commercial fishing operations
+      - name: Marine Safety
+        description: Nautical safety equipment
+      - name: Ship Maintenance
+        description: Vessel repair and servicing
+      - name: Marine Navigation
+        description: GPS and charting systems
+      - name: Port Operations
+        description: Harbor management systems
+      - name: Sailing & Boating
+        description: Recreational watercraft services
+      - name: Ocean Freight
+        description: International shipping services
+
+  - name: Space & Satellites
+    subdomains:
+      - name: Space Technology
+        description: Aerospace and satellite services
+      - name: Satellite Communications
+        description: Orbital communication systems
+      - name: Space Tourism
+        description: Commercial space travel
+      - name: Rocket Manufacturing
+        description: Launch vehicle production
+      - name: Space Research
+        description: Extraterrestrial scientific study
+      - name: Satellite Imaging
+        description: Earth observation services
+      - name: Space Mining
+        description: Asteroid resource extraction
+      - name: Launch Services
+        description: Rocket launch operations
+      - name: Space Stations
+        description: Orbital facility operations
+      - name: Planetary Exploration
+        description: Mars and moon missions
+
+  - name: Telecommunications
+    subdomains:
+      - name: Telecommunications
+        description: Phone and internet service providers
+      - name: 5G Infrastructure
+        description: Next-generation mobile networks
+      - name: Fiber Optics
+        description: High-speed internet infrastructure
+      - name: Network Equipment
+        description: Routers, switches, and hardware
+      - name: Wireless Networks
+        description: WiFi and cellular systems
+      - name: Telephone Systems
+        description: Business phone solutions
+      - name: Unified Communications
+        description: Integrated communication platforms
+      - name: Network Monitoring
+        description: Infrastructure health tracking
+      - name: Bandwidth Management
+        description: Network traffic optimization
+      - name: IoT Connectivity
+        description: Device communication networks
+
+  - name: Smart Home & IoT
+    subdomains:
+      - name: Smart Home
+        description: Connected home automation
+      - name: Home Appliances
+        description: Smart appliance management
+      - name: Lighting Control
+        description: Intelligent lighting systems
+      - name: Climate Control
+        description: Smart thermostat systems
+      - name: Security Systems
+        description: Home alarm and surveillance
+      - name: Voice Assistants
+        description: AI-powered home assistants
+      - name: Entertainment Systems
+        description: Home theater and audio
+      - name: Garden & Landscaping
+        description: Yard care and design
+      - name: Home Maintenance
+        description: Repair and upkeep services
+      - name: Cleaning Services
+        description: Residential cleaning platforms
+
+  - name: Emerging Technology
+    subdomains:
+      - name: Wearable Technology
+        description: Smart watches and fitness trackers
+      - name: Augmented Reality
+        description: AR experiences and applications
+      - name: Virtual Reality
+        description: VR headsets and experiences
+      - name: 3D Modeling
+        description: 3D design and rendering tools
+      - name: Artificial Intelligence
+        description: Machine learning platforms
+      - name: Robotics
+        description: Robot design and automation
+      - name: Quantum Computing
+        description: Next-gen computing platforms
+      - name: Blockchain Technology
+        description: Distributed ledger applications
+      - name: Biometrics
+        description: Fingerprint and facial recognition
+      - name: Natural Language Processing
+        description: AI language understanding
+
+  - name: Dating & Relationships
+    subdomains:
+      - name: Dating & Matchmaking
+        description: Romantic connection platforms
+      - name: Wedding Services
+        description: Marriage service providers
+      - name: Relationship Counseling
+        description: Couples therapy services
+      - name: Social Clubs
+        description: Interest-based group platforms
+      - name: Event Meetups
+        description: Social gathering organization
+      - name: Friend Finding
+        description: Platonic relationship platforms
+      - name: Speed Dating
+        description: Rapid dating event services
+      - name: Matchmaking Services
+        description: Professional matchmaker platforms
+      - name: Marriage Preparation
+        description: Pre-marriage counseling
+      - name: Divorce Services
+        description: Marriage dissolution support
+
+  - name: Personal Finance
+    subdomains:
+      - name: Personal Finance
+        description: Budget and expense tracking
+      - name: Investment Apps
+        description: Personal investing platforms
+      - name: Retirement Planning
+        description: Retirement savings tools
+      - name: Financial Literacy
+        description: Money management education
+      - name: Debt Management
+        description: Debt payoff planning tools
+      - name: Savings Tools
+        description: Automated saving platforms
+      - name: Credit Repair
+        description: Credit score improvement services
+      - name: Estate Planning
+        description: Will and trust creation
+      - name: Financial Advisors
+        description: Personal financial planning
+      - name: Stock Market Education
+        description: Investing learning platforms
+
+  - name: Insurance & Risk Management
+    subdomains:
+      - name: Property Insurance
+        description: Home and building insurance coverage
+      - name: Casualty Insurance
+        description: Liability and accident insurance products
+      - name: Life Insurance
+        description: Life insurance policy management
+      - name: Health Insurance
+        description: Medical insurance products and administration
+      - name: Auto Insurance Claims
+        description: Vehicle insurance claims processing
+      - name: Workers Compensation
+        description: Workplace injury insurance management
+      - name: Professional Liability
+        description: Errors and omissions insurance
+      - name: Cyber Insurance
+        description: Data breach and cyber risk coverage
+      - name: Reinsurance
+        description: Insurance for insurance companies
+      - name: Insurance Underwriting
+        description: Risk assessment and policy pricing
+      - name: Claims Management
+        description: Insurance claim processing and tracking
+      - name: Insurance Brokerage
+        description: Insurance sales and policy comparison
+      - name: Insurance Agency Management
+        description: Insurance agency operations software
+      - name: Actuarial Software
+        description: Risk calculation and statistical analysis
+      - name: Policy Administration
+        description: Insurance policy lifecycle management
+      - name: Insurance Compliance
+        description: Regulatory compliance for insurers
+      - name: Catastrophe Modeling
+        description: Natural disaster risk assessment
+      - name: Loss Adjustment
+        description: Insurance loss evaluation and settlement
+      - name: Insurance Fraud Detection
+        description: Claims fraud prevention and detection
+      - name: Surety Bonds
+        description: Contract and performance bond management
+      - name: Title Insurance
+        description: Property title insurance services
+      - name: Marine Insurance
+        description: Shipping and vessel insurance coverage
+      - name: Aviation Insurance
+        description: Aircraft insurance and risk management
+      - name: Pet Insurance
+        description: Animal health insurance products
+      - name: Travel Insurance Claims
+        description: Trip insurance claims processing
+      - name: Crop Insurance
+        description: Agricultural insurance products
+      - name: Disability Insurance
+        description: Income protection insurance products
+      - name: Long-term Care Insurance
+        description: Nursing and care facility coverage
+      - name: Umbrella Insurance
+        description: Excess liability coverage products
+      - name: Directors & Officers Insurance
+        description: Executive liability coverage
+      - name: Insurance Analytics
+        description: Insurance data analysis and insights
+      - name: Telematics Insurance
+        description: Usage-based insurance programs
+      - name: Microinsurance
+        description: Small-value insurance for underserved
+      - name: Insurance Comparison
+        description: Policy comparison and shopping tools
+      - name: Insurance Document Management
+        description: Policy document storage and retrieval
+      - name: Insurance CRM
+        description: Customer relationship management for insurers
+      - name: Risk Assessment Tools
+        description: Business risk evaluation software
+      - name: Enterprise Risk Management
+        description: Organization-wide risk management platforms
+      - name: Insurance Marketplace
+        description: Multi-carrier insurance platforms
+      - name: Premium Finance
+        description: Insurance premium payment financing
+      - name: Insurance Renewal Management
+        description: Policy renewal tracking and automation
+      - name: Warranty Management
+        description: Product warranty tracking and claims
+      - name: Captive Insurance
+        description: Self-insurance subsidiary management
+      - name: Insurance Licensing
+        description: Agent licensing and certification tracking
+      - name: Third-Party Administration
+        description: Outsourced insurance claims handling
+
+  - name: Pharmaceuticals & Biotech
+    subdomains:
+      - name: Drug Discovery
+        description: New pharmaceutical compound research
+      - name: Drug Development
+        description: Clinical drug development processes
+      - name: Clinical Trial Management
+        description: Clinical study coordination and tracking
+      - name: Pharmaceutical Manufacturing
+        description: Drug production and quality control
+      - name: Biotech Research
+        description: Biotechnology research and development
+      - name: Gene Therapy
+        description: Genetic treatment development
+      - name: Cell Therapy
+        description: Cellular treatment platforms
+      - name: Bioinformatics
+        description: Biological data analysis software
+      - name: Pharmacovigilance
+        description: Drug safety monitoring and reporting
+      - name: Regulatory Affairs
+        description: Pharmaceutical compliance and submissions
+      - name: Drug Distribution
+        description: Pharmaceutical supply chain management
+      - name: Pharmaceutical Sales
+        description: Drug sales force automation
+      - name: Medical Affairs
+        description: Medical information and education
+      - name: Pharmacology Software
+        description: Drug interaction and mechanism tools
+      - name: Formulation Development
+        description: Drug formulation and testing
+      - name: Contract Research
+        description: CRO management and coordination
+      - name: Laboratory Information Systems
+        description: Lab data and workflow management
+      - name: Protein Engineering
+        description: Protein design and optimization
+      - name: Antibody Development
+        description: Therapeutic antibody creation
+      - name: Vaccine Development
+        description: Vaccine research and production
+      - name: Orphan Drug Development
+        description: Rare disease treatment development
+      - name: Biosimilars
+        description: Generic biologic drug development
+      - name: Pharmaceutical Packaging
+        description: Drug packaging and labeling
+      - name: Compounding Software
+        description: Custom pharmaceutical compounding
+      - name: Drug Repurposing
+        description: New uses for existing drugs
+      - name: Molecular Modeling
+        description: Drug molecule simulation software
+      - name: Toxicology Testing
+        description: Drug toxicity assessment
+      - name: Pharmaceutical Analytics
+        description: Drug performance and market analysis
+      - name: Medical Writing
+        description: Scientific document creation tools
+      - name: Pharmaceutical Quality Control
+        description: Drug quality assurance systems
+      - name: Batch Record Management
+        description: Manufacturing batch tracking
+      - name: Pharmacoeconomics
+        description: Drug cost-effectiveness analysis
+      - name: Patient Recruitment
+        description: Clinical trial participant finding
+      - name: Adverse Event Reporting
+        description: Drug side effect tracking systems
+      - name: Serialization & Track-Trace
+        description: Drug authentication and tracking
+      - name: Pharmaceutical ERP
+        description: Enterprise resource planning for pharma
+      - name: Medical Science Liaison
+        description: MSL activity and relationship management
+      - name: Pharmaceutical Pricing
+        description: Drug pricing and reimbursement tools
+
+  - name: Home Services & Maintenance
+    subdomains:
+      - name: Plumbing Services
+        description: Plumber scheduling and service management
+      - name: Electrical Services
+        description: Electrician dispatch and job tracking
+      - name: HVAC Services
+        description: Heating and cooling service management
+      - name: Handyman Services
+        description: General home repair coordination
+      - name: Appliance Repair
+        description: Home appliance service scheduling
+      - name: Roofing Services
+        description: Roof repair and replacement management
+      - name: Pest Control Services
+        description: Extermination and pest management
+      - name: Locksmith Services
+        description: Lock and security service dispatch
+      - name: Septic Services
+        description: Septic system maintenance management
+      - name: Well & Water Services
+        description: Well pump and water system maintenance
+      - name: Gutter Services
+        description: Gutter cleaning and repair scheduling
+      - name: Chimney Services
+        description: Chimney cleaning and inspection
+      - name: Foundation Repair
+        description: Foundation inspection and repair services
+      - name: Waterproofing Services
+        description: Basement and crawl space waterproofing
+      - name: Insulation Services
+        description: Home insulation installation and upgrade
+      - name: Window & Door Services
+        description: Window and door repair and installation
+      - name: Painting Services
+        description: Interior and exterior painting coordination
+      - name: Drywall Services
+        description: Drywall repair and installation
+      - name: Flooring Services
+        description: Floor installation and refinishing
+      - name: Carpentry Services
+        description: Custom woodwork and carpentry
+      - name: Masonry Services
+        description: Brick and stone work services
+      - name: Garage Door Services
+        description: Garage door repair and installation
+      - name: Fencing Services
+        description: Fence installation and repair
+      - name: Deck & Patio Services
+        description: Outdoor structure maintenance
+      - name: Pool Services
+        description: Pool cleaning and maintenance scheduling
+      - name: Hot Tub Services
+        description: Spa maintenance and repair
+      - name: Siding Services
+        description: Exterior siding installation and repair
+      - name: Stucco Services
+        description: Stucco repair and application
+      - name: Tile & Grout Services
+        description: Tile installation and grout cleaning
+      - name: Cabinet Services
+        description: Cabinet installation and refacing
+      - name: Countertop Services
+        description: Countertop installation and repair
+      - name: Home Warranty Management
+        description: Home warranty claim processing
+      - name: Maintenance Scheduling
+        description: Preventive home maintenance tracking
+      - name: Service Technician Routing
+        description: Technician dispatch and route optimization
+      - name: Parts Inventory Management
+        description: Service parts tracking for home repairs
+
+  - name: Personal Care & Beauty Services
+    subdomains:
+      - name: Salon Management
+        description: Hair salon booking and operations
+      - name: Barbershop Software
+        description: Barber appointment and client management
+      - name: Spa Management
+        description: Spa scheduling and service tracking
+      - name: Nail Salon Software
+        description: Nail salon booking and inventory
+      - name: Massage Therapy
+        description: Massage therapist scheduling and billing
+      - name: Esthetics Services
+        description: Skincare treatment booking and tracking
+      - name: Tanning Salon Management
+        description: Tanning service and membership management
+      - name: Tattoo Shop Management
+        description: Tattoo artist booking and design tracking
+      - name: Piercing Studio Software
+        description: Body piercing appointment management
+      - name: Makeup Artist Booking
+        description: Makeup service scheduling and portfolio
+      - name: Lash & Brow Services
+        description: Eyelash and eyebrow service management
+      - name: Hair Extension Services
+        description: Extension service tracking and inventory
+      - name: Bridal Beauty Services
+        description: Wedding beauty service coordination
+      - name: Mobile Beauty Services
+        description: On-location beauty service dispatch
+      - name: Wellness Center Management
+        description: Holistic wellness service coordination
+      - name: Cryotherapy Services
+        description: Cold therapy treatment scheduling
+      - name: Sauna & Steam Room
+        description: Sauna facility booking and management
+      - name: Float Therapy
+        description: Sensory deprivation tank scheduling
+      - name: Oxygen Bar Services
+        description: Oxygen therapy session management
+      - name: Body Contouring
+        description: Non-invasive body treatment scheduling
+      - name: Laser Hair Removal
+        description: Laser treatment booking and tracking
+      - name: Med Spa Services
+        description: Medical aesthetic service management
+      - name: Cosmetic Injection Services
+        description: Botox and filler appointment management
+      - name: Permanent Makeup Services
+        description: Microblading and permanent cosmetics
+      - name: Beauty School Management
+        description: Cosmetology training and certification
+      - name: Booth Rental Management
+        description: Salon chair and booth rental tracking
+      - name: Beauty Loyalty Programs
+        description: Client rewards and retention programs
+      - name: Beauty Product Inventory
+        description: Salon product and supply management
+
+  - name: Creator Economy & Influencer
+    subdomains:
+      - name: Creator Monetization
+        description: Content creator revenue platforms
+      - name: Influencer Marketing Platforms
+        description: Brand and influencer matching services
+      - name: Creator Analytics
+        description: Content performance tracking for creators
+      - name: Fan Subscription Platforms
+        description: Creator membership and subscription tools
+      - name: Digital Product Sales
+        description: Creator digital goods marketplaces
+      - name: Course Creation Platforms
+        description: Online course building for creators
+      - name: Community Platforms
+        description: Creator audience engagement tools
+      - name: Live Streaming Tools
+        description: Creator broadcast and monetization
+      - name: Creator Collaboration
+        description: Creator partnership and project tools
+      - name: Brand Deal Management
+        description: Sponsorship tracking for creators
+      - name: Creator CRM
+        description: Fan and brand relationship management
+      - name: Content Licensing
+        description: Creator content rights management
+      - name: Creator Finance
+        description: Income tracking and tax tools for creators
+      - name: Multi-Platform Publishing
+        description: Cross-platform content distribution
+      - name: Creator Marketplace
+        description: Creator services and talent platforms
+      - name: Podcast Monetization
+        description: Podcaster revenue and sponsorship tools
+      - name: Newsletter Platforms
+        description: Email newsletter creation and monetization
+      - name: Digital Collectibles
+        description: Creator NFT and digital asset platforms
+      - name: Tip & Donation Platforms
+        description: Creator fan tipping systems
+      - name: Merchandise Platforms
+        description: Creator merch design and fulfillment
+      - name: Affiliate Management
+        description: Creator affiliate link tracking
+      - name: Content Calendar
+        description: Creator publishing schedule management
+      - name: Creator Contracts
+        description: Deal and agreement management for creators
+      - name: Media Kit Builder
+        description: Creator portfolio and rate card tools
+      - name: Audience Insights
+        description: Fan demographic and behavior analysis
+      - name: Collab Marketplace
+        description: Creator collaboration opportunity matching
+      - name: Rights & Royalties
+        description: Creator intellectual property tracking
+      - name: Creator Banking
+        description: Financial services for content creators
+      - name: Virtual Events
+        description: Creator online event hosting platforms
+      - name: Video Editing Tools
+        description: Creator content production software
+      - name: Creator Education
+        description: Creator skill development platforms
+      - name: Talent Agencies
+        description: Creator representation and management
+
+  - name: Professional Services & Consulting
+    subdomains:
+      - name: Management Consulting
+        description: Business strategy consulting platforms
+      - name: IT Consulting
+        description: Technology advisory services
+      - name: Financial Consulting
+        description: Financial advisory and planning
+      - name: HR Consulting
+        description: Human resources advisory services
+      - name: Marketing Consulting
+        description: Marketing strategy and advisory
+      - name: Operations Consulting
+        description: Business operations optimization
+      - name: Change Management
+        description: Organizational transformation consulting
+      - name: Business Process Consulting
+        description: Process improvement advisory
+      - name: Risk Consulting
+        description: Business risk advisory services
+      - name: Compliance Consulting
+        description: Regulatory compliance advisory
+      - name: Sustainability Consulting
+        description: Environmental and social impact advisory
+      - name: Digital Transformation
+        description: Technology adoption consulting
+      - name: M&A Advisory
+        description: Merger and acquisition consulting
+      - name: Turnaround Consulting
+        description: Business recovery advisory
+      - name: Interim Management
+        description: Temporary executive placement
+      - name: Business Coaching
+        description: Executive and business coaching services
+      - name: Strategy Development
+        description: Strategic planning consulting
+      - name: Organizational Development
+        description: Organization design and culture consulting
+      - name: Performance Improvement
+        description: Business performance optimization
+      - name: Supply Chain Consulting
+        description: Supply chain optimization advisory
+      - name: Pricing Strategy
+        description: Pricing and revenue optimization consulting
+      - name: Customer Experience Consulting
+        description: CX strategy and improvement advisory
+      - name: Sales Consulting
+        description: Sales strategy and enablement
+      - name: Product Development Consulting
+        description: Product strategy and innovation advisory
+      - name: Technology Implementation
+        description: Software implementation consulting
+      - name: Data Strategy Consulting
+        description: Data analytics and strategy advisory
+      - name: Innovation Consulting
+        description: Innovation strategy and process consulting
+      - name: Lean & Six Sigma Consulting
+        description: Process efficiency consulting
+      - name: Project Management Consulting
+        description: PMO and project advisory services
+      - name: Thought Leadership Platforms
+        description: Consultant content and visibility tools
+
+  - name: Subscription & Membership Services
+    subdomains:
+      - name: Subscription Billing
+        description: Recurring payment management platforms
+      - name: Membership Management
+        description: Member database and engagement tools
+      - name: Subscription Analytics
+        description: Subscriber metrics and churn analysis
+      - name: Subscription Box Platforms
+        description: Physical subscription box management
+      - name: Digital Subscription Platforms
+        description: Digital content subscription services
+      - name: Membership Communities
+        description: Private member community platforms
+      - name: Subscription Commerce
+        description: E-commerce subscription management
+      - name: Tiered Membership
+        description: Multi-level membership tier management
+      - name: Member Onboarding
+        description: New member welcome and setup
+      - name: Subscription Retention
+        description: Churn prevention and win-back tools
+      - name: Member Benefits Management
+        description: Perk and benefit delivery tracking
+      - name: Subscription Payments
+        description: Recurring payment processing systems
+      - name: Member Portals
+        description: Self-service member account management
+      - name: Subscription Metrics
+        description: MRR, LTV, and subscription KPI tracking
+      - name: Auto-Renewal Management
+        description: Subscription renewal automation
+      - name: Dunning Management
+        description: Failed payment recovery systems
+      - name: Member Communications
+        description: Subscriber email and messaging
+      - name: Subscription Packaging
+        description: Product bundling and offer management
+      - name: Member Referrals
+        description: Subscriber referral and rewards programs
+      - name: Subscription Trials
+        description: Free trial and freemium management
+      - name: Membership Cards
+        description: Digital and physical member card systems
+      - name: Usage-Based Billing
+        description: Consumption-based subscription pricing
+      - name: Subscription Downgrades
+        description: Plan change and downgrade management
+      - name: Member Events
+        description: Subscriber event access management
+      - name: Subscription Pausing
+        description: Temporary subscription hold features
+
+  - name: Equipment Rental & Leasing
+    subdomains:
+      - name: Construction Equipment Rental
+        description: Heavy machinery rental management
+      - name: Party Rental Management
+        description: Event equipment rental tracking
+      - name: Tool Rental Systems
+        description: Tool library and rental platforms
+      - name: Medical Equipment Leasing
+        description: Healthcare equipment rental management
+      - name: Audio Visual Rental
+        description: AV equipment rental and tracking
+      - name: Vehicle Rental Management
+        description: Car and truck rental operations
+      - name: Office Equipment Leasing
+        description: Copier and equipment lease management
+      - name: Furniture Rental
+        description: Residential and office furniture rental
+      - name: Outdoor Equipment Rental
+        description: Camping and outdoor gear rental
+      - name: Sports Equipment Rental
+        description: Athletic gear rental management
+      - name: Photography Equipment Rental
+        description: Camera and lighting rental platforms
+      - name: Industrial Equipment Leasing
+        description: Manufacturing equipment rental
+      - name: Computer Equipment Rental
+        description: IT hardware rental management
+      - name: Bounce House Rental
+        description: Inflatable equipment rental tracking
+      - name: Tent & Canopy Rental
+        description: Event shelter rental management
+      - name: Linen & Tableware Rental
+        description: Event supply rental coordination
+      - name: Stage & Lighting Rental
+        description: Performance equipment rental
+      - name: Generator Rental
+        description: Power equipment rental management
+      - name: Trailer Rental
+        description: Cargo and utility trailer rental
+      - name: Dumpster Rental
+        description: Waste container rental management
+      - name: Scaffolding Rental
+        description: Construction access equipment rental
+      - name: Fork Lift Rental
+        description: Material handling equipment rental
+      - name: Aerial Lift Rental
+        description: Boom and scissor lift rental
+      - name: Compressor Rental
+        description: Air compressor rental management
+      - name: Wedding Equipment Rental
+        description: Ceremony and reception equipment
+      - name: Costume Rental
+        description: Theatrical costume rental tracking
+      - name: Musical Instrument Rental
+        description: Instrument rental and lease management
+      - name: Baby Equipment Rental
+        description: Infant gear rental for travelers
+      - name: Medical Mobility Equipment
+        description: Wheelchair and walker rental services
+      - name: Rental Fleet Management
+        description: Multi-location rental asset tracking
+
+  - name: Waste & Sanitation Services
+    subdomains:
+      - name: Waste Collection Management
+        description: Trash pickup route and scheduling
+      - name: Recycling Services
+        description: Recyclable material collection tracking
+      - name: Hazardous Waste Management
+        description: Dangerous material disposal tracking
+      - name: Portable Toilet Rental
+        description: Portable restroom service management
+      - name: Roll-Off Container Services
+        description: Large waste container rental and pickup
+      - name: Grease Trap Services
+        description: Restaurant grease management
+      - name: Medical Waste Services
+        description: Biohazard waste collection and disposal
+      - name: E-Waste Recycling
+        description: Electronic waste disposal tracking
+      - name: Composting Services
+        description: Organic waste collection and processing
+      - name: Junk Removal Services
+        description: Bulk item removal and hauling
+      - name: Septic Pumping
+        description: Septic tank service scheduling
+      - name: Street Sweeping Services
+        description: Municipal street cleaning management
+      - name: Industrial Waste Management
+        description: Factory waste disposal coordination
+      - name: Construction Debris Removal
+        description: Building waste hauling services
+      - name: Document Shredding Services
+        description: Secure paper destruction scheduling
+      - name: Oil & Grease Recycling
+        description: Used oil collection and recycling
+      - name: Landfill Management
+        description: Waste disposal site operations
+      - name: Transfer Station Operations
+        description: Waste processing facility management
+      - name: Waste Auditing
+        description: Waste stream analysis and reporting
+      - name: Zero Waste Consulting
+        description: Waste reduction advisory services
+
+  - name: Mining & Natural Resources
+    subdomains:
+      - name: Mining Operations
+        description: Mine site management and production
+      - name: Mineral Exploration
+        description: Geological survey and prospecting
+      - name: Mining Safety
+        description: Mine safety compliance and tracking
+      - name: Ore Processing
+        description: Mineral extraction and processing
+      - name: Mining Equipment
+        description: Heavy mining machinery management
+      - name: Quarry Operations
+        description: Stone and aggregate extraction
+      - name: Mining Logistics
+        description: Ore transportation and handling
+      - name: Mine Planning
+        description: Mining project planning software
+      - name: Environmental Monitoring
+        description: Mining environmental impact tracking
+      - name: Tailings Management
+        description: Mining waste storage and monitoring
+      - name: Drilling Operations
+        description: Exploration and extraction drilling
+      - name: Blasting Services
+        description: Explosive operations management
+      - name: Mineral Assaying
+        description: Ore quality testing and analysis
+      - name: Mining Workforce
+        description: Mine worker scheduling and safety
+      - name: Resource Estimation
+        description: Mineral reserve calculation software
+      - name: Mining Permits
+        description: Mining license and compliance tracking
+      - name: Artisanal Mining
+        description: Small-scale mining management
+      - name: Mining Finance
+        description: Mining project funding and investment
+      - name: Reclamation Services
+        description: Mine site restoration tracking
+      - name: Geotechnical Analysis
+        description: Ground stability assessment tools
+
+  - name: Chemicals & Materials
+    subdomains:
+      - name: Chemical Manufacturing
+        description: Chemical production management
+      - name: Chemical Distribution
+        description: Chemical supply chain logistics
+      - name: Chemical Safety
+        description: Hazmat compliance and handling
+      - name: Specialty Chemicals
+        description: Custom chemical formulation
+      - name: Industrial Chemicals
+        description: Bulk chemical production
+      - name: Chemical Inventory
+        description: Chemical storage and tracking
+      - name: Material Safety Data
+        description: SDS management and distribution
+      - name: Chemical Compliance
+        description: Chemical regulatory tracking
+      - name: Polymer Manufacturing
+        description: Plastics and polymer production
+      - name: Adhesives & Sealants
+        description: Adhesive product manufacturing
+      - name: Paints & Coatings
+        description: Paint production and formulation
+      - name: Agrochemicals
+        description: Fertilizer and pesticide production
+      - name: Petrochemicals
+        description: Oil-derived chemical production
+      - name: Chemical R&D
+        description: Chemical research and development
+      - name: Chemical Testing
+        description: Chemical analysis and quality control
+      - name: Catalyst Management
+        description: Industrial catalyst tracking
+      - name: Chemical Waste
+        description: Chemical disposal and treatment
+      - name: Green Chemistry
+        description: Sustainable chemical processes
+      - name: Chemical Trading
+        description: Chemical commodity trading platforms
+      - name: Pigments & Dyes
+        description: Colorant manufacturing and distribution
+
+  - name: Funeral & Memorial Services
+    subdomains:
+      - name: Funeral Home Management
+        description: Funeral home operations software
+      - name: Cremation Services
+        description: Crematory operations management
+      - name: Cemetery Management
+        description: Cemetery plot and records tracking
+      - name: Memorial Planning
+        description: Funeral service arrangement tools
+      - name: Pre-Need Sales
+        description: Pre-arranged funeral sales tracking
+      - name: Body Transportation
+        description: Remains transport logistics
+      - name: Embalming Services
+        description: Preparation service management
+      - name: Casket Inventory
+        description: Funeral merchandise tracking
+      - name: Obituary Publishing
+        description: Death notice and tribute platforms
+      - name: Memorial Products
+        description: Urns, markers, and keepsakes
+      - name: Grief Support
+        description: Bereavement counseling services
+      - name: Green Burial
+        description: Eco-friendly burial options
+      - name: Memorial Websites
+        description: Online tribute and memory pages
+      - name: Estate Notification
+        description: Death certificate and notifications
+      - name: Funeral Financing
+        description: Payment plans and insurance claims
+
+  - name: Cannabis Industry
+    subdomains:
+      - name: Cannabis Cultivation
+        description: Grow operation management
+      - name: Dispensary Management
+        description: Retail cannabis store operations
+      - name: Cannabis Compliance
+        description: Regulatory tracking and reporting
+      - name: Seed-to-Sale Tracking
+        description: Cannabis supply chain tracking
+      - name: Cannabis Manufacturing
+        description: Edibles and concentrate production
+      - name: Cannabis Testing
+        description: Lab testing and quality assurance
+      - name: Cannabis Delivery
+        description: Cannabis delivery logistics
+      - name: Cannabis POS
+        description: Point of sale for dispensaries
+      - name: Cannabis Inventory
+        description: Product tracking and management
+      - name: Cannabis Licensing
+        description: License application and renewal
+      - name: Cannabis Marketing
+        description: Compliant cannabis advertising
+      - name: Cannabis Analytics
+        description: Sales and market data analysis
+      - name: Cannabis CRM
+        description: Customer relationship management
+      - name: Cannabis Payments
+        description: Payment processing solutions
+      - name: Cannabis HR
+        description: Industry-specific workforce management
+      - name: Cannabis Security
+        description: Security and surveillance compliance
+      - name: Cannabis Accounting
+        description: 280E tax compliance and accounting
+      - name: Cannabis Wholesale
+        description: B2B cannabis marketplace
+      - name: Hemp & CBD
+        description: Hemp cultivation and CBD products
+      - name: Cannabis Real Estate
+        description: Property for cannabis operations
+
+  - name: Franchising & Multi-Location
+    subdomains:
+      - name: Franchise Management
+        description: Franchisor operations software
+      - name: Franchise Development
+        description: Franchise sales and recruitment
+      - name: Franchisee Portals
+        description: Franchisee communication and resources
+      - name: Franchise Compliance
+        description: FDD and regulatory compliance
+      - name: Multi-Location Operations
+        description: Multi-site business management
+      - name: Franchise Training
+        description: Franchisee onboarding and education
+      - name: Franchise Marketing
+        description: Co-op marketing and brand management
+      - name: Franchise Royalties
+        description: Fee collection and tracking
+      - name: Franchise Analytics
+        description: Multi-location performance metrics
+      - name: Territory Management
+        description: Franchise territory mapping
+      - name: Franchise Auditing
+        description: Franchisee compliance audits
+      - name: Franchise Communications
+        description: Franchisor-franchisee messaging
+      - name: Franchise Supply Chain
+        description: Approved vendor management
+      - name: Franchise Real Estate
+        description: Location selection and leasing
+      - name: Franchise Lending
+        description: Franchisee financing platforms
+      - name: Franchise Resale
+        description: Franchise resale marketplace
+      - name: Franchise Consulting
+        description: Franchise advisory services
+      - name: Multi-Unit Management
+        description: Multi-unit franchisee operations
+      - name: Franchise Benchmarking
+        description: Location performance comparison
+      - name: Franchise Legal
+        description: Franchise agreement management
+
+  - name: Associations & Membership Organizations
+    subdomains:
+      - name: Association Management
+        description: Trade association operations
+      - name: Professional Organizations
+        description: Professional society management
+      - name: Chamber of Commerce
+        description: Local business chamber software
+      - name: Member Directory
+        description: Member search and networking
+      - name: Dues Management
+        description: Membership fee collection
+      - name: Association Events
+        description: Conference and meeting management
+      - name: Member Certification
+        description: Professional certification tracking
+      - name: Association Advocacy
+        description: Lobbying and advocacy tracking
+      - name: Member Benefits
+        description: Member perk and discount management
+      - name: Association Publishing
+        description: Member newsletter and publications
+      - name: Committee Management
+        description: Board and committee coordination
+      - name: Association Learning
+        description: Continuing education delivery
+      - name: Member Engagement
+        description: Member participation tracking
+      - name: Association Fundraising
+        description: PAC and foundation management
+      - name: Industry Research
+        description: Member surveys and industry data
+      - name: Networking Platforms
+        description: Member connection facilitation
+      - name: Alumni Associations
+        description: School alumni management
+      - name: Trade Show Management
+        description: Industry exhibition coordination
+      - name: Accreditation Management
+        description: Program accreditation tracking
+      - name: Member Voting
+        description: Board elections and polling
+
+  - name: Surveying & Geospatial Services
+    subdomains:
+      - name: Land Surveying
+        description: Property boundary measurement
+      - name: Construction Surveying
+        description: Building site layout and grading
+      - name: GIS Services
+        description: Geographic information systems
+      - name: Mapping Software
+        description: Digital map creation tools
+      - name: Aerial Surveying
+        description: Drone and aircraft mapping
+      - name: Hydrographic Surveying
+        description: Underwater terrain mapping
+      - name: Topographic Mapping
+        description: Land elevation and terrain analysis
+      - name: Cadastral Surveying
+        description: Property registration surveys
+      - name: GPS & GNSS Services
+        description: Satellite positioning systems
+      - name: LiDAR Processing
+        description: Laser scanning data analysis
+      - name: Photogrammetry
+        description: Measurement from photographs
+      - name: Geospatial Analytics
+        description: Location data analysis platforms
+      - name: Survey Equipment
+        description: Surveying instrument management
+      - name: Field Data Collection
+        description: Mobile surveying applications
+      - name: Survey Project Management
+        description: Survey job tracking and billing
+      - name: Utility Locating
+        description: Underground utility mapping
+      - name: As-Built Documentation
+        description: Post-construction survey records
+      - name: 3D Scanning Services
+        description: Building and site scanning
+
+  - name: Translation & Localization
+    subdomains:
+      - name: Document Translation
+        description: Written document translation
+      - name: Website Localization
+        description: Multi-language website adaptation
+      - name: Software Localization
+        description: Application translation management
+      - name: Interpretation Services
+        description: Real-time language interpretation
+      - name: Video Subtitling
+        description: Video caption and subtitle creation
+      - name: Audio Transcription
+        description: Speech to text conversion
+      - name: Machine Translation
+        description: AI-powered translation tools
+      - name: Translation Memory
+        description: Translation asset management
+      - name: Terminology Management
+        description: Glossary and term database
+      - name: Quality Assurance
+        description: Translation review and editing
+      - name: Legal Translation
+        description: Legal document translation
+      - name: Medical Translation
+        description: Healthcare content translation
+      - name: Technical Translation
+        description: Engineering and technical docs
+      - name: Marketing Localization
+        description: Marketing content adaptation
+      - name: Game Localization
+        description: Video game translation
+      - name: E-learning Localization
+        description: Training content translation
+      - name: Translator Management
+        description: Freelance translator coordination
+      - name: Translation Project Management
+        description: Translation workflow tracking
+      - name: Cultural Consulting
+        description: Cultural adaptation advisory
+
+  - name: Testing & Certification Services
+    subdomains:
+      - name: Product Testing
+        description: Consumer product safety testing
+      - name: Materials Testing
+        description: Material strength and composition
+      - name: Environmental Testing
+        description: Pollution and contamination testing
+      - name: Electrical Testing
+        description: Electronic device certification
+      - name: Food Testing
+        description: Food safety and quality analysis
+      - name: Drug Testing
+        description: Workplace drug screening
+      - name: Calibration Services
+        description: Instrument calibration tracking
+      - name: Certification Management
+        description: Product certification tracking
+      - name: Compliance Testing
+        description: Regulatory compliance verification
+      - name: Performance Testing
+        description: Product performance evaluation
+      - name: Safety Testing
+        description: Product safety certification
+      - name: Emissions Testing
+        description: Vehicle and industrial emissions
+      - name: Quality Certification
+        description: ISO and quality standard certification
+      - name: Professional Certification
+        description: Individual credential management
+      - name: Laboratory Accreditation
+        description: Lab certification tracking
+      - name: Test Equipment Management
+        description: Testing instrument tracking
+      - name: Sample Management
+        description: Test sample tracking and chain of custody
+      - name: Test Report Generation
+        description: Automated test documentation
+
+  - name: Inspection Services
+    subdomains:
+      - name: Home Inspection
+        description: Residential property inspection
+      - name: Commercial Inspection
+        description: Commercial building assessment
+      - name: Vehicle Inspection
+        description: Automotive safety inspection
+      - name: Fire Safety Inspection
+        description: Fire code compliance checking
+      - name: Health Inspection
+        description: Restaurant and facility health checks
+      - name: Building Code Inspection
+        description: Construction code compliance
+      - name: Elevator Inspection
+        description: Elevator safety certification
+      - name: Boiler Inspection
+        description: Pressure vessel inspection
+      - name: Crane Inspection
+        description: Lifting equipment certification
+      - name: Welding Inspection
+        description: Weld quality assessment
+      - name: Pipeline Inspection
+        description: Oil and gas pipeline assessment
+      - name: Roof Inspection
+        description: Commercial roof assessment
+      - name: Pool Inspection
+        description: Swimming pool safety checks
+      - name: Pest Inspection
+        description: Termite and pest assessment
+      - name: Mold Inspection
+        description: Mold and air quality testing
+      - name: Electrical Inspection
+        description: Electrical system assessment
+      - name: Plumbing Inspection
+        description: Plumbing system evaluation
+      - name: HVAC Inspection
+        description: Heating and cooling assessment
+      - name: Inspection Scheduling
+        description: Inspector dispatch and booking
+      - name: Inspection Reporting
+        description: Digital inspection report generation
+
+  - name: Auction & Liquidation Services
+    subdomains:
+      - name: Online Auctions
+        description: Internet auction platforms
+      - name: Live Auction Management
+        description: In-person auction software
+      - name: Estate Auctions
+        description: Estate sale management
+      - name: Vehicle Auctions
+        description: Auto auction platforms
+      - name: Real Estate Auctions
+        description: Property auction management
+      - name: Equipment Auctions
+        description: Industrial equipment sales
+      - name: Art Auctions
+        description: Fine art auction platforms
+      - name: Charity Auctions
+        description: Fundraising auction software
+      - name: Government Auctions
+        description: Surplus property sales
+      - name: Livestock Auctions
+        description: Animal auction management
+      - name: Bankruptcy Liquidation
+        description: Business asset liquidation
+      - name: Inventory Liquidation
+        description: Excess inventory sales
+      - name: Consignment Management
+        description: Consigned item tracking
+      - name: Bidder Management
+        description: Auction participant registration
+      - name: Auction Cataloging
+        description: Item listing and description
+      - name: Reserve Price Management
+        description: Minimum bid tracking
+      - name: Auction Settlement
+        description: Payment and item release
+      - name: Appraisal Services
+        description: Item valuation tools
+
+  - name: Broadcasting & Radio
+    subdomains:
+      - name: Radio Station Management
+        description: Radio broadcast operations
+      - name: Television Broadcasting
+        description: TV station management
+      - name: Broadcast Scheduling
+        description: Program scheduling software
+      - name: Traffic & Continuity
+        description: Commercial scheduling systems
+      - name: Broadcast Automation
+        description: Automated playout systems
+      - name: Audio Processing
+        description: Broadcast audio enhancement
+      - name: Transmitter Monitoring
+        description: Broadcast equipment tracking
+      - name: Podcast Networks
+        description: Podcast distribution management
+      - name: Internet Radio
+        description: Online radio streaming
+      - name: Radio Advertising
+        description: Radio ad sales and tracking
+      - name: Broadcast Rights
+        description: Content licensing management
+      - name: Emergency Alert Systems
+        description: Emergency broadcast management
+      - name: Radio Ratings
+        description: Audience measurement tools
+      - name: Broadcast Logging
+        description: Program and ad verification
+      - name: Remote Broadcasting
+        description: Outside broadcast coordination
+      - name: Studio Management
+        description: Recording studio scheduling
+      - name: Broadcast News
+        description: Newsroom management systems
+      - name: Sports Broadcasting
+        description: Live sports production tools
+      - name: Music Scheduling
+        description: Radio playlist management
+      - name: Broadcast Engineering
+        description: Technical operations tracking
+
+  - name: Emergency Services & Public Safety
+    subdomains:
+      - name: Fire Department Management
+        description: Fire station operations software
+      - name: EMS Operations
+        description: Ambulance service management
+      - name: Police Department Software
+        description: Law enforcement operations
+      - name: Emergency Dispatch
+        description: 911 and dispatch systems
+      - name: First Responder Scheduling
+        description: Emergency personnel shift management
+      - name: Incident Management
+        description: Emergency incident tracking
+      - name: CAD Systems
+        description: Computer-aided dispatch software
+      - name: Records Management
+        description: Emergency service records tracking
+      - name: Evidence Management
+        description: Evidence chain of custody tracking
+      - name: Training Management
+        description: First responder training tracking
+      - name: Equipment Tracking
+        description: Emergency equipment inventory
+      - name: Vehicle Maintenance
+        description: Emergency vehicle service tracking
+      - name: Mutual Aid Coordination
+        description: Inter-agency response coordination
+      - name: Hydrant Management
+        description: Fire hydrant inspection tracking
+      - name: Hazmat Response
+        description: Hazardous materials incident management
+      - name: Search & Rescue
+        description: SAR operation coordination
+      - name: Wildfire Management
+        description: Forest fire response tracking
+      - name: Emergency Communications
+        description: First responder radio systems
+      - name: Community Paramedicine
+        description: Mobile health response programs
+      - name: Crime Analysis
+        description: Criminal pattern analysis tools
+      - name: Body Camera Management
+        description: Police video storage and review
+      - name: Jail Management
+        description: Correctional facility operations
+      - name: Probation & Parole
+        description: Offender supervision tracking
+      - name: Court Security
+        description: Courthouse security management
+      - name: Emergency Preparedness
+        description: Disaster planning and exercises
+
+  - name: Military & Defense
+    subdomains:
+      - name: Defense Contracting
+        description: Military contract management
+      - name: Military Logistics
+        description: Defense supply chain management
+      - name: Base Operations
+        description: Military installation management
+      - name: Personnel Management
+        description: Military HR and records
+      - name: Training & Simulation
+        description: Military training systems
+      - name: Weapons Systems
+        description: Defense equipment tracking
+      - name: Intelligence Analysis
+        description: Defense intelligence tools
+      - name: Mission Planning
+        description: Military operation planning
+      - name: Communications Security
+        description: Secure military communications
+      - name: Vehicle Maintenance
+        description: Military vehicle tracking
+      - name: Medical Services
+        description: Military healthcare management
+      - name: Veteran Services
+        description: Veteran benefit management
+      - name: Recruiting Systems
+        description: Military recruitment platforms
+      - name: Family Services
+        description: Military family support programs
+      - name: Housing Management
+        description: Military housing allocation
+      - name: Cybersecurity Defense
+        description: Military cyber operations
+      - name: Unmanned Systems
+        description: Drone and robot management
+      - name: Satellite Operations
+        description: Military space systems
+      - name: Supply Chain Security
+        description: Defense logistics security
+      - name: After-Action Review
+        description: Mission debrief and analysis
+
+  - name: Postal & Courier Services
+    subdomains:
+      - name: Mail Processing
+        description: Mail sorting and handling
+      - name: Package Tracking
+        description: Parcel tracking systems
+      - name: Last Mile Delivery
+        description: Final delivery optimization
+      - name: Courier Dispatch
+        description: Messenger service management
+      - name: Route Planning
+        description: Delivery route optimization
+      - name: Address Verification
+        description: Address validation services
+      - name: Postage Management
+        description: Postage meter and tracking
+      - name: Mailroom Management
+        description: Corporate mailroom operations
+      - name: PO Box Management
+        description: Post office box services
+      - name: International Shipping
+        description: Cross-border mail management
+      - name: Customs Documentation
+        description: Import/export paperwork
+      - name: Certified Mail
+        description: Tracked mail services
+      - name: Bulk Mail Processing
+        description: Mass mailing operations
+      - name: Return Mail Handling
+        description: Undeliverable mail processing
+      - name: Mail Forwarding
+        description: Address change management
+      - name: Express Delivery
+        description: Same-day delivery services
+      - name: Locker Systems
+        description: Package locker management
+      - name: Driver Management
+        description: Delivery driver tracking
+      - name: Proof of Delivery
+        description: Delivery confirmation systems
+      - name: Failed Delivery Management
+        description: Redelivery scheduling
+
+  - name: Alternative Medicine & Holistic Health
+    subdomains:
+      - name: Chiropractic Practice
+        description: Chiropractic office management
+      - name: Acupuncture Practice
+        description: Acupuncture clinic software
+      - name: Naturopathic Medicine
+        description: Naturopath practice management
+      - name: Homeopathy Practice
+        description: Homeopathic clinic software
+      - name: Ayurvedic Medicine
+        description: Ayurvedic practice management
+      - name: Traditional Chinese Medicine
+        description: TCM clinic operations
+      - name: Herbal Medicine
+        description: Herbalist practice management
+      - name: Energy Healing
+        description: Reiki and energy work scheduling
+      - name: Functional Medicine
+        description: Integrative health practice
+      - name: Mind-Body Medicine
+        description: Holistic health programs
+      - name: Aromatherapy Services
+        description: Essential oil therapy scheduling
+      - name: Reflexology Practice
+        description: Reflexology appointment management
+      - name: Hypnotherapy Services
+        description: Hypnosis session scheduling
+      - name: Biofeedback Services
+        description: Biofeedback therapy management
+      - name: Sound Therapy
+        description: Sound healing session scheduling
+      - name: Nutrition Therapy
+        description: Nutritional counseling practice
+      - name: Detox Programs
+        description: Detoxification program management
+      - name: Holistic Wellness Centers
+        description: Integrative wellness facility management
+      - name: Alternative Medicine EHR
+        description: Holistic health records
+      - name: Supplement Management
+        description: Natural supplement tracking
+
+  - name: Life Coaching & Personal Development
+    subdomains:
+      - name: Life Coaching Practice
+        description: Life coach business management
+      - name: Executive Coaching
+        description: Executive coach scheduling and tracking
+      - name: Career Coaching
+        description: Career development coaching practice
+      - name: Health Coaching
+        description: Wellness coaching management
+      - name: Relationship Coaching
+        description: Relationship coach practice tools
+      - name: Financial Coaching
+        description: Money coaching practice management
+      - name: Parent Coaching
+        description: Parenting coach services
+      - name: Leadership Coaching
+        description: Leadership development programs
+      - name: Performance Coaching
+        description: Peak performance coaching tools
+      - name: Transition Coaching
+        description: Life transition support services
+      - name: Group Coaching
+        description: Group coaching program management
+      - name: Coaching Certification
+        description: Coach training and credentialing
+      - name: Coaching Assessments
+        description: Client assessment tools
+      - name: Goal Tracking
+        description: Client goal progress tracking
+      - name: Session Notes
+        description: Coaching session documentation
+      - name: Coaching Packages
+        description: Service package management
+      - name: Client Portal
+        description: Coaching client self-service
+      - name: Accountability Systems
+        description: Client accountability tracking
+      - name: Personal Growth Courses
+        description: Self-development course platforms
+      - name: Motivational Speaking
+        description: Speaker booking and management
+
+  - name: Skilled Trades & Craftsmen
+    subdomains:
+      - name: Welding Services
+        description: Welder scheduling and certification
+      - name: Metalworking
+        description: Metal fabrication shop management
+      - name: Woodworking
+        description: Custom woodworking shop operations
+      - name: Cabinet Making
+        description: Custom cabinet shop management
+      - name: Upholstery Services
+        description: Furniture upholstery business
+      - name: Glass & Glazing
+        description: Glass installation services
+      - name: Tile Setting
+        description: Tile installation business management
+      - name: Stone & Marble Work
+        description: Stone fabrication and installation
+      - name: Iron Work
+        description: Ornamental iron fabrication
+      - name: Sign Making
+        description: Custom sign shop management
+      - name: Engraving Services
+        description: Engraving and etching business
+      - name: Auto Body Repair
+        description: Collision repair shop management
+      - name: Marine Repair
+        description: Boat repair and maintenance shops
+      - name: Small Engine Repair
+        description: Equipment repair services
+      - name: Appliance Technicians
+        description: Appliance repair technician dispatch
+      - name: Electronics Repair
+        description: Device repair shop management
+      - name: Shoe Repair
+        description: Cobbler and shoe repair services
+      - name: Tailor & Alterations
+        description: Clothing alterations business
+      - name: Leather Work
+        description: Leather crafting and repair
+      - name: Craft Certifications
+        description: Trade certification tracking
+
+  - name: Vending & Kiosk Services
+    subdomains:
+      - name: Vending Machine Management
+        description: Vending route and inventory
+      - name: Micro-Market Operations
+        description: Self-service market management
+      - name: Kiosk Management
+        description: Retail kiosk operations
+      - name: ATM Operations
+        description: ATM placement and servicing
+      - name: Photo Booth Services
+        description: Photo booth rental and events
+      - name: Arcade Operations
+        description: Arcade machine management
+      - name: Laundromat Management
+        description: Self-service laundry operations
+      - name: Car Wash Kiosks
+        description: Automated car wash management
+      - name: Parking Payment Kiosks
+        description: Parking payment systems
+      - name: Ticket Vending
+        description: Automated ticket machines
+      - name: Food Vending
+        description: Fresh food vending operations
+      - name: Beverage Vending
+        description: Drink machine management
+      - name: Ice Vending
+        description: Ice machine business management
+      - name: Product Dispensing
+        description: Automated product dispensers
+      - name: Vending Route Optimization
+        description: Delivery route planning
+
+  - name: Commercial Cleaning Services
+    subdomains:
+      - name: Office Cleaning
+        description: Corporate office cleaning services
+      - name: Industrial Cleaning
+        description: Factory and plant cleaning
+      - name: Medical Facility Cleaning
+        description: Healthcare cleaning services
+      - name: School Cleaning
+        description: Educational facility cleaning
+      - name: Retail Cleaning
+        description: Store cleaning services
+      - name: Warehouse Cleaning
+        description: Distribution center cleaning
+      - name: Post-Construction Cleaning
+        description: Construction cleanup services
+      - name: Window Cleaning
+        description: Commercial window washing
+      - name: Carpet Cleaning
+        description: Commercial carpet services
+      - name: Floor Care Services
+        description: Floor stripping and waxing
+      - name: Pressure Washing
+        description: Exterior surface cleaning
+      - name: Restaurant Cleaning
+        description: Kitchen deep cleaning services
+      - name: Hotel Housekeeping
+        description: Hospitality cleaning management
+      - name: Gym Cleaning
+        description: Fitness facility sanitation
+      - name: Church Cleaning
+        description: Religious facility maintenance
+      - name: Airport Cleaning
+        description: Terminal cleaning services
+      - name: Green Cleaning
+        description: Eco-friendly cleaning services
+      - name: Disinfection Services
+        description: Sanitization and sterilization
+      - name: Cleaning Supply Management
+        description: Cleaning product inventory
+      - name: Cleaning Crew Scheduling
+        description: Janitorial staff management
+
+  - name: Jewelry & Watch Services
+    subdomains:
+      - name: Jewelry Repair
+        description: Jewelry repair shop management
+      - name: Watch Repair
+        description: Watch service and restoration
+      - name: Custom Jewelry Design
+        description: Bespoke jewelry creation
+      - name: Jewelry Appraisal
+        description: Jewelry valuation services
+      - name: Gemstone Services
+        description: Gem cutting and setting
+      - name: Jewelry Casting
+        description: Jewelry manufacturing processes
+      - name: Jewelry Engraving
+        description: Jewelry engraving and personalization
+      - name: Ring Sizing
+        description: Ring resizing services
+      - name: Pearl Stringing
+        description: Pearl and bead restringing
+      - name: Estate Jewelry
+        description: Antique jewelry buying and selling
+      - name: Jewelry Consignment
+        description: Consignment jewelry sales
+      - name: Jewelry Insurance Appraisal
+        description: Insurance documentation services
+      - name: Jewelry Photography
+        description: Product photography for jewelers
+      - name: Jewelry Inventory
+        description: Jeweler inventory management
+      - name: Jewelry POS
+        description: Point of sale for jewelers

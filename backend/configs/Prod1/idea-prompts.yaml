@@ -1,0 +1,263 @@
+generation_templates:
+  - name: Pain Point Formula
+    template: What if [target audience] could [solution approach] to solve [problem type]?
+    example: What if small businesses could use AI automation to solve high costs?
+    process:
+      - Pick target audience from target-audiences.yaml
+      - Pick solution from solution-types.yaml
+      - Pick problem from problem-types.yaml
+      - Combine and refine
+    enabled: true
+  - name: Domain + Technology
+    template: '[Domain] + [Emerging Technology] = ?'
+    example: Agriculture + AI = Crop disease prediction using phone cameras
+    process:
+      - Pick underserved domain from business-domains.yaml
+      - Pick emerging tech from technologies.yaml
+      - Ask "How could this tech transform this domain?"
+    enabled: true
+  - name: 10x Better/Cheaper/Faster
+    template: How might we make [existing solution] 10x [better/cheaper/faster]?
+    example: How might we make legal advice 10x cheaper?
+    process:
+      - Identify expensive/slow/bad existing solution
+      - Brainstorm radical approaches (not 10% improvements)
+      - Look for non-obvious angles
+    enabled: true
+  - name: Industry Crossover
+    template: What does [Domain A] have that [Domain B] desperately needs?
+    example: What does gaming have that education needs? → Engagement mechanics
+    process:
+      - Pick two unrelated domains
+      - List strengths of Domain A
+      - Find gaps in Domain B
+      - Apply solution across domains
+    enabled: true
+  - name: Unbundling
+    template: What one feature of [big platform] could be a standalone product?
+    example: Calendly = Unbundled scheduling from CRMs
+    process:
+      - Identify bloated all-in-one platform
+      - Find one feature everyone uses
+      - Make it 10x better as standalone
+    enabled: true
+  - name: New Enabler
+    template: Now that [new technology/trend] exists, what becomes possible?
+    example: Now that GPT-4 exists, personalized tutoring becomes affordable
+    process:
+      - Identify recent breakthrough
+      - List what was previously impossible/expensive
+      - Find business in new possibilities
+    enabled: true
+  - name: Flip the Model
+    template: What if [business model] was [opposite business model]?
+    example: What if gym was subscription → pay-per-visit?
+    process:
+      - Take existing business model
+      - Flip revenue model, user flow, or value prop
+      - See if it solves new problem
+    enabled: true
+  - name: Target New Segment
+    template: '[Existing solution] for [underserved audience]'
+    example: Salesforce for freelancers or Uber for seniors
+    process:
+      - Identify successful product
+      - Find audience they don't serve well
+      - Adapt for new segment's needs
+    enabled: true
+  - name: Geographic Arbitrage
+    template: '[Successful product in Country A] adapted for [Country B]'
+    example: Stripe (US) → payment processor for Brazil with local payment methods
+    process:
+      - Find successful product in one market (US, EU, Asia)
+      - Identify country/region where it doesn't exist or is poorly adapted
+      - Adapt for local needs (language, payment methods, regulations, culture)
+      - Look for: Different regulations, payment preferences, cultural differences
+    why_it_works:
+      - Proven model (risk reduced)
+      - Local competitors may not exist yet
+      - Local knowledge is your unfair advantage
+    examples:
+      - 'Rocket Internet model: Clone successful US startups for Europe/LatAm'
+      - 'Rappi (Colombia): DoorDash/Instacart for Latin America'
+      - 'Grab (Southeast Asia): Uber for SEA with local payment methods'
+      - 'Flipkart (India): Amazon for India with cash-on-delivery'
+    enabled: true
+idea_frameworks:
+  - name: Jobs to be Done
+    description: Focus on the job customers hire products to do
+    template: When [situation], I want to [motivation], so I can [outcome]
+    example: When I'm traveling for work, I want to find gyms quickly, so I can maintain my workout routine
+    how_to_use:
+      - Interview potential customers about their goals
+      - Identify the "job" they're trying to accomplish
+      - Look for poorly served jobs
+      - Build product that does job better
+  - name: Pain Point Mining
+    description: Find problems people complain about online
+    process:
+      - Browse r/[industry] subreddit
+      - Search Twitter for "[industry] frustrating"
+      - Read 1-star reviews of popular products
+      - Note 10 most common complaints
+      - Pick most frequent/severe to solve
+    example_subreddits:
+      - r/smallbusiness
+      - r/freelance
+      - r/entrepreneur
+      - r/startups
+      - Industry-specific subs
+  - name: Personal Pain Audit
+    description: Solve problems you personally experience
+    template: Last week, what made you say 'this is annoying' or 'there should be a better way'?
+    process:
+      - Keep notes for 1 week of frustrations
+      - Rate each by frequency and severity
+      - Research if others have same problem
+      - Build solution for yourself first
+    why_powerful: You understand problem deeply + you're first customer
+  - name: Trend Surfing
+    description: Ride emerging waves early
+    current_trends:
+      - AI/GPT integration
+      - Remote work tools
+      - Climate tech
+      - Web3/blockchain
+      - No-code movement
+      - Creator economy
+      - Healthcare at home
+    process:
+      - Pick emerging trend
+      - Ask "What will people need as this grows?"
+      - Build infrastructure for trend
+    warning: Don't chase hype - pick trends you believe in
+  - name: Arbitrage Opportunities
+    description: Find gaps between geographies, time, or information
+    types:
+      - Geographic: Works in US, doesn't exist in EU
+      - Temporal: Was impossible 5 years ago, possible now
+      - Information: Experts know X, public doesn't
+      - Regulatory: Legal in some places, not others
+    process:
+      - Identify successful product in one context
+      - Find where it doesn't exist yet
+      - Adapt for new context
+  - name: Productize a Service
+    description: Turn consulting/agency work into software
+    template: Manual process → Software automation
+    examples:
+      - Tax filing (manual CPA → TurboTax)
+      - Web design (designer → Squarespace)
+      - Recruiting (recruiter → LinkedIn)
+    process:
+      - Find service that's expensive/manual
+      - Identify repeatable parts
+      - Automate or templatize
+      - Sell at 1/10th the price
+brainstorming_exercises:
+  - name: 100 Ideas in 1 Hour
+    goal: Quantity over quality - unlock creativity
+    rules:
+      - Set 60-minute timer
+      - No filtering or judging
+      - Write terrible ideas too
+      - Aim for 100+
+    why_it_works: First 20 are obvious, next 30 are bad, last 50 get interesting
+  - name: Constraint-Based Ideation
+    goal: Force creativity through limits
+    constraints:
+      - Must be profitable in 30 days
+      - Must require $0 to start
+      - Must be built in 1 week
+      - Must serve market I know
+      - Must use only no-code tools
+    process:
+      - Pick 2-3 constraints
+      - Generate ideas that fit
+      - Constraints spark creativity
+  - name: Remix Exercise
+    goal: Combine existing ideas in new ways
+    format: '[Company A] + [Company B] + [Twist]'
+    examples:
+      - Uber + healthcare + for pets = Mobile vet service
+      - Airbnb + coworking + for creators = Creator house network
+      - Tinder + hiring + for projects = Freelancer matching
+    process:
+      - List 10 successful companies
+      - Randomly combine two
+      - Add unique twist
+  - name: Reverse Engineering Success
+    goal: Learn from what works
+    process:
+      - Find 5 successful startups from last 2 years
+      - Answer: What problem did they solve?
+      - Answer: Why did timing matter?
+      - Answer: What's their unfair advantage?
+      - Ask: What adjacent problem could I solve?
+prompt_sequences:
+  daily_practice:
+    - day: Monday
+      prompt: What frustrated me last week?
+      action: Write down 5 frustrations
+    - day: Tuesday
+      prompt: What's expensive that should be cheap?
+      action: List 3 overpriced services
+    - day: Wednesday
+      prompt: What works in X industry but not in mine?
+      action: Find 2 cross-industry ideas
+    - day: Thursday
+      prompt: What will be possible in 2 years?
+      action: Imagine 3 future scenarios
+    - day: Friday
+      prompt: What do I wish existed?
+      action: Selfish ideas for myself
+  research_session:
+    - step: 1
+      task: Pick domain from business-domains.yaml
+      time: 5 min
+    - step: 2
+      task: Browse r/[domain] for complaints
+      time: 20 min
+    - step: 3
+      task: List 10 common problems found
+      time: 10 min
+    - step: 4
+      task: Pick top 3 by frequency + severity
+      time: 5 min
+    - step: 5
+      task: Research existing solutions
+      time: 15 min
+    - step: 6
+      task: Generate 3 ideas for each problem
+      time: 15 min
+anti_patterns:
+  avoid_these:
+    - name: Solution in Search of Problem
+      description: Cool technology without real pain point
+      example: Blockchain for [anything that doesn't need it]
+      fix: Start with problem, not solution
+    - name: Idea Too Broad
+      description: Trying to be everything to everyone
+      example: Social network for everyone
+      fix: Narrow to specific niche first
+    - name: Solving Non-Problems
+      description: Problem only you care about
+      example: App to organize sock drawer
+      fix: Validate with 10 people first
+    - name: Copycat Without Advantage
+      description: Me-too product with no differentiation
+      example: Another todo app
+      fix: Need 10x better or unfair advantage
+quick_filters:
+  ask_immediately:
+    - Would 10 people I know have this problem?
+    - Would they pay to solve it?
+    - Can I build MVP in <3 months?
+    - Do I have any unfair advantage?
+    - Is market growing or shrinking?
+  red_flags:
+    - Needs to change human behavior dramatically
+    - Requires many parties to adopt simultaneously
+    - Regulated industry I don't understand
+    - Competing with billion-dollar companies
+    - I have no competitive advantage

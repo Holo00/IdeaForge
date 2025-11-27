@@ -1,0 +1,271 @@
+# Technologies
+# Tech stacks and approaches for building software
+
+technologies:
+  - name: Web Application
+    description: Browser-based application
+    stack_examples:
+      - React + Node.js + PostgreSQL
+      - Vue.js + Django + MySQL
+      - Angular + .NET + SQL Server
+    complexity: Medium
+    time_to_mvp: 2-4 months
+
+  - name: Mobile App (Native)
+    description: Platform-specific mobile applications
+    stack_examples:
+      - iOS (Swift + SwiftUI)
+      - Android (Kotlin + Jetpack Compose)
+    complexity: Medium-High
+    time_to_mvp: 3-5 months
+
+  - name: Mobile App (Cross-Platform)
+    description: Single codebase for iOS and Android
+    stack_examples:
+      - React Native
+      - Flutter
+      - Ionic
+    complexity: Medium
+    time_to_mvp: 2-4 months
+
+  - name: Progressive Web App (PWA)
+    description: Web app with mobile app capabilities
+    stack_examples:
+      - Service Workers + Web Manifest
+      - Workbox + React
+    complexity: Low-Medium
+    time_to_mvp: 1-3 months
+
+  - name: No-Code Platform
+    description: Build without programming
+    stack_examples:
+      - Webflow
+      - Bubble
+      - Airtable + Zapier
+    complexity: Low
+    time_to_mvp: 2 weeks - 2 months
+
+  - name: Chrome Extension
+    description: Browser extension for Chrome/Edge
+    stack_examples:
+      - Vanilla JavaScript
+      - React + Webpack
+      - Manifest V3
+    complexity: Low-Medium
+    time_to_mvp: 2-6 weeks
+
+  - name: API/Backend Service
+    description: Server-side API for other apps
+    stack_examples:
+      - Node.js + Express + MongoDB
+      - Python + FastAPI + PostgreSQL
+      - Go + Gin + Redis
+    complexity: Medium
+    time_to_mvp: 1-3 months
+
+  - name: Serverless
+    description: Cloud functions without server management
+    stack_examples:
+      - AWS Lambda + API Gateway + DynamoDB
+      - Google Cloud Functions + Firestore
+      - Netlify Functions
+    complexity: Low-Medium
+    time_to_mvp: 1-2 months
+
+  - name: Jamstack
+    description: JavaScript, APIs, and Markup
+    stack_examples:
+      - Next.js + Vercel + Headless CMS
+      - Gatsby + Netlify + Contentful
+      - Nuxt.js + Static Site Generation
+    complexity: Low-Medium
+    time_to_mvp: 1-2 months
+
+  - name: AI/Machine Learning
+    description: Applications powered by ML models
+    stack_examples:
+      - Python + TensorFlow + Flask
+      - PyTorch + FastAPI
+      - OpenAI API + Node.js
+    complexity: High
+    time_to_mvp: 3-6 months
+
+  - name: Blockchain/Web3
+    description: Decentralized applications
+    stack_examples:
+      - Ethereum + Solidity + Web3.js
+      - Polygon + React + ethers.js
+      - Solana + Rust + Anchor
+    complexity: High
+    time_to_mvp: 4-8 months
+
+  - name: IoT Platform
+    description: Internet of Things connected devices
+    stack_examples:
+      - Arduino + MQTT + Node-RED
+      - Raspberry Pi + Python + AWS IoT
+      - ESP32 + C++ + Firebase
+    complexity: High
+    time_to_mvp: 4-8 months
+
+  - name: Desktop Application
+    description: Native desktop software
+    stack_examples:
+      - Electron + React
+      - .NET MAUI (Windows/Mac)
+      - Qt + C++
+    complexity: Medium-High
+    time_to_mvp: 3-6 months
+
+  - name: SaaS Multi-Tenant
+    description: Shared infrastructure for multiple customers
+    stack_examples:
+      - Ruby on Rails + PostgreSQL (row-level security)
+      - Laravel + MySQL (tenant databases)
+      - Django + Separate databases per tenant
+    complexity: High
+    time_to_mvp: 4-6 months
+
+  - name: Marketplace Platform
+    description: Two-sided platform connecting users
+    stack_examples:
+      - Sharetribe (pre-built marketplace)
+      - Custom: React + Node.js + Stripe Connect
+      - Ruby on Rails + PostgreSQL
+    complexity: High
+    time_to_mvp: 4-8 months
+
+  - name: Real-Time Application
+    description: Live data synchronization
+    stack_examples:
+      - WebSockets + Socket.io
+      - Firebase Realtime Database
+      - Supabase Realtime
+    complexity: Medium-High
+    time_to_mvp: 2-4 months
+
+  - name: Data Analytics Platform
+    description: Business intelligence and reporting
+    stack_examples:
+      - Metabase + PostgreSQL
+      - Tableau + Data warehouse
+      - Custom: Python + Pandas + Plotly
+    complexity: Medium-High
+    time_to_mvp: 3-5 months
+
+  - name: Automation/Integration Tool
+    description: Connect apps and automate workflows
+    stack_examples:
+      - n8n (open-source)
+      - Zapier-like: Node.js + OAuth integrations
+      - Make (Integromat) clone
+    complexity: High
+    time_to_mvp: 4-6 months
+
+  - name: Content Management System
+    description: Website content editing platform
+    stack_examples:
+      - WordPress customization
+      - Strapi (headless CMS)
+      - Custom: Next.js + Sanity.io
+    complexity: Medium
+    time_to_mvp: 2-4 months
+
+  - name: E-commerce Platform
+    description: Online shopping solution
+    stack_examples:
+      - Shopify app
+      - WooCommerce plugin
+      - Custom: Next.js + Stripe + Snipcart
+    complexity: Medium-High
+    time_to_mvp: 3-5 months
+
+  - name: Micro-SaaS
+    description: Small, focused SaaS product
+    stack_examples:
+      - Next.js + Supabase + Stripe
+      - Laravel + Paddle
+      - Rails + Heroku + Stripe
+    complexity: Low-Medium
+    time_to_mvp: 1-3 months
+
+  - name: Video Platform
+    description: Video hosting or streaming
+    stack_examples:
+      - Mux + React
+      - AWS MediaConvert + CloudFront
+      - Vimeo API integration
+    complexity: High
+    time_to_mvp: 4-6 months
+
+  - name: Social Platform
+    description: User-generated content and connections
+    stack_examples:
+      - Ruby on Rails + PostgreSQL + Redis
+      - Phoenix + Elixir + PostgreSQL
+      - Django + Celery + PostgreSQL
+    complexity: High
+    time_to_mvp: 5-8 months
+
+  - name: Communication Tool
+    description: Chat, messaging, or collaboration
+    stack_examples:
+      - Stream Chat API + React
+      - Matrix protocol
+      - Custom: WebRTC + Socket.io
+    complexity: High
+    time_to_mvp: 4-7 months
+
+  - name: Game/Gamification
+    description: Interactive gaming experiences
+    stack_examples:
+      - Unity + C#
+      - Phaser.js (HTML5 games)
+      - Godot Engine
+    complexity: High
+    time_to_mvp: 6-12 months
+
+  - name: AR/VR Application
+    description: Augmented or virtual reality
+    stack_examples:
+      - Unity + ARKit/ARCore
+      - Unreal Engine + VR SDKs
+      - A-Frame (WebVR)
+    complexity: Very High
+    time_to_mvp: 6-12+ months
+
+  - name: Voice/Chatbot
+    description: Conversational interfaces
+    stack_examples:
+      - Dialogflow + Node.js
+      - Rasa (open source)
+      - OpenAI GPT + Custom UI
+    complexity: Medium
+    time_to_mvp: 2-4 months
+
+  - name: Low-Code Platform
+    description: Visual development with code flexibility
+    stack_examples:
+      - Retool for internal tools
+      - Bubble + custom plugins
+      - Appsmith (open source)
+    complexity: Low-Medium
+    time_to_mvp: 1-2 months
+
+  - name: Monolithic Architecture
+    description: All-in-one application
+    stack_examples:
+      - Ruby on Rails full-stack
+      - Django full-stack
+      - Laravel full-stack
+    complexity: Medium
+    time_to_mvp: 2-4 months
+
+  - name: Microservices
+    description: Distributed service architecture
+    stack_examples:
+      - Docker + Kubernetes + gRPC
+      - AWS ECS + API Gateway
+      - Service mesh (Istio)
+    complexity: Very High
+    time_to_mvp: 6-12+ months

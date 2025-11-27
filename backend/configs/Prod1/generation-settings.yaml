@@ -1,0 +1,199 @@
+ai_provider: openai
+model: claude-3-5-sonnet-20241022
+temperature: 1
+max_tokens: 30000
+idea_generation_prompt: >
+  You are an expert at generating comprehensive software business ideas. Generate a new, specific, well-researched
+  software business idea using the following framework and constraints.
+
+  **Generation Framework**: {framework_name} {framework_description} {framework_template} {framework_example}
+
+  **Constraints** (choose from the options provided):
+
+  - **Domain Options** (pick one or combine related ones):
+    {domains}
+
+  - **Problem Type Options** (select the most relevant):
+    {problems}
+
+  - **Solution Type Options** (choose the best fit):
+    {solutions}
+
+  - **Additional Requirements** (MUST satisfy ALL of these constraints):
+    {extra_filters}
+
+  - **Monetization Model Options** (pick ONE from this list EXACTLY as written):
+    {monetization_models}
+
+  - **Target Audience Options** (pick ONE from this list EXACTLY as written):
+    {target_audiences}
+
+  **Evaluation Criteria** (each scored 1-10): {criteria}
+
+  ---
+
+  Generate a unique, viable idea that addresses a real problem in the specified domain. For each evaluation criterion,
+  provide 2-3 follow-up questions with detailed answers that demonstrate deep thinking about the idea.
+
+  Return ONLY valid JSON in this exact format: ```json {
+    "name": "Idea Name (max 60 characters)",
+    "domain": "Parent Domain → Subdomain",
+    "problem": "Brief problem description",
+    "solution": "Brief solution description",
+    "quickSummary": "1-2 sentence elevator pitch explaining the value proposition",
+
+    "concreteExample": {
+      "currentState": "Detailed description of how users handle this problem today (2-3 sentences with specific pain points)",
+      "yourSolution": "Step-by-step walkthrough of how they would use your solution (2-3 sentences)",
+      "keyImprovement": "Quantifiable improvements with specific metrics (time saved, cost reduction, etc.)"
+    },
+
+    "ideaComponents": {
+      "monetizationModel": "MUST be one EXACT value from Monetization Model Options list (e.g., 'Monthly Subscription')",
+      "monetization": "Detailed revenue model with specifics (e.g., 'Monthly subscription at $50-150/user based on features')",
+      "targetAudienceCategory": "MUST be one EXACT value from Target Audience Options list (e.g., 'Small Businesses')",
+      "targetAudience": "Specific user segment with demographics (e.g., 'Small business owners with 10-50 employees in retail')",
+      "technology": "Core tech stack needed (e.g., 'React/Node.js web app + OpenAI API + Stripe')",
+      "marketSize": "Market size category with numbers (e.g., 'Mid-Market (500K potential users, $50M TAM)')",
+      "estimatedTeamSize": 2,
+      "estimatedTeamSizeReasoning": "Brief explanation of minimum team needed to build and launch MVP"
+    },
+
+    {evaluation_schema},
+
+    "quickNotes": {
+      "strengths": [
+        "3-5 bullet points highlighting the strongest aspects of this idea",
+        "Focus on unique advantages, market opportunity, clear ROI, etc."
+      ],
+      "weaknesses": [
+        "3-5 bullet points identifying potential risks and challenges",
+        "Be honest about gaps, competition, complexity, etc."
+      ],
+      "keyAssumptions": [
+        "3-5 critical assumptions this idea depends on",
+        "What needs to be true for this to succeed?"
+      ],
+      "nextSteps": [
+        "3-5 actionable validation steps to test this idea quickly",
+        "Include research, interviews, prototypes, etc."
+      ],
+      "references": [
+        "3-5 data points, sources, or facts supporting the analysis",
+        "Include market size, competitor info, research citations, etc."
+      ]
+    },
+
+    "actionPlan": {
+      "nextSteps": [
+        {
+          "step": 1,
+          "title": "Brief title of the action (e.g., 'Validate problem with target users')",
+          "description": "Detailed description of what to do and why (2-3 sentences)",
+          "duration": "Realistic time estimate (e.g., '1-2 weeks')",
+          "blockers": ["Optional: What needs to happen first (empty array if none)"],
+          "successMetric": "How to know you're done (specific, measurable)"
+        },
+        {
+          "step": 2,
+          "title": "Next action title",
+          "description": "What to do next",
+          "duration": "Time estimate",
+          "blockers": ["Step 1: Dependency if needed"],
+          "successMetric": "Success criteria"
+        }
+      ],
+      "requiredResources": {
+        "technical": ["List 3-5 specific technologies, languages, frameworks, or infrastructure needs"],
+        "financial": "Rough budget estimate with breakdown (e.g., '$5K-10K: API costs $1K, infrastructure $2K, legal $2-5K')",
+        "team": ["List 2-4 roles needed with specificity (e.g., '1 full-stack dev with AI experience', '1 designer')"],
+        "legal": ["List 0-3 legal/compliance requirements (e.g., 'HIPAA compliance', 'BAA agreements')]"
+      },
+      "timeline": {
+        "mvp": "Realistic MVP timeline (e.g., '2-3 months')",
+        "firstRevenue": "When could you make first sale (e.g., '4-6 months')",
+        "breakeven": "Break-even timeline with assumptions (e.g., '12-18 months assuming 50 customers @$100/mo')"
+      },
+      "criticalPath": [
+        "2-4 most critical/risky items that could block or delay execution",
+        "Focus on regulatory blockers, technical unknowns, market validation risks",
+        "Be specific about what makes each item critical"
+      ]
+    },
+
+    "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"]
+  } ```
+
+  IMPORTANT: - All {criteria_count} evaluation criteria MUST have exactly 3 questions with detailed answers - Quick
+  notes sections MUST have 3-5 items each (strengths, weaknesses, assumptions, next steps, references) - Action plan
+  MUST have 6-8 next steps with all required fields (step, title, description, duration, successMetric) - Required
+  resources MUST include specific technologies (3-5), budget breakdown, team roles (2-4), and legal requirements (0-3) -
+  Timeline estimates MUST be realistic with clear assumptions (e.g., "12-18 months assuming 50 customers @$100/mo") -
+  Critical path MUST identify 2-4 specific blocking items (regulatory, technical unknowns, market validation risks) -
+  estimatedTeamSize MUST be a realistic integer (1-10) for minimum team needed to build and launch MVP -
+  Use specific numbers, metrics, and evidence throughout - Be realistic and honest in scoring - not everything should be
+  8-10 - Provide actionable insights that help evaluate if this idea is worth pursuing
+extraFilters:
+  - id: maxTeamSize
+    label: Maximum Team Size
+    description: Limit the number of people needed to build the business
+    enabled: true
+    value: 1
+    type: number
+    promptText: The idea must be buildable by a team of {value} person(s) or less.
+  - id: lowInitialCapital
+    label: Low Initial Capital
+    description: Require minimal upfront investment
+    enabled: true
+    value: 10000
+    type: number
+    promptText: The idea must require less than ${value} in initial capital to start.
+  - id: fastTimeToMarket
+    label: Fast Time to Market
+    description: Ideas that can launch quickly
+    enabled: true
+    value: 2
+    type: number
+    promptText: The idea must be launchable within {value} months or less.
+  - id: noRegulation
+    label: Minimal Regulatory Requirements
+    description: Avoid heavily regulated industries
+    enabled: true
+    type: toggle
+    promptText: The idea must not require significant regulatory approvals or licenses.
+  - id: remoteFirst
+    label: Remote-First Business
+    description: Can be operated entirely remotely
+    enabled: false
+    type: toggle
+    promptText: The business must be fully operable remotely without physical location requirements.
+  - id: saasModel
+    label: SaaS Business Model
+    description: Focus on software-as-a-service
+    enabled: false
+    type: toggle
+    promptText: The idea must follow a Software-as-a-Service (SaaS) business model with recurring revenue.
+  - id: b2bFocus
+    label: B2B Focus
+    description: Target business customers instead of consumers
+    enabled: false
+    type: toggle
+    promptText: The idea must target business customers (B2B) rather than individual consumers.
+  - id: provenMarket
+    label: Proven Market Demand
+    description: Target markets with existing demand
+    enabled: false
+    type: toggle
+    promptText: The idea must address a market with proven, existing demand (not creating new market).
+  - id: lowTechComplexity
+    label: Low Technical Complexity
+    description: Avoid highly technical solutions
+    enabled: false
+    type: toggle
+    promptText: The technical implementation must be straightforward, avoiding complex algorithms or infrastructure.
+  - id: profitableFirstYear
+    label: First Year Profitability
+    description: Achieve profitability within 12 months
+    enabled: false
+    type: toggle
+    promptText: The business model must be designed to achieve profitability within the first year.

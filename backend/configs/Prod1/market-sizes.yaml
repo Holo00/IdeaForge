@@ -1,0 +1,254 @@
+# Market Sizes
+# Different scales of market opportunity
+
+market_sizes:
+  - name: Niche Market
+    description: Highly specialized, small addressable market
+    total_addressable_market: $1M - $10M
+    typical_customers: 100 - 1,000
+    competition_level: Low
+    characteristics:
+      - Very specific problem
+      - Limited but dedicated audience
+      - Easier to dominate
+      - Lower revenue ceiling
+    examples:
+      - Podcast editing software for legal podcasts
+      - Inventory management for comic book stores
+      - Scheduling software for mobile pet groomers
+    pros:
+      - Easy to find customers
+      - Low competition
+      - Become market leader quickly
+      - Strong word-of-mouth
+    cons:
+      - Limited growth potential
+      - Hard to raise VC funding
+      - Difficult to pivot
+      - Small customer base
+
+  - name: Small Market
+    description: Specialized vertical with room to grow
+    total_addressable_market: $10M - $100M
+    typical_customers: 1,000 - 10,000
+    competition_level: Low-Medium
+    characteristics:
+      - Vertical-specific solution
+      - Underserved audience
+      - Bootstrap-friendly
+      - Sustainable business size
+    examples:
+      - CRM for real estate agents
+      - Scheduling for yoga studios
+      - Invoicing for freelance designers
+    pros:
+      - Enough customers to build business
+      - Can bootstrap to profitability
+      - Room for multiple winners
+      - Strong unit economics
+    cons:
+      - May hit growth ceiling
+      - Limited exit opportunities
+      - Harder to get VC attention
+      - Requires efficiency
+
+  - name: Mid-Market
+    description: Sizable opportunity with clear segmentation
+    total_addressable_market: $100M - $1B
+    typical_customers: 10,000 - 100,000
+    competition_level: Medium
+    characteristics:
+      - Established category
+      - Multiple competitors
+      - VC-backable
+      - Need differentiation
+    examples:
+      - Email marketing platforms
+      - Restaurant POS systems
+      - Team collaboration tools
+    pros:
+      - Large enough for VC funding
+      - Multiple revenue streams possible
+      - Room for innovation
+      - Clear customer segments
+    cons:
+      - More competition
+      - Higher marketing costs
+      - Need to scale quickly
+      - Feature arms race
+
+  - name: Large Market
+    description: Massive opportunity across industries
+    total_addressable_market: $1B - $10B
+    typical_customers: 100,000 - 1M+
+    competition_level: High
+    characteristics:
+      - Horizontal solution
+      - Global opportunity
+      - Requires significant capital
+      - Platform potential
+    examples:
+      - CRM platforms (Salesforce)
+      - Cloud storage (Dropbox)
+      - Project management (Asana)
+    pros:
+      - Huge revenue potential
+      - VC attractive
+      - Multiple monetization paths
+      - Platform effects possible
+    cons:
+      - Intense competition
+      - High customer acquisition cost
+      - Need significant funding
+      - Long path to profitability
+
+  - name: Mega Market
+    description: Trillion-dollar+ opportunity
+    total_addressable_market: $10B+
+    typical_customers: Millions
+    competition_level: Very High
+    characteristics:
+      - Fundamental infrastructure
+      - Multi-decade opportunity
+      - Requires massive investment
+      - Winner-take-most dynamics
+    examples:
+      - Cloud computing (AWS)
+      - Search engines (Google)
+      - Social networks (Facebook)
+      - E-commerce (Amazon)
+    pros:
+      - Unlimited upside
+      - Category-defining opportunity
+      - Network effects
+      - Global scale
+    cons:
+      - Requires billions in capital
+      - Extremely competitive
+      - High failure rate
+      - Long time to success
+
+  - name: Emerging Market
+    description: New category still being defined
+    total_addressable_market: Unknown (potentially huge)
+    typical_customers: Early adopters
+    competition_level: Low (but growing)
+    characteristics:
+      - Technology-driven change
+      - Customer education needed
+      - High uncertainty
+      - First-mover advantage
+    examples:
+      - AI-powered tools (emerging)
+      - Web3 applications (emerging)
+      - Quantum computing apps (future)
+    pros:
+      - Ground-floor opportunity
+      - Less competition initially
+      - Define the category
+      - Massive upside potential
+    cons:
+      - Market may not materialize
+      - Education costs high
+      - Technology risk
+      - Timing critical
+
+  - name: Saturated Market
+    description: Mature market with many established players
+    total_addressable_market: Varies
+    typical_customers: Varies
+    competition_level: Very High
+    characteristics:
+      - Slow growth
+      - Price competition
+      - Need strong differentiation
+      - Consolidation phase
+    examples:
+      - Antivirus software
+      - Basic website builders
+      - Simple to-do apps
+    pros:
+      - Proven demand
+      - Clear customer needs
+      - Acquisition targets
+      - Established playbooks
+    cons:
+      - Very hard to win
+      - Commoditized pricing
+      - Incumbent advantages
+      - Low margins
+
+  - name: Blue Ocean
+    description: Uncontested market space
+    total_addressable_market: To be created
+    typical_customers: To be defined
+    competition_level: None initially
+    characteristics:
+      - Create new demand
+      - No direct competition
+      - High innovation required
+      - Category creation
+    examples:
+      - Cirque du Soleil (circus + theater)
+      - iPad (tablet category creation)
+      - Airbnb (home sharing category)
+    pros:
+      - No competition
+      - Define the rules
+      - Premium pricing possible
+      - Media attention
+    cons:
+      - Unproven demand
+      - Very high risk
+      - Requires massive innovation
+      - Education costs
+
+  - name: Local/Geographic
+    description: Region-specific opportunity
+    total_addressable_market: Varies by region
+    typical_customers: Local businesses or residents
+    competition_level: Low-Medium
+    characteristics:
+      - Geography-dependent
+      - Local regulations
+      - Community-focused
+      - Difficult to scale globally
+    examples:
+      - Local delivery apps
+      - Regional payment systems
+      - City-specific services
+    pros:
+      - Understand local needs
+      - Community ties
+      - Lower competition
+      - Regulatory advantages
+    cons:
+      - Limited scale
+      - Geographic constraints
+      - Hard to expand
+      - Local regulations
+
+  - name: Global Market
+    description: Worldwide opportunity
+    total_addressable_market: $1B+
+    typical_customers: Millions worldwide
+    competition_level: High
+    characteristics:
+      - Multi-language support
+      - Global infrastructure
+      - Cross-border payments
+      - Cultural adaptation
+    examples:
+      - Spotify (global music)
+      - Zoom (global video)
+      - WhatsApp (global messaging)
+    pros:
+      - Massive scale
+      - Multiple markets
+      - Diversified risk
+      - Currency advantages
+    cons:
+      - Localization costs
+      - Regulatory complexity
+      - Infrastructure investment
+      - Cultural challenges
