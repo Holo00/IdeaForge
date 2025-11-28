@@ -4,11 +4,11 @@ import yaml from 'js-yaml';
 import { pool } from '../lib/db';
 
 // Base path to configs directory
-// __dirname is backend/src/services, so go up to backend then into configs
-const CONFIGS_BASE_DIR = path.join(__dirname, '../..', 'configs');
+// Use process.cwd() for consistent path resolution in dev and prod
+const CONFIGS_BASE_DIR = path.join(process.cwd(), 'backend', 'configs');
 
 // Master config directory (single source of truth for filter options)
-const MASTER_CONFIG_DIR = path.join(__dirname, '../..', 'config');
+const MASTER_CONFIG_DIR = path.join(process.cwd(), 'backend', 'config');
 
 export class ConfigService {
   // Optional profile override for concurrent generation with different profiles
