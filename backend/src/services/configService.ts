@@ -6,9 +6,11 @@ import { pool } from '../lib/db';
 // Base path to configs directory
 // Use process.cwd() for consistent path resolution in dev and prod
 const CONFIGS_BASE_DIR = path.join(process.cwd(), 'backend', 'configs');
+console.log('[ConfigService] CONFIGS_BASE_DIR:', CONFIGS_BASE_DIR);
 
 // Master config directory (single source of truth for filter options)
 const MASTER_CONFIG_DIR = path.join(process.cwd(), 'backend', 'config');
+console.log('[ConfigService] MASTER_CONFIG_DIR:', MASTER_CONFIG_DIR);
 
 export class ConfigService {
   // Optional profile override for concurrent generation with different profiles
@@ -56,10 +58,14 @@ export class ConfigService {
     const activeProfile = await this.getActiveConfigProfile();
     if (!activeProfile) {
       // Fall back to default if no active profile found
-      console.warn('No active configuration profile found, using default');
-      return path.join(CONFIGS_BASE_DIR, 'default');
+      console.warn('[ConfigService] No active configuration profile found, using default');
+      const fallbackPath = path.join(CONFIGS_BASE_DIR, 'default');
+      console.log('[ConfigService] Fallback config path:', fallbackPath);
+      return fallbackPath;
     }
-    return path.join(CONFIGS_BASE_DIR, activeProfile.folder_name);
+    const configPath = path.join(CONFIGS_BASE_DIR, activeProfile.folder_name);
+    console.log('[ConfigService] Active profile:', activeProfile.folder_name, 'Path:', configPath);
+    return configPath;
   }
 
   /**

@@ -48,7 +48,7 @@ async function getApiKeyConfig(): Promise<ApiKeyConfig | null> {
     const path = require('path');
     const yaml = require('js-yaml');
 
-    const configDir = path.join(__dirname, '../..', 'configs', folderName);
+    const configDir = path.join(process.cwd(), 'backend', 'configs', folderName);
     const settingsPath = path.join(configDir, 'settings.yaml');
 
     let settingsData: any;
