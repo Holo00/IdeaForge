@@ -2,6 +2,9 @@
   "name": "ideaforge-frontend",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev -p 6001",
     "build": "next build",
