@@ -7,9 +7,12 @@ import { pool } from '../../lib/db';
 
 const router = express.Router();
 
-// Path to master config files (single source of truth for filter options)
-// Use process.cwd() for consistent path resolution in dev and prod
-const MASTER_CONFIG_DIR = path.join(process.cwd(), 'backend', 'config');
+// Base path to all config profiles
+const CONFIGS_BASE_DIR = path.join(process.cwd(), 'backend', 'configs');
+
+// Master config directory (single source of truth for filter options)
+// This is the same as the default profile config - /backend/configs/config/
+const MASTER_CONFIG_DIR = path.join(CONFIGS_BASE_DIR, 'config');
 
 /**
  * MASTER CONFIG VALIDATION
@@ -64,13 +67,8 @@ async function getConfigDir(profileId?: string): Promise<string> {
 
   const folderName = result.rows[0].folder_name;
 
-  // Check if this is the default 'config' folder or a custom profile folder
-  if (folderName === 'config') {
-    return MASTER_CONFIG_DIR;
-  }
-
-  // Custom profiles are stored in backend/configs/{folder_name}
-  return path.join(process.cwd(), 'backend', 'configs', folderName);
+  // All profiles are stored in backend/configs/{folder_name}
+  return path.join(CONFIGS_BASE_DIR, folderName);
 }
 
 /**
@@ -758,9 +756,9 @@ router.post('/profiles', async (req, res, next) => {
       throw new ValidationError('folder_name must contain only letters, numbers, dashes, and underscores');
     }
 
-    // Create the configuration directory by copying from config
-    const newConfigDir = path.join(process.cwd(), 'backend', 'configs', folder_name);
-    const defaultConfigDir = path.join(process.cwd(), 'backend', 'configs', 'config');
+    // Create the configuration directory by copying from the master config
+    const newConfigDir = path.join(CONFIGS_BASE_DIR, folder_name);
+    const defaultConfigDir = MASTER_CONFIG_DIR;
 
     try {
       // Check if directory already exists
@@ -876,16 +874,11 @@ router.post('/profiles/:id/clone', async (req, res, next) => {
 
     const sourceFolderName = sourceResult.rows[0].folder_name;
 
-    // Determine source config directory
-    let sourceConfigDir: string;
-    if (sourceFolderName === 'config') {
-      sourceConfigDir = path.join(process.cwd(), 'backend', 'configs', 'config');
-    } else {
-      sourceConfigDir = path.join(process.cwd(), 'backend', 'configs', sourceFolderName);
-    }
+    // All profiles are in CONFIGS_BASE_DIR
+    const sourceConfigDir = path.join(CONFIGS_BASE_DIR, sourceFolderName);
 
     // Create the new configuration directory
-    const newConfigDir = path.join(process.cwd(), 'backend', 'configs', folder_name);
+    const newConfigDir = path.join(CONFIGS_BASE_DIR, folder_name);
 
     // Check if new directory already exists
     try {
@@ -940,7 +933,7 @@ router.delete('/profiles/:id', async (req, res, next) => {
     await pool.query('DELETE FROM configuration_profiles WHERE id = $1', [id]);
 
     // Delete the configuration directory
-    const configDir = path.join(process.cwd(), 'backend', 'configs', folderName);
+    const configDir = path.join(CONFIGS_BASE_DIR, folderName);
     try {
       await fs.rm(configDir, { recursive: true, force: true });
     } catch (error) {

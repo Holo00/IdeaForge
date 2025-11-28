@@ -6,11 +6,10 @@ import { pool } from '../lib/db';
 // Base path to configs directory
 // Use process.cwd() for consistent path resolution in dev and prod
 const CONFIGS_BASE_DIR = path.join(process.cwd(), 'backend', 'configs');
-console.log('[ConfigService] CONFIGS_BASE_DIR:', CONFIGS_BASE_DIR);
 
 // Master config directory (single source of truth for filter options)
-const MASTER_CONFIG_DIR = path.join(process.cwd(), 'backend', 'config');
-console.log('[ConfigService] MASTER_CONFIG_DIR:', MASTER_CONFIG_DIR);
+// This is the same as the default profile config - /backend/configs/config/
+const MASTER_CONFIG_DIR = path.join(CONFIGS_BASE_DIR, 'config');
 
 export class ConfigService {
   // Optional profile override for concurrent generation with different profiles
