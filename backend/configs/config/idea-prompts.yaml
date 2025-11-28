@@ -7,7 +7,7 @@ generation_templates:
       - Pick solution from solution-types.yaml
       - Pick problem from problem-types.yaml
       - Combine and refine
-    enabled: false
+    enabled: true
   - name: Domain + Technology
     template: '[Domain] + [Emerging Technology] = ?'
     example: Agriculture + AI = Crop disease prediction using phone cameras
@@ -15,6 +15,7 @@ generation_templates:
       - Pick underserved domain from business-domains.yaml
       - Pick emerging tech from technologies.yaml
       - Ask "How could this tech transform this domain?"
+    enabled: true
   - name: 10x Better/Cheaper/Faster
     template: How might we make [existing solution] 10x [better/cheaper/faster]?
     example: How might we make legal advice 10x cheaper?
@@ -22,6 +23,7 @@ generation_templates:
       - Identify expensive/slow/bad existing solution
       - Brainstorm radical approaches (not 10% improvements)
       - Look for non-obvious angles
+    enabled: true
   - name: Industry Crossover
     template: What does [Domain A] have that [Domain B] desperately needs?
     example: What does gaming have that education needs? → Engagement mechanics
@@ -30,6 +32,7 @@ generation_templates:
       - List strengths of Domain A
       - Find gaps in Domain B
       - Apply solution across domains
+    enabled: true
   - name: Unbundling
     template: What one feature of [big platform] could be a standalone product?
     example: Calendly = Unbundled scheduling from CRMs
@@ -37,6 +40,7 @@ generation_templates:
       - Identify bloated all-in-one platform
       - Find one feature everyone uses
       - Make it 10x better as standalone
+    enabled: true
   - name: New Enabler
     template: Now that [new technology/trend] exists, what becomes possible?
     example: Now that GPT-4 exists, personalized tutoring becomes affordable
@@ -44,6 +48,7 @@ generation_templates:
       - Identify recent breakthrough
       - List what was previously impossible/expensive
       - Find business in new possibilities
+    enabled: true
   - name: Flip the Model
     template: What if [business model] was [opposite business model]?
     example: What if gym was subscription → pay-per-visit?
@@ -51,6 +56,7 @@ generation_templates:
       - Take existing business model
       - Flip revenue model, user flow, or value prop
       - See if it solves new problem
+    enabled: true
   - name: Target New Segment
     template: '[Existing solution] for [underserved audience]'
     example: Salesforce for freelancers or Uber for seniors
@@ -58,6 +64,7 @@ generation_templates:
       - Identify successful product
       - Find audience they don't serve well
       - Adapt for new segment's needs
+    enabled: true
   - name: Geographic Arbitrage
     template: '[Successful product in Country A] adapted for [Country B]'
     example: Stripe (US) → payment processor for Brazil with local payment methods
@@ -75,6 +82,7 @@ generation_templates:
       - 'Rappi (Colombia): DoorDash/Instacart for Latin America'
       - 'Grab (Southeast Asia): Uber for SEA with local payment methods'
       - 'Flipkart (India): Amazon for India with cash-on-delivery'
+    enabled: true
 idea_frameworks:
   - name: Jobs to be Done
     description: Focus on the job customers hire products to do
