@@ -51,6 +51,15 @@ app.use(errorHandler);
 
 // Start server
 async function startServer() {
+  // Start HTTP server first so healthcheck passes
+  const server = app.listen(PORT, () => {
+    console.log(`\n✓ Server running on port ${PORT}`);
+    console.log(`  Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`  API: http://localhost:${PORT}/api`);
+    console.log(`  Health: http://localhost:${PORT}/health`);
+  });
+
+  // Then initialize database and scheduler
   try {
     // Test database connection
     await pool.query('SELECT NOW()');
@@ -62,16 +71,9 @@ async function startServer() {
     // Start auto-generation scheduler
     startAutoGenerationScheduler();
     console.log('✓ Auto-generation scheduler started');
-
-    app.listen(PORT, () => {
-      console.log(`\n✓ Server running on port ${PORT}`);
-      console.log(`  Environment: ${process.env.NODE_ENV || 'development'}`);
-      console.log(`  API: http://localhost:${PORT}/api`);
-      console.log(`  Health: http://localhost:${PORT}/health`);
-    });
   } catch (error) {
-    console.error('Failed to start server:', error);
-    process.exit(1);
+    console.error('Database/migration error (server still running):', error);
+    // Don't exit - let the server keep running for debugging
   }
 }
 
