@@ -9,6 +9,7 @@ import configRouter from './api/routes/config';
 import logsRouter from './api/routes/logs';
 import authRouter, { requireAuth } from './api/routes/auth';
 import { startAutoGenerationScheduler, stopAutoGenerationScheduler } from './services/autoGenerationScheduler';
+import { runMigrations } from './lib/runMigrations';
 
 dotenv.config();
 
@@ -51,6 +52,9 @@ async function startServer() {
     // Test database connection
     await pool.query('SELECT NOW()');
     console.log('✓ Database connection successful');
+
+    // Run database migrations
+    await runMigrations();
 
     // Start auto-generation scheduler
     startAutoGenerationScheduler();
