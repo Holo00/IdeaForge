@@ -293,6 +293,73 @@ export class IdeaRepository {
     }));
   }
 
+  /**
+   * Get landing page data: featured idea (random from last 24h), latest 5 ideas, and stats
+   */
+  async getLandingData(): Promise<{
+    featuredIdea: Idea | null;
+    latestIdeas: Idea[];
+    stats: {
+      totalIdeas: number;
+      averageScore: number;
+      generatedToday: number;
+    };
+  }> {
+    // Get a random idea from the last 24 hours (or latest if none in 24h)
+    const featuredResult = await query<any>(
+      `SELECT * FROM ideas
+       WHERE created_at >= NOW() - INTERVAL '24 hours'
+       ORDER BY RANDOM()
+       LIMIT 1`
+    );
+
+    let featuredIdea: Idea | null = null;
+    if (featuredResult.length > 0) {
+      featuredIdea = this.mapFromDb(featuredResult[0]);
+    } else {
+      // Fallback to most recent idea if none in last 24h
+      const fallbackResult = await query<any>(
+        `SELECT * FROM ideas ORDER BY created_at DESC LIMIT 1`
+      );
+      if (fallbackResult.length > 0) {
+        featuredIdea = this.mapFromDb(fallbackResult[0]);
+      }
+    }
+
+    // Get latest 5 ideas (excluding the featured one if it exists)
+    const latestResult = await query<any>(
+      `SELECT * FROM ideas
+       ${featuredIdea ? `WHERE id != $1` : ''}
+       ORDER BY created_at DESC
+       LIMIT 5`,
+      featuredIdea ? [featuredIdea.id] : []
+    );
+    const latestIdeas = latestResult.map(this.mapFromDb);
+
+    // Get stats
+    const statsResult = await queryOne<{
+      total_ideas: string;
+      average_score: string;
+      generated_today: string;
+    }>(
+      `SELECT
+        COUNT(*) as total_ideas,
+        COALESCE(ROUND(AVG(score)::numeric, 1), 0) as average_score,
+        COUNT(*) FILTER (WHERE created_at >= CURRENT_DATE) as generated_today
+       FROM ideas`
+    );
+
+    return {
+      featuredIdea,
+      latestIdeas,
+      stats: {
+        totalIdeas: parseInt(statsResult?.total_ideas || '0', 10),
+        averageScore: parseFloat(statsResult?.average_score || '0'),
+        generatedToday: parseInt(statsResult?.generated_today || '0', 10),
+      },
+    };
+  }
+
   private mapFromDb(row: any): Idea {
     return {
       id: row.id,
