@@ -26,9 +26,10 @@ export async function runMigrations(): Promise<boolean> {
     executedResult.rows.map((row: any) => row.migration_name)
   );
 
-  // In production (compiled), __dirname is dist/lib, migrations are in backend/db/migrations
-  // In development (ts-node), __dirname is backend/src/lib
-  const migrationsDir = path.join(__dirname, '..', '..', 'db', 'migrations');
+  // Use process.cwd() to get project root, then navigate to migrations
+  // Works in both dev (ts-node) and prod (compiled to dist/)
+  const migrationsDir = path.join(process.cwd(), 'backend', 'db', 'migrations');
+  console.log(`  Looking for migrations in: ${migrationsDir}`);
   const files = fs.readdirSync(migrationsDir).sort();
 
   let migrationsRun = 0;
